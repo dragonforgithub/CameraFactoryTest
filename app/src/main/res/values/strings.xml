@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">Hello World, CameraPreviewActivity!</string>
+    <string name="app_name">CameraTest</string>
+    
+    <!-- ============================ -->
+    <!--  graphics examples strings  -->
+    <!-- ============================ -->
+
+    <string name="hide_me">Hide Me!</string>
+
+    <string name="density_title">Density: Unknown Screen</string>
+    <string name="camera_alert">Device has only one camera!</string>
+    <string name="switch_cam">Switch Camera</string>
+</resources>
