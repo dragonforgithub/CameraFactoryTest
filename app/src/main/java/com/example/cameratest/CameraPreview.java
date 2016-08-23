@@ -142,11 +142,13 @@ public class CameraPreview extends SurfaceView implements SurfaceHolder.Callback
 
     public void setExp(int exp)
     {
+        float mExp;
         Parameters parameters=mCamera.getParameters();
-        float mExp = 1/(float)exp;
-        parameters.set("set_shutter_speed",exp+"");
+        mExp = (float)exp;
+
+        parameters.set("set_shutter_speed",mExp+"");
         mCamera.setParameters(parameters);
-        Log.e("set_shutter_speed","exp:"+exp);
+        Log.e("set_shutter_speed","exp:"+mExp);
         wlog("set_iso_exp done");
     }
 

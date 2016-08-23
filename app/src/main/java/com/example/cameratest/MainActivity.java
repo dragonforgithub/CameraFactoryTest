@@ -143,7 +143,7 @@ public class MainActivity extends Activity {
 
 		Log.i(TAG,"mOrientationListener start:");
 		mOrientationListener = new MyOrientationDetector(this);
-		//mOrientationListener.enable();
+		mOrientationListener.enable();
 
 		Log.v(TAG, "CameraID="+mCameraMode+";log path="+mLogPath);
 	}
@@ -277,22 +277,22 @@ public class MainActivity extends Activity {
 			mDisOrientation=270;
 			switch (mCameraMode){
 				case 0 : //rear0&rear1
-					parameters.setRotation(270);
+					parameters.setRotation(0);
 					mCamera.setDisplayOrientation(mDisOrientation);
 
-					parameters1.setRotation(270);
+					parameters1.setRotation(0);
 					mCamera1.setDisplayOrientation(mDisOrientation);
 					break;
 				case 1 : //rear0
-					parameters.setRotation(270);
+					parameters.setRotation(0);
 					mCamera.setDisplayOrientation(mDisOrientation);
 					break;
 				case 2 : //rear1
-					parameters.setRotation(270);
+					parameters.setRotation(0);
 					mCamera.setDisplayOrientation(mDisOrientation);
 					break;
 				case 3 : //front
-					parameters.setRotation(90);
+					parameters.setRotation(180);
 					mCamera.setDisplayOrientation(mDisOrientation);
 					break;
 				default:

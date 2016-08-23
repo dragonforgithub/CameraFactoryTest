@@ -5,14 +5,14 @@
         jar="/home/sheldon/StudioProjects/CameraTest_For_Hades/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
         jumboMode="true"
         revision="23.0.2"
-        sha1="9c95294582cee6d4f0ac6affecc28c1da821ccdb">
+        sha1="1ff48ea6d0d54eb8b6407667f098cf97bbe98ac4">
         <dex dex="/home/sheldon/StudioProjects/CameraTest_For_Hades/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_7c972f2b78b3a4fd6d9b1fc072c6e8576e1af8e7/classes.dex" />
     </item>
     <item
         jar="/home/sheldon/StudioProjects/CameraTest_For_Hades/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
         jumboMode="true"
         revision="23.0.2"
-        sha1="c9d427cf0c9c128bca552e0274416db395bb509b">
+        sha1="18a17765c41df426a64650649bafc657376c12c7">
         <dex dex="/home/sheldon/StudioProjects/CameraTest_For_Hades/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_3f7eef7237008c88f89535a466e58852dbe4e8a0/classes.dex" />
     </item>
 
