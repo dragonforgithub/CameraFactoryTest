@@ -47,7 +47,7 @@
             android:name="com.example.cameratest.CamReceiver"
             android:enabled="true" >
             <intent-filter>
-                <action android:name="asus.camera.autofocus" />
+                <action android:name="asus.camera.release" />
                 <action android:name="asus.camera.setsavepath" />
                 <action android:name="asus.camera.setparameter" />
                 <action android:name="asus.camera.takepicture" />

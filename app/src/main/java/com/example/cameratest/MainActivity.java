@@ -52,12 +52,16 @@ public class MainActivity extends Activity {
 	Camera mCamera = null;
 	Camera mCamera1= null;
 
+	private int mOpenCamIndex =-1;
+	private int mOpenCamIndex1 =-1;
+
 	private boolean mRear0Exist=false;
 	private boolean mFrontExist=false;
 	private boolean mRear1Exist=false;
 	private int mCameraNumber=0;
 	private int mPicOrientation=0;
 	private int mDisOrientation=0;
+
 	String mSavaPath = "";
 	String mLogPath = "";
 	private boolean mbTkPicture = false;
@@ -109,7 +113,7 @@ public class MainActivity extends Activity {
 		if(file_RearModule_1.exists()) {
 			mRear0Exist=true;
 		}else {
-			Log.e(TAG,"RearModule_1 not Exist!");
+			Log.e(TAG,"RearModule not Exist!");
 		}
 
 		if(file_FrontModule.exists()) {
@@ -121,7 +125,7 @@ public class MainActivity extends Activity {
 		if(file_RearModule_2.exists()) {
 			mRear1Exist=true;
 		}else {
-			Log.e(TAG,"RearModule_2 not Exist!");
+			Log.e(TAG,"RearModule2 not Exist!");
 		}
 
 		//get current camera number and information
@@ -170,16 +174,15 @@ public class MainActivity extends Activity {
 
 			Parameters parameters = null;
 			Parameters parameters1 = null;
-			int openCamIndex =-1;
 			switch (mCameraMode){
 				case 0 : //rear0 & rear1
 					if(mRear0Exist && mRear1Exist){
-						openCamIndex = FindBackCamera0();
-						mCamera = Camera.open(openCamIndex);
+						mOpenCamIndex = FindBackCamera0();
+						mCamera = Camera.open(mOpenCamIndex);
 						parameters = mCamera.getParameters();
 
-						openCamIndex = FindBackCamera1();
-						mCamera1 = Camera.open(openCamIndex);
+						mOpenCamIndex1 = FindBackCamera1();
+						mCamera1 = Camera.open(mOpenCamIndex1);
 						parameters1 = mCamera1.getParameters();
 						Log.i(TAG, "open rear two cameraS!");
 					}else {
@@ -192,8 +195,8 @@ public class MainActivity extends Activity {
 					previewTV_1.setVisibility(View.INVISIBLE);
 
 					if(mRear0Exist){
-						openCamIndex = FindBackCamera0();
-						mCamera = Camera.open(openCamIndex);
+						mOpenCamIndex = FindBackCamera0();
+						mCamera = Camera.open(mOpenCamIndex);
 						parameters = mCamera.getParameters();
 						Log.i(TAG, "open rear 0 camera!");
 					}else {
@@ -206,8 +209,8 @@ public class MainActivity extends Activity {
 					previewTV_1.setVisibility(View.INVISIBLE);
 
 					if(mRear1Exist){
-						openCamIndex = FindBackCamera1();
-						mCamera = Camera.open(openCamIndex);
+						mOpenCamIndex = FindBackCamera1();
+						mCamera = Camera.open(mOpenCamIndex);
 						parameters = mCamera.getParameters();
 						Log.i(TAG, "open rear 1 camera!");
 					}else {
@@ -219,8 +222,8 @@ public class MainActivity extends Activity {
 					previewTV.setText("FrontCamera");
 					previewTV_1.setVisibility(View.INVISIBLE);
 					if(mFrontExist){
-						openCamIndex = FindFrontCamera();
-						mCamera = Camera.open(openCamIndex);
+						mOpenCamIndex = FindFrontCamera();
+						mCamera = Camera.open(mOpenCamIndex);
 						parameters = mCamera.getParameters();
 						Log.i(TAG, "open front camera!");
 					}else {
@@ -304,17 +307,17 @@ public class MainActivity extends Activity {
 			if(mCameraMode == 0 && mCamera1 != null) {
 				mCamera.setParameters(parameters);
 				surfaceView = (SurfaceView) findViewById(R.id.camera_preview);
-				mPreview = new CameraPreview(this, mCamera ,surfaceView);
+				mPreview = new CameraPreview(this, mCamera ,surfaceView, mOpenCamIndex);
 				mPreview.setlogPath(mLogPath);
 
 				mCamera1.setParameters(parameters1);
 				surfaceView1 = (SurfaceView) findViewById(R.id.camera_preview1);
-				mPreview1 = new CameraPreview(this, mCamera1 ,surfaceView1);
+				mPreview1 = new CameraPreview(this, mCamera1 ,surfaceView1, mOpenCamIndex1);
 				mPreview1.setlogPath(mLogPath);
 			}else {
 				mCamera.setParameters(parameters);
 				surfaceView = (SurfaceView) findViewById(R.id.camera_preview2);
-				mPreview = new CameraPreview(this, mCamera ,surfaceView);
+				mPreview = new CameraPreview(this, mCamera ,surfaceView, mOpenCamIndex);
 				mPreview.setlogPath(mLogPath);
 			}
 
@@ -337,6 +340,11 @@ public class MainActivity extends Activity {
 
 				{
 					switch (msg.what) {
+
+						case HandleMsg.MSG_CLOSE_CAMERA:
+
+							release(mCameraMode);
+							break;
 
 						case HandleMsg.MSG_SET_SAVE_PATH:
 
@@ -454,6 +462,29 @@ public class MainActivity extends Activity {
 		}
 	}
 
+
+	void release(int cameraMode){
+
+		if(cameraMode == 0 && mCamera1 != null) {
+			mCamera.setPreviewCallback(null);
+			mCamera1.setPreviewCallback(null);
+			mCamera.stopPreview();
+			mCamera1.stopPreview();
+			mCamera.release();
+			mCamera1.release();
+			mCamera = null;
+			mCamera1 = null;
+		}else {
+			mCamera.setPreviewCallback(null);
+			mCamera.stopPreview();
+			mCamera.release();
+			mCamera = null;
+		}
+
+		Log.e(TAG,"release camera done.");
+		wlog("close camera");
+	}
+
 	@Override
 	protected void onDestroy() {
 		// TODO Auto-generated method stub
@@ -485,11 +516,11 @@ public class MainActivity extends Activity {
 	}
 
 	private int FindBackCamera1() {
-		boolean findFirst=false;
-		int cameraCount = 0;
+		boolean findFirst;
+		int cameraCount;
 		Camera.CameraInfo cameraInfo = new Camera.CameraInfo();
 		cameraCount = Camera.getNumberOfCameras(); // get cameras number
-
+		findFirst=false; //initual
 		for (int camIdx = 0; camIdx < cameraCount; camIdx++) {
 			Camera.getCameraInfo(camIdx, cameraInfo); // get camerainfo
 			if (cameraInfo.facing == Camera.CameraInfo.CAMERA_FACING_BACK) {
@@ -785,10 +816,12 @@ public class MainActivity extends Activity {
 			if(raw_need==1)
 			{
 				try {
+					//mCamera.stopPreview();
 					wlog("take raw pic");
 					if(mCameraMode == 0 && mCamera1 != null) {
 						mCamera1.stopPreview();
 					}
+					//mCamera.startPreview();
 					mCamera.takePicture(null, null, mRawPictureCallback);
 				} catch (Exception e) {
 					// TODO: handle exception

@@ -16,11 +16,13 @@ public class CameraPreview extends SurfaceView implements SurfaceHolder.Callback
     private SurfaceHolder mHolder;
     private Camera mCamera;
     private Context mContext;
+    private int cameraID=-1;
     private String mLogPath = "";
     private static final String TAG = "CameraPreview";
 
-    public CameraPreview(Context context, Camera camera, SurfaceView sv) {
+    public CameraPreview(Context context, Camera camera, SurfaceView sv, int camID) {
         super(context);
+        cameraID = camID;
         mCamera = camera;
         mContext=context;
 
@@ -85,8 +87,10 @@ public class CameraPreview extends SurfaceView implements SurfaceHolder.Callback
         try {
             mCamera.setPreviewDisplay(mHolder);
             mCamera.startPreview();
+            Log.e(TAG,"[ok] start preview : "+cameraID);
             wlog("call startPreview ok");
         } catch (Exception e){
+            Log.e(TAG,"[fail] start preview : "+cameraID);
             Log.e(TAG, "Error starting camera preview: " + e.getMessage());
         }
     }
@@ -122,7 +126,7 @@ public class CameraPreview extends SurfaceView implements SurfaceHolder.Callback
 			}
 
         	parameters.setPictureSize(lw, lh);
-        	Log.v(TAG, "set picture size:" + lw + "x" + lh );
+        	Log.v(TAG, "set picture size:" + lw + "x" + lh);
 			mCamera.setParameters(parameters);
         }   
     }

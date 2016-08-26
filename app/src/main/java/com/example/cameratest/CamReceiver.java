@@ -13,7 +13,7 @@ public class CamReceiver extends BroadcastReceiver {
 	
     public static final String TAG = "CamReceiver";
 
-    public static final String AUTO_FOCUS = "asus.camera.autofocus";
+    public static final String CLOSE_CAMERA = "asus.camera.release";
     public static final String SET_PARAMETER= "asus.camera.setparameter";
     public static final String TAKE_PIC = "asus.camera.takepicture";
     public static final String SET_SAVE_PATH = "asus.camera.setsavepath";
@@ -35,8 +35,14 @@ public class CamReceiver extends BroadcastReceiver {
         Log.e(TAG, "onReceive action="+action);
        
         if(mCameraHandle==null){
-            Toast.makeText(context, "camera handle empty reminder", Toast.LENGTH_LONG).show();
+            Log.e(TAG, "camera handle empty reminder, return.");
         	return;
+        }
+
+        if(action.equals(CLOSE_CAMERA)){
+            msg.what=HandleMsg.MSG_CLOSE_CAMERA;
+            Log.v(TAG, "close camera :");
+            mCameraHandle.sendMessage(msg);
         }
 
         if(action.equals(SET_SAVE_PATH)){
