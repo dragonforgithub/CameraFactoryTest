@@ -501,14 +501,11 @@ public class MainActivity extends Activity {
 	}
 
 	private int FindBackCamera0() {
-		int cameraCount = 0;
 		Camera.CameraInfo cameraInfo = new Camera.CameraInfo();
-		cameraCount = Camera.getNumberOfCameras(); // get cameras number
-
-		for (int camIdx = 0; camIdx < cameraCount; camIdx++) {
+		for (int camIdx = 0; camIdx < mCameraNumber; camIdx++) {
 			Camera.getCameraInfo(camIdx, cameraInfo); // get camerainfo
 			if (cameraInfo.facing == Camera.CameraInfo.CAMERA_FACING_BACK) {
-				Log.i(TAG,"FindBackCamera0 index =  "+camIdx);
+				Log.e(TAG,"FindBackCamera0 index =  "+camIdx);
 				return camIdx;
 			}
 		}
@@ -517,15 +514,13 @@ public class MainActivity extends Activity {
 
 	private int FindBackCamera1() {
 		boolean findFirst;
-		int cameraCount;
 		Camera.CameraInfo cameraInfo = new Camera.CameraInfo();
-		cameraCount = Camera.getNumberOfCameras(); // get cameras number
-		findFirst=false; //initual
-		for (int camIdx = 0; camIdx < cameraCount; camIdx++) {
+		findFirst=false; //init
+		for (int camIdx = 0; camIdx < mCameraNumber; camIdx++) {
 			Camera.getCameraInfo(camIdx, cameraInfo); // get camerainfo
 			if (cameraInfo.facing == Camera.CameraInfo.CAMERA_FACING_BACK) {
 				if(findFirst == true || !mRear0Exist){
-					Log.i(TAG,"FindBackCamera1 index =  "+camIdx);
+					Log.e(TAG,"FindBackCamera1 index =  "+camIdx);
 					return camIdx;
 				}else {
 					findFirst=true;
@@ -536,14 +531,11 @@ public class MainActivity extends Activity {
 	}
 
 	private int FindFrontCamera() {
-		int cameraCount;
 		Camera.CameraInfo cameraInfo = new Camera.CameraInfo();
-		cameraCount = Camera.getNumberOfCameras(); // get cameras number
-
-		for (int camIdx = 0; camIdx < cameraCount; camIdx++) {
+		for (int camIdx = 0; camIdx < mCameraNumber; camIdx++) {
 			Camera.getCameraInfo(camIdx, cameraInfo); // get camerainfo
 			if (cameraInfo.facing == Camera.CameraInfo.CAMERA_FACING_FRONT) {
-				Log.i(TAG,"FindFrontCamera index =  "+camIdx);
+				Log.e(TAG,"FindFrontCamera index =  "+camIdx);
 				return camIdx;
 			}
 		}

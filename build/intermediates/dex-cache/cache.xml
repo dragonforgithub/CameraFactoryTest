@@ -1,19 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" >
-
-    <item
-        jar="/home/sheldon/StudioProjects/CameraTest_For_Hades/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
-        jumboMode="true"
-        revision="23.0.2"
-        sha1="05ff5b65cf3b092b3f6567956b959d665ba4deee">
-        <dex dex="/home/sheldon/StudioProjects/CameraTest_For_Hades/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_7c972f2b78b3a4fd6d9b1fc072c6e8576e1af8e7/classes.dex" />
-    </item>
-    <item
-        jar="/home/sheldon/StudioProjects/CameraTest_For_Hades/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
-        jumboMode="true"
-        revision="23.0.2"
-        sha1="da1d8a5179688f239138b2c0798caa26dbf17f6b">
-        <dex dex="/home/sheldon/StudioProjects/CameraTest_For_Hades/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_3f7eef7237008c88f89535a466e58852dbe4e8a0/classes.dex" />
-    </item>
-
-</items>
+<items version="2" />
