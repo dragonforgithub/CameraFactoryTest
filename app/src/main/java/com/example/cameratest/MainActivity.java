@@ -70,6 +70,7 @@ public class MainActivity extends Activity {
 	private int mCameraMode=-1;
 
 	private boolean isSupportFlash=false;
+	private boolean isSupportFlash_1=false;
 	private boolean isSupportFocuse=false;
 	private boolean isSupportFocuse_1=false;
 
@@ -164,6 +165,7 @@ public class MainActivity extends Activity {
 		Log.v(TAG, "onResume");
 		getWindow().setFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON, WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 		List<String> supportedFlashMode;
+		List<String> supportedFlashMode_1;
 		List<String> supportedFocuseMode;
 		List<String> supportedFocuseMode_1;
 
@@ -173,7 +175,7 @@ public class MainActivity extends Activity {
 			previewTV_1 = (TextView) findViewById(R.id.previewName_1);
 
 			Parameters parameters = null;
-			Parameters parameters1 = null;
+			Parameters parameters_1 = null;
 			switch (mCameraMode){
 				case 0 : //rear0 & rear1
 					if(mRear0Exist && mRear1Exist){
@@ -183,7 +185,7 @@ public class MainActivity extends Activity {
 
 						mOpenCamIndex1 = FindBackCamera1();
 						mCamera1 = Camera.open(mOpenCamIndex1);
-						parameters1 = mCamera1.getParameters();
+						parameters_1 = mCamera1.getParameters();
 						Log.i(TAG, "open rear two cameraS!");
 					}else {
 						Log.e(TAG, "mRear0Exist:"+mRear0Exist+",mRear1Exist:"+mRear1Exist);
@@ -247,6 +249,19 @@ public class MainActivity extends Activity {
 				}
 			}
 
+			if(mCameraMode == 0 && parameters_1 != null) {
+				supportedFlashMode_1 = parameters_1.getSupportedFlashModes();
+				if(supportedFlashMode_1 == null || supportedFlashMode_1.isEmpty()){
+					isSupportFlash_1 = false;
+					Log.e(TAG, "supportedFlashMode : Null");
+				}else {
+					isSupportFlash_1 = true;
+					for(int i=0 ;i<supportedFlashMode_1.size(); i++){
+						Log.e(TAG, "supportedFlashMode_1 : "+supportedFlashMode_1.get(i).toString());
+					}
+				}
+			}
+
 			supportedFocuseMode = parameters.getSupportedFocusModes();
 			if(supportedFocuseMode == null || supportedFocuseMode.isEmpty()){
 				isSupportFocuse = false;
@@ -260,8 +275,8 @@ public class MainActivity extends Activity {
 				}
 			}
 
-			if(mCameraMode == 0 && parameters1 != null) {
-				supportedFocuseMode_1 = parameters1.getSupportedFocusModes();
+			if(mCameraMode == 0 && parameters_1 != null) {
+				supportedFocuseMode_1 = parameters_1.getSupportedFocusModes();
 				if(supportedFocuseMode_1 == null || supportedFocuseMode_1.isEmpty()){
 					isSupportFocuse_1 = false;
 					Log.e(TAG, "supportedFocuseMode_1 : Null");
@@ -277,13 +292,13 @@ public class MainActivity extends Activity {
 
 			Log.i(TAG,"set default rotation:");
 			//set default rotation
-			mDisOrientation=270;
+			mDisOrientation=90;
 			switch (mCameraMode){
 				case 0 : //rear0&rear1
 					parameters.setRotation(0);
 					mCamera.setDisplayOrientation(mDisOrientation);
 
-					parameters1.setRotation(0);
+					parameters_1.setRotation(0);
 					mCamera1.setDisplayOrientation(mDisOrientation);
 					break;
 				case 1 : //rear0
@@ -310,7 +325,7 @@ public class MainActivity extends Activity {
 				mPreview = new CameraPreview(this, mCamera ,surfaceView, mOpenCamIndex);
 				mPreview.setlogPath(mLogPath);
 
-				mCamera1.setParameters(parameters1);
+				mCamera1.setParameters(parameters_1);
 				surfaceView1 = (SurfaceView) findViewById(R.id.camera_preview1);
 				mPreview1 = new CameraPreview(this, mCamera1 ,surfaceView1, mOpenCamIndex1);
 				mPreview1.setlogPath(mLogPath);
@@ -374,34 +389,55 @@ public class MainActivity extends Activity {
 								switch(flashmode){
 									case 0:
 										parameters.setFlashMode(Parameters.FLASH_MODE_OFF);
+										mCamera.setParameters(parameters);
+										if(isSupportFlash_1 && mCameraMode == 0 && mCamera1 != null){
+											Parameters parameters_1 = mCamera1.getParameters();
+											parameters_1.setFocusMode(Parameters.FLASH_MODE_OFF);
+											mCamera1.setParameters(parameters_1);
+										}
 										break;
 									case 1:
 										parameters.setFlashMode(Parameters.FLASH_MODE_ON);
+										mCamera.setParameters(parameters);
+										if(isSupportFlash_1 && mCameraMode == 0 && mCamera1 != null){
+											Parameters parameters_1 = mCamera1.getParameters();
+											parameters_1.setFocusMode(Parameters.FLASH_MODE_ON);
+											mCamera1.setParameters(parameters_1);
+										}
 										break;
 									case 2:
 										parameters.setFlashMode(Parameters.FLASH_MODE_AUTO);
+										mCamera.setParameters(parameters);
+										if(isSupportFlash_1 && mCameraMode == 0 && mCamera1 != null){
+											Parameters parameters_1 = mCamera1.getParameters();
+											parameters_1.setFocusMode(Parameters.FLASH_MODE_AUTO);
+											mCamera1.setParameters(parameters_1);
+										}
 										break;
 								}
 							}else {
 								parameters.setFlashMode(Parameters.FLASH_MODE_OFF);
 							}
 
-
-							if(focusmode!=-1 && isSupportFocuse)
+							if(focusmode!=-1)
 							{
 								switch(focusmode){
 									case 0:
-										parameters.setFocusMode(Parameters.FOCUS_MODE_AUTO);
+										if(isSupportFocuse){
+											parameters.setFocusMode(Parameters.FOCUS_MODE_AUTO);
+											mCamera.setParameters(parameters);
+										}
+
+										if(isSupportFocuse_1 && mCameraMode == 0 && mCamera1 != null){
+											Parameters parameters_1 = mCamera1.getParameters();
+											parameters_1.setFocusMode(Parameters.FOCUS_MODE_AUTO);
+											mCamera1.setParameters(parameters_1);
+										}
 										break;
 									case 1:
 										parameters.setFocusMode(Parameters.FOCUS_MODE_INFINITY);
 										break;
 								}
-							}
-
-							mCamera.setParameters(parameters);
-							if(mCameraMode == 0 && mCamera1 != null) {
-								mCamera1.setParameters(parameters);
 							}
 							break;
 
@@ -801,8 +837,11 @@ public class MainActivity extends Activity {
 			*/
 			parameters.setPictureFormat(256); //0x11:NV21 / 0x100 : JPEG
 			mCamera.setParameters(parameters);
+
 			if(mCameraMode == 0 && mCamera1 != null) {
-				mCamera1.setParameters(parameters);
+				Parameters parameters_1 = mCamera1.getParameters();
+				parameters_1.setPictureFormat(256); //0x11:NV21 / 0x100 : JPEG
+				mCamera1.setParameters(parameters_1);
 			}
 
 			if(raw_need==1)
@@ -818,21 +857,23 @@ public class MainActivity extends Activity {
 				} catch (Exception e) {
 					// TODO: handle exception
 					mbTkPicture=false;
+					mbTkPicture_1=false;
 					Log.v(TAG, e.getMessage());
 					wlog(e.getMessage());
 				}
 			}
 			else if(focus_need==1 && isSupportFocuse)
 			{
-				mCamera.cancelAutoFocus(); //reset focusState=0
-				if(mCameraMode == 0 && mCamera1 != null) {
-					mCamera1.cancelAutoFocus(); //reset focusState=0
-				}
 
+				mCamera.cancelAutoFocus(); //reset focusState=0
 				parameters.setFocusMode(Parameters.FOCUS_MODE_AUTO);
 				mCamera.setParameters(parameters);
-				if(mCameraMode == 0 && mCamera1 != null) {
-					mCamera1.setParameters(parameters);
+
+				if(mCameraMode == 0 && mCamera1 != null && isSupportFocuse_1) {
+					mCamera1.cancelAutoFocus(); //reset focusState=0
+					Parameters parameters_1 = mCamera1.getParameters();
+					parameters_1.setFocusMode(Parameters.FOCUS_MODE_AUTO);
+					mCamera1.setParameters(parameters_1);
 				}
 
 				try {
@@ -844,6 +885,7 @@ public class MainActivity extends Activity {
 						// TODO: handle exception
 						Log.e(TAG, "autoFocus error!");
 						mbTkPicture=false;
+						mbTkPicture_1=false;
 						wlog(e.getMessage());
 				}
 			}
@@ -857,6 +899,7 @@ public class MainActivity extends Activity {
 				} catch (Exception e) {
 						// TODO: handle exception
 						mbTkPicture=false;
+						mbTkPicture_1=false;
 						Log.v(TAG, e.getMessage());
 						wlog(e.getMessage());
 				}
@@ -888,16 +931,19 @@ public class MainActivity extends Activity {
 						ArrayList<Area> focusArea = new ArrayList<Area>();
 						focusArea.add(new Area(new Rect(), 1000));
 						Log.e(TAG,"set focusArea start:");
-						if(CameraMode == 0){
+						if(CameraMode == 0 && mCamera1 != null){
 							focusArea.get(0).rect.set(-250, -750, 250, -250);
 							parameters.setFocusAreas(focusArea);
+							mCamera.setParameters(parameters);
 
 							Parameters parameters_1=mCamera1.getParameters();
 							focusArea.get(0).rect.set(-250, 250, 250, 750);
 							parameters_1.setFocusAreas(focusArea);
+							mCamera1.setParameters(parameters_1);
 						}else{
 							focusArea.get(0).rect.set(-250, -250, 250, 250);
 							parameters.setFocusAreas(focusArea);
+							mCamera.setParameters(parameters);
 						}
 						Log.e(TAG,"set focusArea end.");
 					//}
@@ -923,6 +969,7 @@ public class MainActivity extends Activity {
 						if(mCameraMode == 0 && mCamera1 != null) {
 							meteringArea.get(0).rect.set(-250, -750, 250, -250);
 							parameters.setMeteringAreas(meteringArea);
+							mCamera.setParameters(parameters);
 
 							Parameters parameters_1=mCamera1.getParameters();
 							meteringArea.get(0).rect.set(-250, 250, 250, 750);
@@ -931,10 +978,10 @@ public class MainActivity extends Activity {
 						}else{
 							meteringArea.get(0).rect.set(-250, -250, 250, 250);
 							parameters.setMeteringAreas(meteringArea);
+							mCamera.setParameters(parameters);
 						}
 					//}
 				}
-				mCamera.setParameters(parameters);
 			}
 		}
 }

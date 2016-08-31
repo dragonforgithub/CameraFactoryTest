@@ -4,7 +4,7 @@
     api-level="23"
     density="xxhdpi"
     format="7"
-    timestamp="26171588558082" >
+    timestamp="417965970207900" >
 
     <task
         name="javac"
@@ -17,13 +17,13 @@
         duration="10" />
     <task
         name="verifier"
-        duration="0" />
+        duration="1" />
 
     <artifact
         location="/home/sheldon/StudioProjects/CameraTest_For_Hades/app/build/outputs/apk/app-debug.apk"
         type="MAIN" />
 
-    <build timestamp="26171588558082" >
+    <build timestamp="417965970207900" >
         <artifact
             location="/home/sheldon/StudioProjects/CameraTest_For_Hades/app/build/outputs/apk/app-debug.apk"
             type="MAIN" />
