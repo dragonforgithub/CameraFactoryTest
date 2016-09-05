@@ -352,7 +352,6 @@ public class MainActivity extends Activity {
 
 			    mHandler = new Handler() {
 				public void handleMessage(Message msg)
-
 				{
 					switch (msg.what) {
 
@@ -382,14 +381,20 @@ public class MainActivity extends Activity {
 							int flashmode= bundle.getInt("flashmode");
 							int focusmode= bundle.getInt("focusmode");
 							//int zoom= bundle.getInt("zoom");
-
+							mCamera.stopPreview();
+							if(mCameraMode == 0 && mCamera1 != null){
+								mCamera1.stopPreview();
+							}
 							Parameters parameters = mCamera.getParameters();
-							if(flashmode!=-1 && isSupportFlash)
+							if(flashmode!=-1)
 							{
 								switch(flashmode){
 									case 0:
-										parameters.setFlashMode(Parameters.FLASH_MODE_OFF);
-										mCamera.setParameters(parameters);
+										if(isSupportFlash){
+											parameters.setFlashMode(Parameters.FLASH_MODE_OFF);
+											mCamera.setParameters(parameters);
+										}
+
 										if(isSupportFlash_1 && mCameraMode == 0 && mCamera1 != null){
 											Parameters parameters_1 = mCamera1.getParameters();
 											parameters_1.setFocusMode(Parameters.FLASH_MODE_OFF);
@@ -397,8 +402,11 @@ public class MainActivity extends Activity {
 										}
 										break;
 									case 1:
-										parameters.setFlashMode(Parameters.FLASH_MODE_ON);
-										mCamera.setParameters(parameters);
+										if(isSupportFlash){
+											parameters.setFlashMode(Parameters.FLASH_MODE_ON);
+											mCamera.setParameters(parameters);
+										}
+
 										if(isSupportFlash_1 && mCameraMode == 0 && mCamera1 != null){
 											Parameters parameters_1 = mCamera1.getParameters();
 											parameters_1.setFocusMode(Parameters.FLASH_MODE_ON);
@@ -406,8 +414,11 @@ public class MainActivity extends Activity {
 										}
 										break;
 									case 2:
-										parameters.setFlashMode(Parameters.FLASH_MODE_AUTO);
-										mCamera.setParameters(parameters);
+										if(isSupportFlash){
+											parameters.setFlashMode(Parameters.FLASH_MODE_AUTO);
+											mCamera.setParameters(parameters);
+										}
+
 										if(isSupportFlash_1 && mCameraMode == 0 && mCamera1 != null){
 											Parameters parameters_1 = mCamera1.getParameters();
 											parameters_1.setFocusMode(Parameters.FLASH_MODE_AUTO);
@@ -415,8 +426,6 @@ public class MainActivity extends Activity {
 										}
 										break;
 								}
-							}else {
-								parameters.setFlashMode(Parameters.FLASH_MODE_OFF);
 							}
 
 							if(focusmode!=-1)
@@ -435,9 +444,23 @@ public class MainActivity extends Activity {
 										}
 										break;
 									case 1:
-										parameters.setFocusMode(Parameters.FOCUS_MODE_INFINITY);
+										if(isSupportFocuse){
+											parameters.setFocusMode(Parameters.FOCUS_MODE_INFINITY);
+											mCamera.setParameters(parameters);
+										}
+
+										if(isSupportFocuse_1 && mCameraMode == 0 && mCamera1 != null){
+											Parameters parameters_1 = mCamera1.getParameters();
+											parameters_1.setFocusMode(Parameters.FOCUS_MODE_INFINITY);
+											mCamera1.setParameters(parameters_1);
+										}
 										break;
 								}
+							}
+
+							mCamera.startPreview();
+							if(mCameraMode == 0 && mCamera1 != null){
+								mCamera1.startPreview();
 							}
 							break;
 
