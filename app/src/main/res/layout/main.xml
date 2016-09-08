@@ -12,22 +12,23 @@
         <android.view.SurfaceView
             android:id="@+id/camera_preview"
             android:layout_width="match_parent"
-            android:layout_height="250dp"
+            android:layout_height="280dp"
             android:layout_weight="0.5" />
 
         <android.view.SurfaceView
             android:id="@+id/camera_preview1"
             android:layout_width="match_parent"
-            android:layout_height="250dp"
+            android:layout_height="280dp"
             android:layout_weight="0.5"
             android:layout_gravity="center_horizontal|bottom" />
+
 
         <android.view.SurfaceView
             android:id="@+id/camera_preview2"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_weight="0.5"
-            android:layout_gravity="left|top" />
+            android:layout_gravity="center" />
 
         <TextView
             android:id="@+id/previewName"

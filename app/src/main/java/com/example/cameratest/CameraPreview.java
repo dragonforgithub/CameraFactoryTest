@@ -10,22 +10,27 @@ import java.util.List;
 
 import android.hardware.Camera.Parameters;
 import android.util.Log;
+import android.widget.FrameLayout;
 
 /** A basic Camera preview class */
 public class CameraPreview extends SurfaceView implements SurfaceHolder.Callback {
+    private SurfaceView mSurfaceView;
     private SurfaceHolder mHolder;
     private Camera mCamera;
     private Context mContext;
-    private int cameraID=-1;
+    private int cameraID=0;
+    private int mCameraMode=1;
     private String mLogPath = "";
     private static final String TAG = "CameraPreview";
 
-    public CameraPreview(Context context, Camera camera, SurfaceView sv, int camID) {
+    public CameraPreview(Context context, Camera camera, SurfaceView sv, int camID, int cameraMode) {
         super(context);
         cameraID = camID;
+        mCameraMode = cameraMode;
         mCamera = camera;
         mContext=context;
 
+        mSurfaceView = sv;
         // Install a SurfaceHolder.Callback so we get notified when the
         // underlying surface is created and destroyed.
         mHolder = sv.getHolder();
@@ -100,33 +105,53 @@ public class CameraPreview extends SurfaceView implements SurfaceHolder.Callback
         if (mCamera != null) {
         	Parameters parameters=mCamera.getParameters();
         	int lw = 0, lh = 0;
-        	List<Size> mSupportedPreviewSizes = parameters.getSupportedPreviewSizes();
-        	for (int i = 0; i < mSupportedPreviewSizes.size(); ++i) {
-				Size size = mSupportedPreviewSizes.get(i);
-                Log.i(TAG, "mSupportedPreviewSizes:" + size.width + "x" + size.height );
+            float picScale= (float) 0.0;
+            float preScale= (float) 0.0;
+            float diff = (float) 0.0;
 
-                if (size.width > lw || size.height > lh) {
-					lw = size.width;
-					lh = size.height;
-				}
-			}
-
-            parameters.setPreviewSize(lw, lh);
-			Log.v(TAG, "set preview size:" + lw + "x" + lh);
-			
-			List<Size> mSupportedPictureSizes = parameters.getSupportedPictureSizes();
-        	for (int i = 0; i < mSupportedPictureSizes.size(); ++i) {
-				Size size = mSupportedPictureSizes.get(i);
+            //set picture size
+            List<Size> mSupportedPictureSizes = parameters.getSupportedPictureSizes();
+            for (int i = 0; i < mSupportedPictureSizes.size(); ++i) {
+                Size size = mSupportedPictureSizes.get(i);
                 Log.i(TAG, "mSupportedPictureSizes:" + size.width + "x" + size.height );
+                if (size.width > lw || size.height > lh) {
+                    lw = size.width;
+                    lh = size.height;
+                }
+            }
+            parameters.setPictureSize(lw, lh);
+            picScale = (float)lw/(float)lh;
+            Log.v(TAG, "picScale = " + picScale);
+            Log.v(TAG, "set picturesize:" + lw + "x" + lh );
 
-				if (size.width > lw || size.height > lh) {
-					lw = size.width;
-					lh = size.height;
-				}
-			}
+            lw = 0;
+            lh = 0;
+            //set preview size
+            List<Size> mSupportedPreviewSizes = parameters.getSupportedPreviewSizes();
+            for (int i = 0; i < mSupportedPreviewSizes.size(); ++i) {
+                Size size = mSupportedPreviewSizes.get(i);
+                Log.i(TAG, "mSupportedPreviewSizes:" + size.width + "x" + size.height );
+                if (size.width > lw || size.height > lh) {
+                    preScale = (float)size.width/(float)size.height;
+                    diff = Math.abs(preScale - picScale);
+                    Log.v(TAG, "Scale diff = " + diff); //keep preview FOV same as picture
+                    if(Math.abs(diff) < 0.1 ){
+                        lw = size.width;
+                        lh = size.height;
+                    }
+                }
+            }
+            parameters.setPreviewSize(lw, lh);
+            Log.v(TAG, "set previewsize:" + lw + "x" + lh );
 
-        	parameters.setPictureSize(lw, lh);
-        	Log.v(TAG, "set picture size:" + lw + "x" + lh);
+            //reset display size if not dual camera mode
+            if(mCameraMode != 0){
+                FrameLayout.LayoutParams lp = (FrameLayout.LayoutParams) mSurfaceView.getLayoutParams();
+                lp.height = lw;
+                lp.width = lh;
+                mSurfaceView.setLayoutParams(lp);
+            }
+
 			mCamera.setParameters(parameters);
         }   
     }

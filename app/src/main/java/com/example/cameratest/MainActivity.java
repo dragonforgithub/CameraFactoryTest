@@ -81,10 +81,12 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.main);
-		getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
 		getWindow().setFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON, WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
-		//requestWindowFeature(Window.FEATURE_NO_TITLE);
+		getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
+		requestWindowFeature(Window.FEATURE_NO_TITLE);
+
+		setContentView(R.layout.main);
 
 		//Read Project ID------
 		/*
@@ -163,7 +165,6 @@ public class MainActivity extends Activity {
 	protected void onResume() {
 		super.onResume();
 		Log.v(TAG, "onResume");
-		getWindow().setFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON, WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 		List<String> supportedFlashMode;
 		List<String> supportedFlashMode_1;
 		List<String> supportedFocuseMode;
@@ -322,17 +323,17 @@ public class MainActivity extends Activity {
 			if(mCameraMode == 0 && mCamera1 != null) {
 				mCamera.setParameters(parameters);
 				surfaceView = (SurfaceView) findViewById(R.id.camera_preview);
-				mPreview = new CameraPreview(this, mCamera ,surfaceView, mOpenCamIndex);
+				mPreview = new CameraPreview(this, mCamera ,surfaceView, mOpenCamIndex, mCameraMode);
 				mPreview.setlogPath(mLogPath);
 
 				mCamera1.setParameters(parameters_1);
 				surfaceView1 = (SurfaceView) findViewById(R.id.camera_preview1);
-				mPreview1 = new CameraPreview(this, mCamera1 ,surfaceView1, mOpenCamIndex1);
+				mPreview1 = new CameraPreview(this, mCamera1 ,surfaceView1, mOpenCamIndex1, mCameraMode);
 				mPreview1.setlogPath(mLogPath);
 			}else {
 				mCamera.setParameters(parameters);
 				surfaceView = (SurfaceView) findViewById(R.id.camera_preview2);
-				mPreview = new CameraPreview(this, mCamera ,surfaceView, mOpenCamIndex);
+				mPreview = new CameraPreview(this, mCamera ,surfaceView, mOpenCamIndex, mCameraMode);
 				mPreview.setlogPath(mLogPath);
 			}
 
