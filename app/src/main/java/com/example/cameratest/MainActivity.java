@@ -311,7 +311,7 @@ public class MainActivity extends Activity {
 					mCamera.setDisplayOrientation(mDisOrientation);
 					break;
 				case 3 : //front
-					parameters.setRotation(180);
+					parameters.setRotation(0);
 					mCamera.setDisplayOrientation(mDisOrientation);
 					break;
 				default:
@@ -631,16 +631,22 @@ public class MainActivity extends Activity {
 				return;
 			}
 
+
+			if(mPicOrientation == 0){
+				mPicOrientation = 90;
+			} else if(mPicOrientation == 180){
+				mPicOrientation = 270;
+			}
+
 			Parameters parameters = mCamera.getParameters();
 			if (mCameraMode == 0 && mCamera1 != null) {  //rear0 & rear1
 				mPicOrientation = (mPicOrientation+270)%360;
 
 				parameters.setRotation(mPicOrientation);
+				mCamera.setParameters(parameters);
 
 				Parameters parameters1 = mCamera1.getParameters();
 				parameters1.setRotation(mPicOrientation);
-
-				mCamera.setParameters(parameters);
 				mCamera1.setParameters(parameters1);
 			}
 			else if(mCameraMode == 1){ //rear0
@@ -705,7 +711,7 @@ public class MainActivity extends Activity {
 				Log.e(TAG, "auto focus_1 fail");
 				wlog("auto focus_1 fail");
 			}
-			mCamera1.stopPreview();
+			//mCamera1.stopPreview();
 			mCamera.takePicture(null, null, mPictureCallback);
 		}
 	};
@@ -736,7 +742,7 @@ public class MainActivity extends Activity {
 			mbTkPicture=false;
 
 			if(mCameraMode == 0 && mCamera1 != null) {
-				mCamera.stopPreview();
+				//mCamera.stopPreview();
 				mCamera1.startPreview();
 				Log.i(TAG,"take picture_1 : ");
 				mCamera1.takePicture(null, null, mPicture_1Callback);
@@ -791,7 +797,7 @@ public class MainActivity extends Activity {
 			mbTkPicture=false;
 
 			if(mCameraMode == 0 && mCamera1 != null) {
-				mCamera.stopPreview();
+				//mCamera.stopPreview();
 				mCamera1.startPreview();
 				mCamera1.takePicture(null, null, mRawPicture_1Callback);
 			}
@@ -873,9 +879,9 @@ public class MainActivity extends Activity {
 				try {
 					//mCamera.stopPreview();
 					wlog("take raw pic");
-					if(mCameraMode == 0 && mCamera1 != null) {
-						mCamera1.stopPreview();
-					}
+					//if(mCameraMode == 0 && mCamera1 != null) {
+					//	mCamera1.stopPreview();
+					//}
 					//mCamera.startPreview();
 					mCamera.takePicture(null, null, mRawPictureCallback);
 				} catch (Exception e) {
@@ -916,9 +922,9 @@ public class MainActivity extends Activity {
 			else{
 				try {
 						Log.i(TAG,"take picture start without af");
-						if(mCameraMode == 0 && mCamera1 != null) {
-							mCamera1.stopPreview();
-						}
+						//if(mCameraMode == 0 && mCamera1 != null) {
+						//	mCamera1.stopPreview();
+						//}
 						mCamera.takePicture(null, null, mPictureCallback);
 				} catch (Exception e) {
 						// TODO: handle exception
@@ -956,12 +962,12 @@ public class MainActivity extends Activity {
 						focusArea.add(new Area(new Rect(), 1000));
 						Log.e(TAG,"set focusArea start:");
 						if(CameraMode == 0 && mCamera1 != null){
-							focusArea.get(0).rect.set(-250, -750, 250, -250);
+							focusArea.get(0).rect.set(-500, -250, 0, 250);
 							parameters.setFocusAreas(focusArea);
 							mCamera.setParameters(parameters);
 
 							Parameters parameters_1=mCamera1.getParameters();
-							focusArea.get(0).rect.set(-250, 250, 250, 750);
+							focusArea.get(0).rect.set(0, -250, 500, 250);
 							parameters_1.setFocusAreas(focusArea);
 							mCamera1.setParameters(parameters_1);
 						}else{
@@ -991,12 +997,12 @@ public class MainActivity extends Activity {
 						meteringArea.add(new Area(new Rect(), 1000));
 
 						if(mCameraMode == 0 && mCamera1 != null) {
-							meteringArea.get(0).rect.set(-250, -750, 250, -250);
+							meteringArea.get(0).rect.set(-500, -250, 0, 250);
 							parameters.setMeteringAreas(meteringArea);
 							mCamera.setParameters(parameters);
 
 							Parameters parameters_1=mCamera1.getParameters();
-							meteringArea.get(0).rect.set(-250, 250, 250, 750);
+							meteringArea.get(0).rect.set(0, -250, 500, 250);
 							parameters_1.setMeteringAreas(meteringArea);
 							mCamera1.setParameters(parameters_1);
 						}else{
