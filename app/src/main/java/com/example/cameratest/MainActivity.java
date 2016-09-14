@@ -382,10 +382,10 @@ public class MainActivity extends Activity {
 							int flashmode= bundle.getInt("flashmode");
 							int focusmode= bundle.getInt("focusmode");
 							//int zoom= bundle.getInt("zoom");
-							mCamera.stopPreview();
-							if(mCameraMode == 0 && mCamera1 != null){
-								mCamera1.stopPreview();
-							}
+							//mCamera.stopPreview();
+							//if(mCameraMode == 0 && mCamera1 != null){
+							//	mCamera1.stopPreview();
+							//}
 							Parameters parameters = mCamera.getParameters();
 							if(flashmode!=-1)
 							{
@@ -459,10 +459,10 @@ public class MainActivity extends Activity {
 								}
 							}
 
-							mCamera.startPreview();
-							if(mCameraMode == 0 && mCamera1 != null){
-								mCamera1.startPreview();
-							}
+							//mCamera.startPreview();
+							//if(mCameraMode == 0 && mCamera1 != null){
+							//	mCamera1.startPreview();
+							//}
 							break;
 
 						case HandleMsg.SET_EXP:
@@ -743,11 +743,11 @@ public class MainActivity extends Activity {
 
 			if(mCameraMode == 0 && mCamera1 != null) {
 				//mCamera.stopPreview();
-				mCamera1.startPreview();
+				//mCamera1.startPreview();
 				Log.i(TAG,"take picture_1 : ");
 				mCamera1.takePicture(null, null, mPicture_1Callback);
 			}else{
-				mCamera.startPreview();
+				//mCamera.startPreview();
 				try {
 					//android读取图片EXIF信息
 					ExifInterface exifInterface=new ExifInterface(savaPath);
@@ -783,7 +783,7 @@ public class MainActivity extends Activity {
 			Log.e(TAG, "takePicture_1 finish to : "+savaPath);
 			wlog("takePicture_1 finish");
 			mbTkPicture_1=false;
-			mCamera.startPreview();
+			//mCamera.startPreview();
 			mCamera1.startPreview();
 		}
 	};
@@ -798,11 +798,8 @@ public class MainActivity extends Activity {
 
 			if(mCameraMode == 0 && mCamera1 != null) {
 				//mCamera.stopPreview();
-				mCamera1.startPreview();
+				//mCamera1.startPreview();
 				mCamera1.takePicture(null, null, mRawPicture_1Callback);
-			}
-			else {
-				mCamera.startPreview();
 			}
 		}
 	};
@@ -814,7 +811,7 @@ public class MainActivity extends Activity {
 			Log.e(TAG, "takeRawPicture_1");
 			wlog("takeRawPicture_1 finish");
 			mbTkPicture_1=false;
-			mCamera.startPreview();
+			//mCamera.startPreview();
 			mCamera1.startPreview();
 		}
 	};

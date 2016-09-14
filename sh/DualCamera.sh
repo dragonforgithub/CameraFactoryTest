@@ -121,12 +121,12 @@ Test Tool Version: $VERSION
 
 API: ATD TestCommand Interface $ATD_Interface_VERSION
 
-FORMAT: adb shell /data/data/CameraTest para1 para2 para3 ...
+FORMAT: adb shell /data/data/DualCamera para1 para2 para3 ...
 
 RETURN VALUE: 0/1   (0 = fail , 1 = pass)
 
 USAGE:
-  <Enable/Disable camera preview.>
+  <Enable/Disable dual camera preview.>
     (para1) 0
     (para2) 0:off, 1:on
     (para3) Timedout value (second) 
@@ -158,11 +158,11 @@ USAGE:
 
   <Calibration.>
     (para1) 6
-    (para2) 0: Back camera ,  1: Front camera, 2:Back camera2
+    (para2) 0: DUAL CAMERA
 
   <Get golden data.>
     (para1) 7
-    (para2) 0: Back camera ,  1: Front camera, 2:Back camera2
+    (para2) 0: TBD
 	
   <Take picture with af with flash>
     (para1) 9
@@ -176,7 +176,7 @@ USAGE:
  
   <DIT AF Calibration>
     (para1) 11
-    (para2) 0: Back camera, 1: Front camera
+    (para2) TBD
     (para3) 0:Generate dit_af_cali Result
 	    1:Inf
 	    2:Macro
