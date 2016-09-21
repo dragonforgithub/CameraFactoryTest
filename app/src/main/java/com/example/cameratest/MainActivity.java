@@ -358,7 +358,7 @@ public class MainActivity extends Activity {
 
 						case HandleMsg.MSG_CLOSE_CAMERA:
 
-							release(mCameraMode);
+							onDestroy();
 							break;
 
 						case HandleMsg.MSG_SET_SAVE_PATH:
@@ -436,12 +436,18 @@ public class MainActivity extends Activity {
 										if(isSupportFocuse){
 											parameters.setFocusMode(Parameters.FOCUS_MODE_AUTO);
 											mCamera.setParameters(parameters);
+											setFocusArea(mCameraMode);
+											Log.e(TAG, "do Focus :");
+											mCamera.autoFocus(mAutoFocusCallbackParameter);
 										}
 
 										if(isSupportFocuse_1 && mCameraMode == 0 && mCamera1 != null){
 											Parameters parameters_1 = mCamera1.getParameters();
 											parameters_1.setFocusMode(Parameters.FOCUS_MODE_AUTO);
 											mCamera1.setParameters(parameters_1);
+											setFocusArea(mCameraMode);
+											Log.e(TAG, "do Focus tele :");
+											mCamera1.autoFocus(mAutoFocusCallbackPrameter_1);
 										}
 										break;
 									case 1:
@@ -522,29 +528,6 @@ public class MainActivity extends Activity {
 		}
 	}
 
-
-	void release(int cameraMode){
-
-		if(cameraMode == 0 && mCamera1 != null) {
-			mCamera.setPreviewCallback(null);
-			mCamera1.setPreviewCallback(null);
-			mCamera.stopPreview();
-			mCamera1.stopPreview();
-			mCamera.release();
-			mCamera1.release();
-			mCamera = null;
-			mCamera1 = null;
-		}else {
-			mCamera.setPreviewCallback(null);
-			mCamera.stopPreview();
-			mCamera.release();
-			mCamera = null;
-		}
-
-		Log.e(TAG,"release camera done.");
-		wlog("close camera");
-	}
-
 	@Override
 	protected void onDestroy() {
 		// TODO Auto-generated method stub
@@ -555,9 +538,40 @@ public class MainActivity extends Activity {
 			mOrientationListener.disable();
 		}
 
-		if(mCamReceiver!=null)
+		if(mCameraMode == 0) {
+			if(mCamera != null){
+				mCamera.stopPreview();
+				mCamera.setPreviewCallback(null);
+				mCamera.lock();
+				mCamera.release();
+				mCamera = null;
+			}
+
+			if(mCamera1 != null){
+				mCamera1.stopPreview();
+				mCamera1.setPreviewCallback(null);
+				mCamera1.lock();
+				mCamera1.release();
+				mCamera1 = null;
+			}
+		}else {
+			if(mCamera != null){
+				mCamera.stopPreview();
+				mCamera.setPreviewCallback(null);
+				mCamera.lock();
+				mCamera.release();
+				mCamera = null;
+			}
+		}
+
+		if(mCamReceiver!=null){
 			this.unregisterReceiver(mCamReceiver);
-		mCamReceiver=null;
+			mCamReceiver=null;
+		}
+
+		Log.e(TAG,"release camera done.");
+		wlog("close camera finish");
+		finish();
 	}
 
 	private int FindBackCamera0() {
@@ -698,6 +712,30 @@ public class MainActivity extends Activity {
 				}
 			}else{
 				mCamera.takePicture(null, null, mPictureCallback);
+			}
+		}
+	};
+
+	AutoFocusCallback mAutoFocusCallbackParameter=new Camera.AutoFocusCallback() {
+		@Override
+		public void onAutoFocus(boolean success, Camera camera) {
+			// TODO Auto-generated method stub
+			Log.e(TAG, "mAutoFocusCallback:parameter");
+			if(success==false){
+				Log.e(TAG, "parameter auto focus fail");
+				wlog("parameter auto focus fail");
+			}
+		}
+	};
+
+	AutoFocusCallback mAutoFocusCallbackPrameter_1=new Camera.AutoFocusCallback() {
+		@Override
+		public void onAutoFocus(boolean success, Camera camera) {
+			// TODO Auto-generated method stub
+			Log.e(TAG, "mAutoFocusCallback_1:parameter");
+			if(success==false){
+				Log.e(TAG, "parameter_1 auto focus fail");
+				wlog("parameter_1 auto focus fail");
 			}
 		}
 	};

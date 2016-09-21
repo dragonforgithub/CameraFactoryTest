@@ -94,12 +94,12 @@ ADDED from /home/sheldon/StudioProjects/CameraTest_For_Hades/app/src/main/Androi
 		ADDED from /home/sheldon/StudioProjects/CameraTest_For_Hades/app/src/main/AndroidManifest.xml:37:63-85
 	android:name
 		ADDED from /home/sheldon/StudioProjects/CameraTest_For_Hades/app/src/main/AndroidManifest.xml:37:13-62
-intent-filter#asus.camera.iso+asus.camera.release+asus.camera.setexptime+asus.camera.setparameter+asus.camera.setsavepath+asus.camera.takepicture
+intent-filter#asus.camera.close+asus.camera.iso+asus.camera.setexptime+asus.camera.setparameter+asus.camera.setsavepath+asus.camera.takepicture
 ADDED from /home/sheldon/StudioProjects/CameraTest_For_Hades/app/src/main/AndroidManifest.xml:39:13-48:29
-action#asus.camera.release
-ADDED from /home/sheldon/StudioProjects/CameraTest_For_Hades/app/src/main/AndroidManifest.xml:41:18-63
+action#asus.camera.close
+ADDED from /home/sheldon/StudioProjects/CameraTest_For_Hades/app/src/main/AndroidManifest.xml:41:18-61
 	android:name
-		ADDED from /home/sheldon/StudioProjects/CameraTest_For_Hades/app/src/main/AndroidManifest.xml:41:26-60
+		ADDED from /home/sheldon/StudioProjects/CameraTest_For_Hades/app/src/main/AndroidManifest.xml:41:26-58
 action#asus.camera.setsavepath
 ADDED from /home/sheldon/StudioProjects/CameraTest_For_Hades/app/src/main/AndroidManifest.xml:42:18-67
 	android:name

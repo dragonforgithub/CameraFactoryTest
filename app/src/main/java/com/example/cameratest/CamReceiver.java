@@ -13,7 +13,7 @@ public class CamReceiver extends BroadcastReceiver {
 	
     public static final String TAG = "CamReceiver";
 
-    public static final String CLOSE_CAMERA = "asus.camera.release";
+    public static final String CLOSE_CAMERA = "asus.camera.close";
     public static final String SET_PARAMETER= "asus.camera.setparameter";
     public static final String TAKE_PIC = "asus.camera.takepicture";
     public static final String SET_SAVE_PATH = "asus.camera.setsavepath";

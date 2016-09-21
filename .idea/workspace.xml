@@ -18,41 +18,63 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.bin" afterPath="$PROJECT_DIR$/.gradle/2.10/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" afterPath="$PROJECT_DIR$/.gradle/2.10/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/tasks/_app_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" afterPath="$PROJECT_DIR$/.gradle/2.10/tasks/_app_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/cameratest/CamReceiver.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/cameratest/CamReceiver.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/cameratest/MainActivity$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/cameratest/MainActivity$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/cameratest/MainActivity$2.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/cameratest/MainActivity$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/cameratest/MainActivity$3.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/cameratest/MainActivity$3.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/cameratest/MainActivity$4.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/cameratest/MainActivity$4.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/cameratest/MainActivity$5.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/cameratest/MainActivity$5.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/cameratest/MainActivity$6.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/cameratest/MainActivity$6.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/cameratest/MainActivity$7.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/cameratest/MainActivity$7.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/cameratest/MainActivity$MyOrientationDetector.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/cameratest/MainActivity$MyOrientationDetector.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/cameratest/MainActivity.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/cameratest/MainActivity.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/example/cameratest/CamReceiver.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/example/cameratest/CamReceiver.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/example/cameratest/MainActivity$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/example/cameratest/MainActivity$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/example/cameratest/MainActivity$2.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/example/cameratest/MainActivity$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/example/cameratest/MainActivity$3.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/example/cameratest/MainActivity$3.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/example/cameratest/MainActivity$4.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/example/cameratest/MainActivity$4.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/example/cameratest/MainActivity$5.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/example/cameratest/MainActivity$5.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/example/cameratest/MainActivity$6.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/example/cameratest/MainActivity$6.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/example/cameratest/MainActivity$7.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/example/cameratest/MainActivity$7.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/example/cameratest/MainActivity$MyOrientationDetector.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/example/cameratest/MainActivity$MyOrientationDetector.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/example/cameratest/MainActivity.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/example/cameratest/MainActivity.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/instant-run-support/debug/classes.zip" afterPath="$PROJECT_DIR$/app/build/intermediates/instant-run-support/debug/classes.zip" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/instant-run-support/debug/resources.zip" afterPath="$PROJECT_DIR$/app/build/intermediates/instant-run-support/debug/resources.zip" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/resources-debug-androidTest.ap_" afterPath="$PROJECT_DIR$/app/build/intermediates/res/resources-debug-androidTest.ap_" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/resources-debug.ap_" afterPath="$PROJECT_DIR$/app/build/intermediates/res/resources-debug.ap_" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_3/classes.dex" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_3/classes.dex" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/example/cameratest/CamReceiver.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/example/cameratest/CamReceiver.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/example/cameratest/MainActivity$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/example/cameratest/MainActivity$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/example/cameratest/MainActivity$2.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/example/cameratest/MainActivity$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/example/cameratest/MainActivity$3.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/example/cameratest/MainActivity$3.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/example/cameratest/MainActivity$4.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/example/cameratest/MainActivity$4.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/example/cameratest/MainActivity$5.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/example/cameratest/MainActivity$5.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/example/cameratest/MainActivity$6.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/example/cameratest/MainActivity$6.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/example/cameratest/MainActivity$7.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/example/cameratest/MainActivity$7.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/example/cameratest/MainActivity$MyOrientationDetector.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/example/cameratest/MainActivity$MyOrientationDetector.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/example/cameratest/MainActivity.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/example/cameratest/MainActivity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_3/com/example/cameratest/CamReceiver.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_3/com/example/cameratest/CamReceiver.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_3/com/example/cameratest/MainActivity$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_3/com/example/cameratest/MainActivity$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_3/com/example/cameratest/MainActivity$2.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_3/com/example/cameratest/MainActivity$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_3/com/example/cameratest/MainActivity$3.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_3/com/example/cameratest/MainActivity$3.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_3/com/example/cameratest/MainActivity$4.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_3/com/example/cameratest/MainActivity$4.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_3/com/example/cameratest/MainActivity$5.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_3/com/example/cameratest/MainActivity$5.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_3/com/example/cameratest/MainActivity$6.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_3/com/example/cameratest/MainActivity$6.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_3/com/example/cameratest/MainActivity$7.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_3/com/example/cameratest/MainActivity$7.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_3/com/example/cameratest/MainActivity$MyOrientationDetector.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_3/com/example/cameratest/MainActivity$MyOrientationDetector.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_3/com/example/cameratest/MainActivity.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_3/com/example/cameratest/MainActivity.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/outputs/apk/app-debug-unaligned.apk" afterPath="$PROJECT_DIR$/app/build/outputs/apk/app-debug-unaligned.apk" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/outputs/apk/app-debug.apk" afterPath="$PROJECT_DIR$/app/build/outputs/apk/app-debug.apk" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/bundles/debug/instant-run/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/bundles/debug/instant-run/AndroidManifest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/instant-run-support/debug/manifest.crc" afterPath="$PROJECT_DIR$/app/build/intermediates/instant-run-support/debug/manifest.crc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/manifests/full/debug/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/manifests/full/debug/AndroidManifest.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/restart-dex/debug/build-info.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/restart-dex/debug/build-info.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/outputs/logs/manifest-merger-debug-report.txt" afterPath="$PROJECT_DIR$/app/build/outputs/logs/manifest-merger-debug-report.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/cameratest/CamReceiver.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/cameratest/CamReceiver.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/cameratest/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/cameratest/MainActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" afterPath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" />
     </list>
@@ -78,189 +100,8 @@
       <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/cameratest/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.509434">
-              <caret line="802" column="13" selection-start-line="802" selection-start-column="13" selection-end-line="802" selection-end-column="13" />
-              <folding>
-                <element signature="e#22685#23093#0" expanded="true" />
-                <element signature="e#23092#23093#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Camera.java" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Android/Sdk/sources/android-23/android/hardware/Camera.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="722" column="29" selection-start-line="722" selection-start-column="29" selection-end-line="722" selection-end-column="29" />
-              <folding>
-                <element signature="e#0#175903#0" expanded="false" />
-                <element signature="imports" expanded="false" />
-                <element signature="e#14359#14360#0" expanded="false" />
-                <element signature="e#14402#14403#0" expanded="false" />
-                <element signature="e#21113#21114#0" expanded="false" />
-                <element signature="e#21151#21152#0" expanded="false" />
-                <element signature="e#21228#21229#0" expanded="false" />
-                <element signature="e#21263#21264#0" expanded="false" />
-                <element signature="e#21392#21393#0" expanded="false" />
-                <element signature="e#21417#21418#0" expanded="false" />
-                <element signature="e#68069#68070#0" expanded="false" />
-                <element signature="e#68129#68130#0" expanded="false" />
-                <element signature="e#79088#79089#0" expanded="false" />
-                <element signature="e#79123#79124#0" expanded="false" />
-                <element signature="e#82659#82660#0" expanded="false" />
-                <element signature="e#82712#82713#0" expanded="false" />
-                <element signature="e#103789#103790#0" expanded="false" />
-                <element signature="e#103876#103877#0" expanded="false" />
-                <element signature="e#104331#104332#0" expanded="false" />
-                <element signature="e#104373#104374#0" expanded="false" />
-                <element signature="e#106753#106754#0" expanded="false" />
-                <element signature="e#106793#106794#0" expanded="false" />
-                <element signature="e#107761#107762#0" expanded="false" />
-                <element signature="e#107818#107819#0" expanded="false" />
-                <element signature="e#109415#109416#0" expanded="false" />
-                <element signature="e#109459#109460#0" expanded="false" />
-                <element signature="e#109692#109693#0" expanded="false" />
-                <element signature="e#109754#109755#0" expanded="false" />
-                <element signature="e#116066#116067#0" expanded="false" />
-                <element signature="e#116131#116132#0" expanded="false" />
-                <element signature="e#116405#116406#0" expanded="false" />
-                <element signature="e#116459#116460#0" expanded="false" />
-                <element signature="e#116647#116648#0" expanded="false" />
-                <element signature="e#116702#116703#0" expanded="false" />
-                <element signature="e#117088#117089#0" expanded="false" />
-                <element signature="e#117144#117145#0" expanded="false" />
-                <element signature="e#117555#117556#0" expanded="false" />
-                <element signature="e#117616#117617#0" expanded="false" />
-                <element signature="e#134870#134871#0" expanded="false" />
-                <element signature="e#134923#134924#0" expanded="false" />
-                <element signature="e#136473#136474#0" expanded="false" />
-                <element signature="e#136519#136520#0" expanded="false" />
-                <element signature="e#136732#136733#0" expanded="false" />
-                <element signature="e#136778#136779#0" expanded="false" />
-                <element signature="e#137546#137547#0" expanded="false" />
-                <element signature="e#137597#137598#0" expanded="false" />
-                <element signature="e#137810#137811#0" expanded="false" />
-                <element signature="e#137867#137868#0" expanded="false" />
-                <element signature="e#139107#139108#0" expanded="false" />
-                <element signature="e#139157#139158#0" expanded="false" />
-                <element signature="e#139784#139785#0" expanded="false" />
-                <element signature="e#139834#139835#0" expanded="false" />
-                <element signature="e#140621#140622#0" expanded="false" />
-                <element signature="e#140671#140672#0" expanded="false" />
-                <element signature="e#140856#140857#0" expanded="false" />
-                <element signature="e#140906#140907#0" expanded="false" />
-                <element signature="e#141921#141922#0" expanded="false" />
-                <element signature="e#141971#141972#0" expanded="false" />
-                <element signature="e#142156#142157#0" expanded="false" />
-                <element signature="e#142206#142207#0" expanded="false" />
-                <element signature="e#142863#142864#0" expanded="false" />
-                <element signature="e#142933#142934#0" expanded="false" />
-                <element signature="e#143961#143962#0" expanded="false" />
-                <element signature="e#144028#144029#0" expanded="false" />
-                <element signature="e#144606#144607#0" expanded="false" />
-                <element signature="e#144667#144668#0" expanded="false" />
-                <element signature="e#145020#145021#0" expanded="false" />
-                <element signature="e#145091#145092#0" expanded="false" />
-                <element signature="e#145444#145445#0" expanded="false" />
-                <element signature="e#145515#145516#0" expanded="false" />
-                <element signature="e#152644#152645#0" expanded="false" />
-                <element signature="e#152694#152695#0" expanded="false" />
-                <element signature="e#153269#153270#0" expanded="false" />
-                <element signature="e#153313#153314#0" expanded="false" />
-                <element signature="e#154164#154165#0" expanded="false" />
-                <element signature="e#154218#154219#0" expanded="false" />
-                <element signature="e#154798#154799#0" expanded="false" />
-                <element signature="e#154859#154860#0" expanded="false" />
-                <element signature="e#160125#160126#0" expanded="false" />
-                <element signature="e#160187#160188#0" expanded="false" />
-                <element signature="e#160437#160438#0" expanded="false" />
-                <element signature="e#160493#160494#0" expanded="false" />
-                <element signature="e#160885#160886#0" expanded="false" />
-                <element signature="e#160953#160954#0" expanded="false" />
-                <element signature="e#163278#163279#0" expanded="false" />
-                <element signature="e#163343#163344#0" expanded="false" />
-                <element signature="e#164149#164150#0" expanded="false" />
-                <element signature="e#164220#164221#0" expanded="false" />
-                <element signature="e#165263#165264#0" expanded="false" />
-                <element signature="e#165331#165332#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ArrayList.java" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Android/Sdk/sources/android-23/java/util/ArrayList.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="113" column="29" selection-start-line="113" selection-start-column="29" selection-end-line="113" selection-end-column="29" />
-              <folding>
-                <element signature="e#0#21990#0" expanded="false" />
-                <element signature="imports" expanded="false" />
-                <element signature="e#3143#3144#0" expanded="false" />
-                <element signature="e#3184#3185#0" expanded="false" />
-                <element signature="e#11210#11211#0" expanded="false" />
-                <element signature="e#11237#11238#0" expanded="false" />
-                <element signature="e#11279#11280#0" expanded="false" />
-                <element signature="e#11311#11312#0" expanded="false" />
-                <element signature="e#18297#18298#0" expanded="false" />
-                <element signature="e#18343#18344#0" expanded="false" />
-                <element signature="e#18755#18756#0" expanded="false" />
-                <element signature="e#18800#18801#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Rect.java" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Android/Sdk/sources/android-23/android/graphics/Rect.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="259" column="16" selection-start-line="259" selection-start-column="16" selection-end-line="259" selection-end-column="16" />
-              <folding>
-                <element signature="e#0#22526#0" expanded="false" />
-                <element signature="imports" expanded="false" />
-                <element signature="e#1852#1853#0" expanded="false" />
-                <element signature="e#1913#1914#0" expanded="false" />
-                <element signature="e#4100#4101#0" expanded="false" />
-                <element signature="e#4159#4160#0" expanded="false" />
-                <element signature="e#6298#6299#0" expanded="false" />
-                <element signature="e#6351#6352#0" expanded="false" />
-                <element signature="e#6538#6539#0" expanded="false" />
-                <element signature="e#6573#6574#0" expanded="false" />
-                <element signature="e#6762#6763#0" expanded="false" />
-                <element signature="e#6797#6798#0" expanded="false" />
-                <element signature="e#7051#7052#0" expanded="false" />
-                <element signature="e#7093#7094#0" expanded="false" />
-                <element signature="e#7345#7346#0" expanded="false" />
-                <element signature="e#7387#7388#0" expanded="false" />
-                <element signature="e#7520#7521#0" expanded="false" />
-                <element signature="e#7564#7565#0" expanded="false" />
-                <element signature="e#7695#7696#0" expanded="false" />
-                <element signature="e#7739#7740#0" expanded="false" />
-                <element signature="e#7823#7824#0" expanded="false" />
-                <element signature="e#7870#7871#0" expanded="false" />
-                <element signature="e#14961#14962#0" expanded="false" />
-                <element signature="e#15027#15028#0" expanded="false" />
-                <element signature="e#19110#19111#0" expanded="false" />
-                <element signature="e#19165#19166#0" expanded="false" />
-                <element signature="e#20424#20425#0" expanded="false" />
-                <element signature="e#20448#20449#0" expanded="false" />
-                <element signature="e#21301#21302#0" expanded="false" />
-                <element signature="e#21346#21347#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/main.xml">
-          <provider editor-type-id="android-designer">
-            <state />
-          </provider>
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="20" column="37" selection-start-line="20" selection-start-column="37" selection-end-line="20" selection-end-column="37" />
+            <state vertical-scroll-proportion="0.43908045">
+              <caret line="553" column="35" selection-start-line="553" selection-start-column="35" selection-end-line="553" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -306,11 +147,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="28" column="19" selection-start-line="28" selection-start-column="19" selection-end-line="28" selection-end-column="19" />
-              <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#5880#5881#0" expanded="false" />
-                <element signature="e#5906#5907#0" expanded="false" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -318,11 +155,29 @@
       <file leaf-file-name="CamReceiver.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/cameratest/CamReceiver.java">
           <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-6.774194">
+              <caret line="42" column="47" selection-start-line="42" selection-start-column="31" selection-end-line="42" selection-end-column="47" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AndroidManifest.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-5.625">
+              <caret line="40" column="50" selection-start-line="40" selection-start-column="44" selection-end-line="40" selection-end-column="50" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HandleMsg.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/cameratest/HandleMsg.java">
+          <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="25" column="4" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="4" />
-              <folding>
-                <element signature="imports" expanded="false" />
-              </folding>
+              <caret line="4" column="29" selection-start-line="4" selection-start-column="29" selection-end-line="4" selection-end-column="29" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -1917,6 +1772,8 @@
       <list>
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/cameratest/CameraPreview.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/main.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/cameratest/CamReceiver.java" />
+        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/cameratest/MainActivity.java" />
       </list>
     </option>
@@ -1952,17 +1809,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope">
-        <subPane subId="Project Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-      <pane id="ProjectPane" />
       <pane id="AndroidView">
         <subPane>
           <PATH>
@@ -1983,8 +1829,19 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="Scratches" />
       <pane id="PackagesPane" />
+      <pane id="ProjectPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -2287,7 +2144,7 @@
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32975295" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.518797" sideWeight="0.49586776" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.7411386" sideWeight="0.49586776" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
@@ -2331,414 +2188,27 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/cameratest/MainActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/cameratest/CamReceiver.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="325" column="37" selection-start-line="325" selection-start-column="37" selection-end-line="325" selection-end-column="37" />
-          <folding>
-            <element signature="e#22685#23093#0" expanded="true" />
-            <element signature="e#23092#23093#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/main.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="20" column="37" selection-start-line="20" selection-start-column="37" selection-end-line="20" selection-end-column="37" />
+          <caret line="25" column="4" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="4" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Android/Sdk/sources/android-23/android/view/SurfaceView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="85" column="13" selection-start-line="85" selection-start-column="13" selection-end-line="85" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#34204#0" expanded="false" />
-            <element signature="imports" expanded="false" />
-            <element signature="e#5728#5729#0" expanded="false" />
-            <element signature="e#5802#5803#0" expanded="false" />
-            <element signature="e#7659#7660#0" expanded="false" />
-            <element signature="e#7695#7696#0" expanded="false" />
-            <element signature="e#7926#7927#0" expanded="false" />
-            <element signature="e#7963#7964#0" expanded="false" />
-            <element signature="e#15875#15876#0" expanded="false" />
-            <element signature="e#15909#15910#0" expanded="false" />
-            <element signature="e#25648#25649#0" expanded="false" />
-            <element signature="e#25690#25691#0" expanded="false" />
-            <element signature="e#25986#25987#0" expanded="false" />
-            <element signature="e#26058#26059#0" expanded="false" />
-            <element signature="e#28741#28742#0" expanded="false" />
-            <element signature="e#28783#28784#0" expanded="false" />
-            <element signature="e#31144#31145#0" expanded="false" />
-            <element signature="e#31199#31200#0" expanded="false" />
-            <element signature="e#32196#32197#0" expanded="false" />
-            <element signature="e#32257#32258#0" expanded="false" />
-            <element signature="e#34051#34052#0" expanded="false" />
-            <element signature="e#34090#34091#0" expanded="false" />
-            <element signature="e#34149#34150#0" expanded="false" />
-            <element signature="e#34193#34194#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/cameratest/CameraPreview.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="28" column="19" selection-start-line="28" selection-start-column="19" selection-end-line="28" selection-end-column="19" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#5880#5881#0" expanded="false" />
-            <element signature="e#5906#5907#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/cameratest/CamReceiver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="25" column="4" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/cameratest/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#22685#23093#0" expanded="true" />
-            <element signature="e#23092#23093#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/main.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Android/Sdk/sources/android-23/android/view/SurfaceView.java">
+    <entry file="file://$USER_HOME$/Android/Sdk/sources/android-23/android/hardware/Camera.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="85" column="13" selection-start-line="85" selection-start-column="13" selection-end-line="85" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#34204#0" expanded="false" />
-            <element signature="imports" expanded="false" />
-            <element signature="e#5728#5729#0" expanded="false" />
-            <element signature="e#5802#5803#0" expanded="false" />
-            <element signature="e#7659#7660#0" expanded="false" />
-            <element signature="e#7695#7696#0" expanded="false" />
-            <element signature="e#7926#7927#0" expanded="false" />
-            <element signature="e#7963#7964#0" expanded="false" />
-            <element signature="e#15875#15876#0" expanded="false" />
-            <element signature="e#15909#15910#0" expanded="false" />
-            <element signature="e#25648#25649#0" expanded="false" />
-            <element signature="e#25690#25691#0" expanded="false" />
-            <element signature="e#25986#25987#0" expanded="false" />
-            <element signature="e#26058#26059#0" expanded="false" />
-            <element signature="e#28741#28742#0" expanded="false" />
-            <element signature="e#28783#28784#0" expanded="false" />
-            <element signature="e#31144#31145#0" expanded="false" />
-            <element signature="e#31199#31200#0" expanded="false" />
-            <element signature="e#32196#32197#0" expanded="false" />
-            <element signature="e#32257#32258#0" expanded="false" />
-            <element signature="e#34051#34052#0" expanded="false" />
-            <element signature="e#34090#34091#0" expanded="false" />
-            <element signature="e#34149#34150#0" expanded="false" />
-            <element signature="e#34193#34194#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/cameratest/CameraPreview.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="22" column="11" selection-start-line="22" selection-start-column="11" selection-end-line="22" selection-end-column="11" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#5880#5881#0" expanded="false" />
-            <element signature="e#5906#5907#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/cameratest/CamReceiver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="25" column="4" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/cameratest/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#22685#23093#0" expanded="true" />
-            <element signature="e#23092#23093#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/main.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <caret line="722" column="29" selection-start-line="722" selection-start-column="29" selection-end-line="722" selection-end-column="29" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Android/Sdk/sources/android-23/android/view/SurfaceView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="85" column="13" selection-start-line="85" selection-start-column="13" selection-end-line="85" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#34204#0" expanded="false" />
-            <element signature="imports" expanded="false" />
-            <element signature="e#5728#5729#0" expanded="false" />
-            <element signature="e#5802#5803#0" expanded="false" />
-            <element signature="e#7659#7660#0" expanded="false" />
-            <element signature="e#7695#7696#0" expanded="false" />
-            <element signature="e#7926#7927#0" expanded="false" />
-            <element signature="e#7963#7964#0" expanded="false" />
-            <element signature="e#15875#15876#0" expanded="false" />
-            <element signature="e#15909#15910#0" expanded="false" />
-            <element signature="e#25648#25649#0" expanded="false" />
-            <element signature="e#25690#25691#0" expanded="false" />
-            <element signature="e#25986#25987#0" expanded="false" />
-            <element signature="e#26058#26059#0" expanded="false" />
-            <element signature="e#28741#28742#0" expanded="false" />
-            <element signature="e#28783#28784#0" expanded="false" />
-            <element signature="e#31144#31145#0" expanded="false" />
-            <element signature="e#31199#31200#0" expanded="false" />
-            <element signature="e#32196#32197#0" expanded="false" />
-            <element signature="e#32257#32258#0" expanded="false" />
-            <element signature="e#34051#34052#0" expanded="false" />
-            <element signature="e#34090#34091#0" expanded="false" />
-            <element signature="e#34149#34150#0" expanded="false" />
-            <element signature="e#34193#34194#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/cameratest/CameraPreview.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="22" column="11" selection-start-line="22" selection-start-column="11" selection-end-line="22" selection-end-column="11" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#5880#5881#0" expanded="false" />
-            <element signature="e#5906#5907#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/cameratest/CamReceiver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="25" column="4" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/cameratest/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#22685#23093#0" expanded="true" />
-            <element signature="e#23092#23093#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/cameratest/CameraPreview.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="111" column="21" selection-start-line="111" selection-start-column="21" selection-end-line="111" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#5880#5881#0" expanded="false" />
-            <element signature="e#5906#5907#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/cameratest/CamReceiver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="25" column="4" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/cameratest/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#22685#23093#0" expanded="true" />
-            <element signature="e#23092#23093#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/cameratest/CamReceiver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="25" column="4" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/cameratest/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#22685#23093#0" expanded="true" />
-            <element signature="e#23092#23093#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/cameratest/CamReceiver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="25" column="4" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/cameratest/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#22685#23093#0" expanded="true" />
-            <element signature="e#23092#23093#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/cameratest/CamReceiver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="25" column="4" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/cameratest/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#22685#23093#0" expanded="true" />
-            <element signature="e#23092#23093#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/cameratest/CamReceiver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="25" column="4" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/cameratest/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#22685#23093#0" expanded="true" />
-            <element signature="e#23092#23093#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/cameratest/CamReceiver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="25" column="4" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/cameratest/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#22685#23093#0" expanded="true" />
-            <element signature="e#23092#23093#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/cameratest/CamReceiver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="25" column="4" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/cameratest/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#22685#23093#0" expanded="true" />
-            <element signature="e#23092#23093#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/cameratest/CamReceiver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="25" column="4" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2850,11 +2320,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="28" column="19" selection-start-line="28" selection-start-column="19" selection-end-line="28" selection-end-column="19" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#5880#5881#0" expanded="false" />
-            <element signature="e#5906#5907#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2862,9 +2328,347 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="25" column="4" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/cameratest/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="325" column="37" selection-start-line="325" selection-start-column="37" selection-end-line="325" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/main.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="20" column="37" selection-start-line="20" selection-start-column="37" selection-end-line="20" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Android/Sdk/sources/android-23/android/view/SurfaceView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="85" column="13" selection-start-line="85" selection-start-column="13" selection-end-line="85" selection-end-column="13" />
           <folding>
+            <element signature="e#0#34204#0" expanded="false" />
             <element signature="imports" expanded="false" />
+            <element signature="e#5728#5729#0" expanded="false" />
+            <element signature="e#5802#5803#0" expanded="false" />
+            <element signature="e#7659#7660#0" expanded="false" />
+            <element signature="e#7695#7696#0" expanded="false" />
+            <element signature="e#7926#7927#0" expanded="false" />
+            <element signature="e#7963#7964#0" expanded="false" />
+            <element signature="e#15875#15876#0" expanded="false" />
+            <element signature="e#15909#15910#0" expanded="false" />
+            <element signature="e#25648#25649#0" expanded="false" />
+            <element signature="e#25690#25691#0" expanded="false" />
+            <element signature="e#25986#25987#0" expanded="false" />
+            <element signature="e#26058#26059#0" expanded="false" />
+            <element signature="e#28741#28742#0" expanded="false" />
+            <element signature="e#28783#28784#0" expanded="false" />
+            <element signature="e#31144#31145#0" expanded="false" />
+            <element signature="e#31199#31200#0" expanded="false" />
+            <element signature="e#32196#32197#0" expanded="false" />
+            <element signature="e#32257#32258#0" expanded="false" />
+            <element signature="e#34051#34052#0" expanded="false" />
+            <element signature="e#34090#34091#0" expanded="false" />
+            <element signature="e#34149#34150#0" expanded="false" />
+            <element signature="e#34193#34194#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/cameratest/CameraPreview.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="28" column="19" selection-start-line="28" selection-start-column="19" selection-end-line="28" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/cameratest/CamReceiver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="25" column="4" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/cameratest/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/main.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Android/Sdk/sources/android-23/android/view/SurfaceView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="85" column="13" selection-start-line="85" selection-start-column="13" selection-end-line="85" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#34204#0" expanded="false" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#5728#5729#0" expanded="false" />
+            <element signature="e#5802#5803#0" expanded="false" />
+            <element signature="e#7659#7660#0" expanded="false" />
+            <element signature="e#7695#7696#0" expanded="false" />
+            <element signature="e#7926#7927#0" expanded="false" />
+            <element signature="e#7963#7964#0" expanded="false" />
+            <element signature="e#15875#15876#0" expanded="false" />
+            <element signature="e#15909#15910#0" expanded="false" />
+            <element signature="e#25648#25649#0" expanded="false" />
+            <element signature="e#25690#25691#0" expanded="false" />
+            <element signature="e#25986#25987#0" expanded="false" />
+            <element signature="e#26058#26059#0" expanded="false" />
+            <element signature="e#28741#28742#0" expanded="false" />
+            <element signature="e#28783#28784#0" expanded="false" />
+            <element signature="e#31144#31145#0" expanded="false" />
+            <element signature="e#31199#31200#0" expanded="false" />
+            <element signature="e#32196#32197#0" expanded="false" />
+            <element signature="e#32257#32258#0" expanded="false" />
+            <element signature="e#34051#34052#0" expanded="false" />
+            <element signature="e#34090#34091#0" expanded="false" />
+            <element signature="e#34149#34150#0" expanded="false" />
+            <element signature="e#34193#34194#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/cameratest/CameraPreview.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="22" column="11" selection-start-line="22" selection-start-column="11" selection-end-line="22" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/cameratest/CamReceiver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="25" column="4" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/cameratest/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/main.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Android/Sdk/sources/android-23/android/view/SurfaceView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="85" column="13" selection-start-line="85" selection-start-column="13" selection-end-line="85" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#34204#0" expanded="false" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#5728#5729#0" expanded="false" />
+            <element signature="e#5802#5803#0" expanded="false" />
+            <element signature="e#7659#7660#0" expanded="false" />
+            <element signature="e#7695#7696#0" expanded="false" />
+            <element signature="e#7926#7927#0" expanded="false" />
+            <element signature="e#7963#7964#0" expanded="false" />
+            <element signature="e#15875#15876#0" expanded="false" />
+            <element signature="e#15909#15910#0" expanded="false" />
+            <element signature="e#25648#25649#0" expanded="false" />
+            <element signature="e#25690#25691#0" expanded="false" />
+            <element signature="e#25986#25987#0" expanded="false" />
+            <element signature="e#26058#26059#0" expanded="false" />
+            <element signature="e#28741#28742#0" expanded="false" />
+            <element signature="e#28783#28784#0" expanded="false" />
+            <element signature="e#31144#31145#0" expanded="false" />
+            <element signature="e#31199#31200#0" expanded="false" />
+            <element signature="e#32196#32197#0" expanded="false" />
+            <element signature="e#32257#32258#0" expanded="false" />
+            <element signature="e#34051#34052#0" expanded="false" />
+            <element signature="e#34090#34091#0" expanded="false" />
+            <element signature="e#34149#34150#0" expanded="false" />
+            <element signature="e#34193#34194#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/cameratest/CameraPreview.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="22" column="11" selection-start-line="22" selection-start-column="11" selection-end-line="22" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/cameratest/CamReceiver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="25" column="4" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/cameratest/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/cameratest/CameraPreview.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="111" column="21" selection-start-line="111" selection-start-column="21" selection-end-line="111" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/cameratest/CamReceiver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="25" column="4" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/cameratest/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/cameratest/CamReceiver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="25" column="4" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/cameratest/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/cameratest/CamReceiver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="25" column="4" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/cameratest/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/cameratest/CamReceiver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="25" column="4" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/cameratest/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/cameratest/CamReceiver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="25" column="4" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/cameratest/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/cameratest/CamReceiver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="25" column="4" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/cameratest/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/cameratest/CamReceiver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="25" column="4" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/cameratest/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/cameratest/CamReceiver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="25" column="4" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="4" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2872,109 +2676,151 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="722" column="29" selection-start-line="722" selection-start-column="29" selection-end-line="722" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Android/Sdk/sources/android-23/java/util/ArrayList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="113" column="29" selection-start-line="113" selection-start-column="29" selection-end-line="113" selection-end-column="29" />
           <folding>
-            <element signature="e#0#175903#0" expanded="false" />
+            <element signature="e#0#21990#0" expanded="false" />
             <element signature="imports" expanded="false" />
-            <element signature="e#14359#14360#0" expanded="false" />
-            <element signature="e#14402#14403#0" expanded="false" />
-            <element signature="e#21113#21114#0" expanded="false" />
-            <element signature="e#21151#21152#0" expanded="false" />
-            <element signature="e#21228#21229#0" expanded="false" />
-            <element signature="e#21263#21264#0" expanded="false" />
-            <element signature="e#21392#21393#0" expanded="false" />
-            <element signature="e#21417#21418#0" expanded="false" />
-            <element signature="e#68069#68070#0" expanded="false" />
-            <element signature="e#68129#68130#0" expanded="false" />
-            <element signature="e#79088#79089#0" expanded="false" />
-            <element signature="e#79123#79124#0" expanded="false" />
-            <element signature="e#82659#82660#0" expanded="false" />
-            <element signature="e#82712#82713#0" expanded="false" />
-            <element signature="e#103789#103790#0" expanded="false" />
-            <element signature="e#103876#103877#0" expanded="false" />
-            <element signature="e#104331#104332#0" expanded="false" />
-            <element signature="e#104373#104374#0" expanded="false" />
-            <element signature="e#106753#106754#0" expanded="false" />
-            <element signature="e#106793#106794#0" expanded="false" />
-            <element signature="e#107761#107762#0" expanded="false" />
-            <element signature="e#107818#107819#0" expanded="false" />
-            <element signature="e#109415#109416#0" expanded="false" />
-            <element signature="e#109459#109460#0" expanded="false" />
-            <element signature="e#109692#109693#0" expanded="false" />
-            <element signature="e#109754#109755#0" expanded="false" />
-            <element signature="e#116066#116067#0" expanded="false" />
-            <element signature="e#116131#116132#0" expanded="false" />
-            <element signature="e#116405#116406#0" expanded="false" />
-            <element signature="e#116459#116460#0" expanded="false" />
-            <element signature="e#116647#116648#0" expanded="false" />
-            <element signature="e#116702#116703#0" expanded="false" />
-            <element signature="e#117088#117089#0" expanded="false" />
-            <element signature="e#117144#117145#0" expanded="false" />
-            <element signature="e#117555#117556#0" expanded="false" />
-            <element signature="e#117616#117617#0" expanded="false" />
-            <element signature="e#134870#134871#0" expanded="false" />
-            <element signature="e#134923#134924#0" expanded="false" />
-            <element signature="e#136473#136474#0" expanded="false" />
-            <element signature="e#136519#136520#0" expanded="false" />
-            <element signature="e#136732#136733#0" expanded="false" />
-            <element signature="e#136778#136779#0" expanded="false" />
-            <element signature="e#137546#137547#0" expanded="false" />
-            <element signature="e#137597#137598#0" expanded="false" />
-            <element signature="e#137810#137811#0" expanded="false" />
-            <element signature="e#137867#137868#0" expanded="false" />
-            <element signature="e#139107#139108#0" expanded="false" />
-            <element signature="e#139157#139158#0" expanded="false" />
-            <element signature="e#139784#139785#0" expanded="false" />
-            <element signature="e#139834#139835#0" expanded="false" />
-            <element signature="e#140621#140622#0" expanded="false" />
-            <element signature="e#140671#140672#0" expanded="false" />
-            <element signature="e#140856#140857#0" expanded="false" />
-            <element signature="e#140906#140907#0" expanded="false" />
-            <element signature="e#141921#141922#0" expanded="false" />
-            <element signature="e#141971#141972#0" expanded="false" />
-            <element signature="e#142156#142157#0" expanded="false" />
-            <element signature="e#142206#142207#0" expanded="false" />
-            <element signature="e#142863#142864#0" expanded="false" />
-            <element signature="e#142933#142934#0" expanded="false" />
-            <element signature="e#143961#143962#0" expanded="false" />
-            <element signature="e#144028#144029#0" expanded="false" />
-            <element signature="e#144606#144607#0" expanded="false" />
-            <element signature="e#144667#144668#0" expanded="false" />
-            <element signature="e#145020#145021#0" expanded="false" />
-            <element signature="e#145091#145092#0" expanded="false" />
-            <element signature="e#145444#145445#0" expanded="false" />
-            <element signature="e#145515#145516#0" expanded="false" />
-            <element signature="e#152644#152645#0" expanded="false" />
-            <element signature="e#152694#152695#0" expanded="false" />
-            <element signature="e#153269#153270#0" expanded="false" />
-            <element signature="e#153313#153314#0" expanded="false" />
-            <element signature="e#154164#154165#0" expanded="false" />
-            <element signature="e#154218#154219#0" expanded="false" />
-            <element signature="e#154798#154799#0" expanded="false" />
-            <element signature="e#154859#154860#0" expanded="false" />
-            <element signature="e#160125#160126#0" expanded="false" />
-            <element signature="e#160187#160188#0" expanded="false" />
-            <element signature="e#160437#160438#0" expanded="false" />
-            <element signature="e#160493#160494#0" expanded="false" />
-            <element signature="e#160885#160886#0" expanded="false" />
-            <element signature="e#160953#160954#0" expanded="false" />
-            <element signature="e#163278#163279#0" expanded="false" />
-            <element signature="e#163343#163344#0" expanded="false" />
-            <element signature="e#164149#164150#0" expanded="false" />
-            <element signature="e#164220#164221#0" expanded="false" />
-            <element signature="e#165263#165264#0" expanded="false" />
-            <element signature="e#165331#165332#0" expanded="false" />
+            <element signature="e#3143#3144#0" expanded="false" />
+            <element signature="e#3184#3185#0" expanded="false" />
+            <element signature="e#11210#11211#0" expanded="false" />
+            <element signature="e#11237#11238#0" expanded="false" />
+            <element signature="e#11279#11280#0" expanded="false" />
+            <element signature="e#11311#11312#0" expanded="false" />
+            <element signature="e#18297#18298#0" expanded="false" />
+            <element signature="e#18343#18344#0" expanded="false" />
+            <element signature="e#18755#18756#0" expanded="false" />
+            <element signature="e#18800#18801#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Android/Sdk/sources/android-23/android/graphics/Rect.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="259" column="16" selection-start-line="259" selection-start-column="16" selection-end-line="259" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#22526#0" expanded="false" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#1852#1853#0" expanded="false" />
+            <element signature="e#1913#1914#0" expanded="false" />
+            <element signature="e#4100#4101#0" expanded="false" />
+            <element signature="e#4159#4160#0" expanded="false" />
+            <element signature="e#6298#6299#0" expanded="false" />
+            <element signature="e#6351#6352#0" expanded="false" />
+            <element signature="e#6538#6539#0" expanded="false" />
+            <element signature="e#6573#6574#0" expanded="false" />
+            <element signature="e#6762#6763#0" expanded="false" />
+            <element signature="e#6797#6798#0" expanded="false" />
+            <element signature="e#7051#7052#0" expanded="false" />
+            <element signature="e#7093#7094#0" expanded="false" />
+            <element signature="e#7345#7346#0" expanded="false" />
+            <element signature="e#7387#7388#0" expanded="false" />
+            <element signature="e#7520#7521#0" expanded="false" />
+            <element signature="e#7564#7565#0" expanded="false" />
+            <element signature="e#7695#7696#0" expanded="false" />
+            <element signature="e#7739#7740#0" expanded="false" />
+            <element signature="e#7823#7824#0" expanded="false" />
+            <element signature="e#7870#7871#0" expanded="false" />
+            <element signature="e#14961#14962#0" expanded="false" />
+            <element signature="e#15027#15028#0" expanded="false" />
+            <element signature="e#19110#19111#0" expanded="false" />
+            <element signature="e#19165#19166#0" expanded="false" />
+            <element signature="e#20424#20425#0" expanded="false" />
+            <element signature="e#20448#20449#0" expanded="false" />
+            <element signature="e#21301#21302#0" expanded="false" />
+            <element signature="e#21346#21347#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/main.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="20" column="37" selection-start-line="20" selection-start-column="37" selection-end-line="20" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Android/Sdk/sources/android-23/android/view/SurfaceView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="85" column="13" selection-start-line="85" selection-start-column="13" selection-end-line="85" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#34204#0" expanded="false" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#5728#5729#0" expanded="false" />
+            <element signature="e#5802#5803#0" expanded="false" />
+            <element signature="e#7659#7660#0" expanded="false" />
+            <element signature="e#7695#7696#0" expanded="false" />
+            <element signature="e#7926#7927#0" expanded="false" />
+            <element signature="e#7963#7964#0" expanded="false" />
+            <element signature="e#15875#15876#0" expanded="false" />
+            <element signature="e#15909#15910#0" expanded="false" />
+            <element signature="e#25648#25649#0" expanded="false" />
+            <element signature="e#25690#25691#0" expanded="false" />
+            <element signature="e#25986#25987#0" expanded="false" />
+            <element signature="e#26058#26059#0" expanded="false" />
+            <element signature="e#28741#28742#0" expanded="false" />
+            <element signature="e#28783#28784#0" expanded="false" />
+            <element signature="e#31144#31145#0" expanded="false" />
+            <element signature="e#31199#31200#0" expanded="false" />
+            <element signature="e#32196#32197#0" expanded="false" />
+            <element signature="e#32257#32258#0" expanded="false" />
+            <element signature="e#34051#34052#0" expanded="false" />
+            <element signature="e#34090#34091#0" expanded="false" />
+            <element signature="e#34149#34150#0" expanded="false" />
+            <element signature="e#34193#34194#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/cameratest/CameraPreview.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="28" column="19" selection-start-line="28" selection-start-column="19" selection-end-line="28" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/cameratest/HandleMsg.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="4" column="29" selection-start-line="4" selection-start-column="29" selection-end-line="4" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.625">
+          <caret line="40" column="50" selection-start-line="40" selection-start-column="44" selection-end-line="40" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/cameratest/CamReceiver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.774194">
+          <caret line="42" column="47" selection-start-line="42" selection-start-column="31" selection-end-line="42" selection-end-column="47" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/cameratest/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.509434">
-          <caret line="802" column="13" selection-start-line="802" selection-start-column="13" selection-end-line="802" selection-end-column="13" />
-          <folding>
-            <element signature="e#22685#23093#0" expanded="true" />
-            <element signature="e#23092#23093#0" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.43908045">
+          <caret line="553" column="35" selection-start-line="553" selection-start-column="35" selection-end-line="553" selection-end-column="35" />
+          <folding />
         </state>
       </provider>
     </entry>
