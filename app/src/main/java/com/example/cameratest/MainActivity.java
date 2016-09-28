@@ -398,7 +398,7 @@ public class MainActivity extends Activity {
 
 										if(isSupportFlash_1 && mCameraMode == 0 && mCamera1 != null){
 											Parameters parameters_1 = mCamera1.getParameters();
-											parameters_1.setFocusMode(Parameters.FLASH_MODE_OFF);
+											parameters_1.setFlashMode(Parameters.FLASH_MODE_OFF);
 											mCamera1.setParameters(parameters_1);
 										}
 										break;
@@ -410,7 +410,7 @@ public class MainActivity extends Activity {
 
 										if(isSupportFlash_1 && mCameraMode == 0 && mCamera1 != null){
 											Parameters parameters_1 = mCamera1.getParameters();
-											parameters_1.setFocusMode(Parameters.FLASH_MODE_ON);
+											parameters_1.setFlashMode(Parameters.FLASH_MODE_ON);
 											mCamera1.setParameters(parameters_1);
 										}
 										break;
@@ -422,7 +422,7 @@ public class MainActivity extends Activity {
 
 										if(isSupportFlash_1 && mCameraMode == 0 && mCamera1 != null){
 											Parameters parameters_1 = mCamera1.getParameters();
-											parameters_1.setFocusMode(Parameters.FLASH_MODE_AUTO);
+											parameters_1.setFlashMode(Parameters.FLASH_MODE_AUTO);
 											mCamera1.setParameters(parameters_1);
 										}
 										break;
@@ -645,6 +645,7 @@ public class MainActivity extends Activity {
 				return;
 			}
 
+			Log.e(TAG,"mPicOrientation:"+mPicOrientation);
 
 			if(mPicOrientation == 0){
 				mPicOrientation = 90;
@@ -654,7 +655,7 @@ public class MainActivity extends Activity {
 
 			Parameters parameters = mCamera.getParameters();
 			if (mCameraMode == 0 && mCamera1 != null) {  //rear0 & rear1
-				mPicOrientation = (mPicOrientation+270)%360;
+				mPicOrientation = (mPicOrientation+90)%360;
 
 				parameters.setRotation(mPicOrientation);
 				mCamera.setParameters(parameters);
@@ -664,12 +665,12 @@ public class MainActivity extends Activity {
 				mCamera1.setParameters(parameters1);
 			}
 			else if(mCameraMode == 1){ //rear0
-				mPicOrientation = (mPicOrientation+270)%360;
+				mPicOrientation = (mPicOrientation+90)%360;
 				parameters.setRotation(mPicOrientation);
 				mCamera.setParameters(parameters);
 			}
 			else if(mCameraMode == 2){ //rear1
-				mPicOrientation = (mPicOrientation+270)%360;
+				mPicOrientation = (mPicOrientation+90)%360;
 				parameters.setRotation(mPicOrientation);
 				mCamera.setParameters(parameters);
 			}
@@ -679,7 +680,7 @@ public class MainActivity extends Activity {
 				}else if(mPicOrientation == 180){
 					mPicOrientation = 0;
 				}
-				mPicOrientation = (mPicOrientation+270)%360;
+				mPicOrientation = (mPicOrientation+90)%360;
 				parameters.setRotation(mPicOrientation);
 				mCamera.setParameters(parameters);
 			}
@@ -688,7 +689,7 @@ public class MainActivity extends Activity {
 			}
 
 			Log.i(TAG,"set picture Orientation:"+mPicOrientation);
-			Log.i(TAG,"set display Orientation:"+mDisOrientation);
+			//Log.i(TAG,"set display Orientation:"+mDisOrientation);
 		}
 	}
 
