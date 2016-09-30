@@ -15,50 +15,19 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/fileSnapshots.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/outputFileStates.bin" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/outputFileStates.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/taskArtifacts.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.bin" afterPath="$PROJECT_DIR$/.gradle/2.10/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" afterPath="$PROJECT_DIR$/.gradle/2.10/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/tasks/_app_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" afterPath="$PROJECT_DIR$/.gradle/2.10/tasks/_app_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/cameratest/MainActivity$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/cameratest/MainActivity$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/cameratest/MainActivity$2.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/cameratest/MainActivity$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/cameratest/MainActivity$3.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/cameratest/MainActivity$3.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/cameratest/MainActivity$4.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/cameratest/MainActivity$4.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/cameratest/MainActivity$5.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/cameratest/MainActivity$5.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/cameratest/MainActivity$6.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/cameratest/MainActivity$6.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/cameratest/MainActivity$7.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/cameratest/MainActivity$7.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/cameratest/MainActivity$MyOrientationDetector.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/cameratest/MainActivity$MyOrientationDetector.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/cameratest/MainActivity.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/cameratest/MainActivity.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/example/cameratest/MainActivity$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/example/cameratest/MainActivity$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/example/cameratest/MainActivity$2.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/example/cameratest/MainActivity$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/example/cameratest/MainActivity$3.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/example/cameratest/MainActivity$3.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/example/cameratest/MainActivity$4.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/example/cameratest/MainActivity$4.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/example/cameratest/MainActivity$5.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/example/cameratest/MainActivity$5.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/example/cameratest/MainActivity$6.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/example/cameratest/MainActivity$6.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/example/cameratest/MainActivity$7.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/example/cameratest/MainActivity$7.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/example/cameratest/MainActivity$MyOrientationDetector.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/example/cameratest/MainActivity$MyOrientationDetector.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/example/cameratest/MainActivity.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/example/cameratest/MainActivity.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/instant-run-support/debug/classes.zip" afterPath="$PROJECT_DIR$/app/build/intermediates/instant-run-support/debug/classes.zip" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/instant-run-support/debug/resources.zip" afterPath="$PROJECT_DIR$/app/build/intermediates/instant-run-support/debug/resources.zip" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/resources-debug-androidTest.ap_" afterPath="$PROJECT_DIR$/app/build/intermediates/res/resources-debug-androidTest.ap_" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/resources-debug.ap_" afterPath="$PROJECT_DIR$/app/build/intermediates/res/resources-debug.ap_" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_3/classes.dex" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_3/classes.dex" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/example/cameratest/MainActivity$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/example/cameratest/MainActivity$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/example/cameratest/MainActivity$2.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/example/cameratest/MainActivity$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/example/cameratest/MainActivity$3.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/example/cameratest/MainActivity$3.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/example/cameratest/MainActivity$4.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/example/cameratest/MainActivity$4.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/example/cameratest/MainActivity$5.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/example/cameratest/MainActivity$5.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/example/cameratest/MainActivity$6.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/example/cameratest/MainActivity$6.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/example/cameratest/MainActivity$7.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/example/cameratest/MainActivity$7.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/example/cameratest/MainActivity$MyOrientationDetector.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/example/cameratest/MainActivity$MyOrientationDetector.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/example/cameratest/MainActivity.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/example/cameratest/MainActivity.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_3/com/example/cameratest/MainActivity$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_3/com/example/cameratest/MainActivity$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_3/com/example/cameratest/MainActivity$2.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_3/com/example/cameratest/MainActivity$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_3/com/example/cameratest/MainActivity$3.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_3/com/example/cameratest/MainActivity$3.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_3/com/example/cameratest/MainActivity$4.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_3/com/example/cameratest/MainActivity$4.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_3/com/example/cameratest/MainActivity$5.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_3/com/example/cameratest/MainActivity$5.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_3/com/example/cameratest/MainActivity$6.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_3/com/example/cameratest/MainActivity$6.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_3/com/example/cameratest/MainActivity$7.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_3/com/example/cameratest/MainActivity$7.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_3/com/example/cameratest/MainActivity$MyOrientationDetector.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_3/com/example/cameratest/MainActivity$MyOrientationDetector.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_3/com/example/cameratest/MainActivity.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_3/com/example/cameratest/MainActivity.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/outputs/apk/app-debug-unaligned.apk" afterPath="$PROJECT_DIR$/app/build/outputs/apk/app-debug-unaligned.apk" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/outputs/apk/app-debug.apk" afterPath="$PROJECT_DIR$/app/build/outputs/apk/app-debug.apk" />
@@ -90,15 +59,10 @@
       <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/cameratest/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.15402299">
-              <caret line="652" column="35" selection-start-line="652" selection-start-column="35" selection-end-line="652" selection-end-column="35" />
+            <state vertical-scroll-proportion="0.5627081">
+              <caret line="1007" column="24" selection-start-line="1007" selection-start-column="24" selection-end-line="1007" selection-end-column="24" />
               <folding>
-                <element signature="e#10416#15068#0" expanded="true" />
-                <element signature="e#15067#15068#0" expanded="true" />
-                <element signature="e#21725#23064#0" expanded="true" />
-                <element signature="e#23063#23064#0" expanded="true" />
-                <element signature="e#23103#23814#0" expanded="true" />
-                <element signature="e#23813#23814#0" expanded="true" />
+                <element signature="e#30326#30332#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -127,7 +91,7 @@
       <file leaf-file-name="CamReceiver.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/cameratest/CamReceiver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.870968">
+            <state vertical-scroll-proportion="0.0">
               <caret line="66" column="35" selection-start-line="66" selection-start-column="35" selection-end-line="66" selection-end-column="35" />
               <folding />
             </state>
@@ -1781,16 +1745,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope">
-        <subPane subId="Project Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
       <pane id="Scratches" />
       <pane id="AndroidView">
         <subPane>
@@ -1812,8 +1766,18 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="ProjectPane" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -2109,7 +2073,13 @@
       <option name="project" value="LOCAL" />
       <updated>1474472248477</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="fix flash mode setting &amp; correct picture orientation">
+      <created>1475071515317</created>
+      <option name="number" value="00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1475071515317</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -2160,7 +2130,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="not stop preview when take picture in dual camera mode" />
     <MESSAGE value="detect snapdragon camera &amp; check camera close state" />
-    <option name="LAST_COMMIT_MESSAGE" value="detect snapdragon camera &amp; check camera close state" />
+    <MESSAGE value="fix flash mode setting &amp; correct picture orientation" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix flash mode setting &amp; correct picture orientation" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -2180,12 +2151,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#10416#15068#0" expanded="true" />
-            <element signature="e#15067#15068#0" expanded="true" />
-            <element signature="e#21725#23064#0" expanded="true" />
-            <element signature="e#23063#23064#0" expanded="true" />
-            <element signature="e#23103#23814#0" expanded="true" />
-            <element signature="e#23813#23814#0" expanded="true" />
+            <element signature="e#30326#30332#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2251,12 +2217,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="325" column="37" selection-start-line="325" selection-start-column="37" selection-end-line="325" selection-end-column="37" />
           <folding>
-            <element signature="e#10416#15068#0" expanded="true" />
-            <element signature="e#15067#15068#0" expanded="true" />
-            <element signature="e#21725#23064#0" expanded="true" />
-            <element signature="e#23063#23064#0" expanded="true" />
-            <element signature="e#23103#23814#0" expanded="true" />
-            <element signature="e#23813#23814#0" expanded="true" />
+            <element signature="e#30326#30332#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2301,12 +2262,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#10416#15068#0" expanded="true" />
-            <element signature="e#15067#15068#0" expanded="true" />
-            <element signature="e#21725#23064#0" expanded="true" />
-            <element signature="e#23063#23064#0" expanded="true" />
-            <element signature="e#23103#23814#0" expanded="true" />
-            <element signature="e#23813#23814#0" expanded="true" />
+            <element signature="e#30326#30332#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2351,12 +2307,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#10416#15068#0" expanded="true" />
-            <element signature="e#15067#15068#0" expanded="true" />
-            <element signature="e#21725#23064#0" expanded="true" />
-            <element signature="e#23063#23064#0" expanded="true" />
-            <element signature="e#23103#23814#0" expanded="true" />
-            <element signature="e#23813#23814#0" expanded="true" />
+            <element signature="e#30326#30332#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2401,12 +2352,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#10416#15068#0" expanded="true" />
-            <element signature="e#15067#15068#0" expanded="true" />
-            <element signature="e#21725#23064#0" expanded="true" />
-            <element signature="e#23063#23064#0" expanded="true" />
-            <element signature="e#23103#23814#0" expanded="true" />
-            <element signature="e#23813#23814#0" expanded="true" />
+            <element signature="e#30326#30332#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2432,12 +2378,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#10416#15068#0" expanded="true" />
-            <element signature="e#15067#15068#0" expanded="true" />
-            <element signature="e#21725#23064#0" expanded="true" />
-            <element signature="e#23063#23064#0" expanded="true" />
-            <element signature="e#23103#23814#0" expanded="true" />
-            <element signature="e#23813#23814#0" expanded="true" />
+            <element signature="e#30326#30332#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2455,12 +2396,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#10416#15068#0" expanded="true" />
-            <element signature="e#15067#15068#0" expanded="true" />
-            <element signature="e#21725#23064#0" expanded="true" />
-            <element signature="e#23063#23064#0" expanded="true" />
-            <element signature="e#23103#23814#0" expanded="true" />
-            <element signature="e#23813#23814#0" expanded="true" />
+            <element signature="e#30326#30332#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2478,12 +2414,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#10416#15068#0" expanded="true" />
-            <element signature="e#15067#15068#0" expanded="true" />
-            <element signature="e#21725#23064#0" expanded="true" />
-            <element signature="e#23063#23064#0" expanded="true" />
-            <element signature="e#23103#23814#0" expanded="true" />
-            <element signature="e#23813#23814#0" expanded="true" />
+            <element signature="e#30326#30332#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2501,12 +2432,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#10416#15068#0" expanded="true" />
-            <element signature="e#15067#15068#0" expanded="true" />
-            <element signature="e#21725#23064#0" expanded="true" />
-            <element signature="e#23063#23064#0" expanded="true" />
-            <element signature="e#23103#23814#0" expanded="true" />
-            <element signature="e#23813#23814#0" expanded="true" />
+            <element signature="e#30326#30332#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2524,12 +2450,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#10416#15068#0" expanded="true" />
-            <element signature="e#15067#15068#0" expanded="true" />
-            <element signature="e#21725#23064#0" expanded="true" />
-            <element signature="e#23063#23064#0" expanded="true" />
-            <element signature="e#23103#23814#0" expanded="true" />
-            <element signature="e#23813#23814#0" expanded="true" />
+            <element signature="e#30326#30332#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2547,12 +2468,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#10416#15068#0" expanded="true" />
-            <element signature="e#15067#15068#0" expanded="true" />
-            <element signature="e#21725#23064#0" expanded="true" />
-            <element signature="e#23063#23064#0" expanded="true" />
-            <element signature="e#23103#23814#0" expanded="true" />
-            <element signature="e#23813#23814#0" expanded="true" />
+            <element signature="e#30326#30332#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2570,12 +2486,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#10416#15068#0" expanded="true" />
-            <element signature="e#15067#15068#0" expanded="true" />
-            <element signature="e#21725#23064#0" expanded="true" />
-            <element signature="e#23063#23064#0" expanded="true" />
-            <element signature="e#23103#23814#0" expanded="true" />
-            <element signature="e#23813#23814#0" expanded="true" />
+            <element signature="e#30326#30332#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2654,7 +2565,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/cameratest/CamReceiver.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.870968">
+        <state vertical-scroll-proportion="0.0">
           <caret line="66" column="35" selection-start-line="66" selection-start-column="35" selection-end-line="66" selection-end-column="35" />
           <folding />
         </state>
@@ -2662,15 +2573,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/cameratest/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.15402299">
-          <caret line="652" column="35" selection-start-line="652" selection-start-column="35" selection-end-line="652" selection-end-column="35" />
+        <state vertical-scroll-proportion="0.5627081">
+          <caret line="1007" column="24" selection-start-line="1007" selection-start-column="24" selection-end-line="1007" selection-end-column="24" />
           <folding>
-            <element signature="e#10416#15068#0" expanded="true" />
-            <element signature="e#15067#15068#0" expanded="true" />
-            <element signature="e#21725#23064#0" expanded="true" />
-            <element signature="e#23063#23064#0" expanded="true" />
-            <element signature="e#23103#23814#0" expanded="true" />
-            <element signature="e#23813#23814#0" expanded="true" />
+            <element signature="e#30326#30332#0" expanded="true" />
           </folding>
         </state>
       </provider>

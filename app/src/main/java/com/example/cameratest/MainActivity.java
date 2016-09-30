@@ -997,13 +997,16 @@ public class MainActivity extends Activity {
 						ArrayList<Area> focusArea = new ArrayList<Area>();
 						focusArea.add(new Area(new Rect(), 1000));
 						Log.e(TAG,"set focusArea start:");
+
 						if(CameraMode == 0 && mCamera1 != null){
-							focusArea.get(0).rect.set(-500, -250, 0, 250);
+							//focusArea.get(0).rect.set(-500, -250, 0, 250);
+							focusArea.get(0).rect.set(-250, -250, 250, 250);
 							parameters.setFocusAreas(focusArea);
 							mCamera.setParameters(parameters);
 
 							Parameters parameters_1=mCamera1.getParameters();
-							focusArea.get(0).rect.set(0, -250, 500, 250);
+							//focusArea.get(0).rect.set(0, -250, 500, 250);
+							focusArea.get(0).rect.set(-250, -250, 250, 250);
 							parameters_1.setFocusAreas(focusArea);
 							mCamera1.setParameters(parameters_1);
 						}else{
@@ -1033,12 +1036,14 @@ public class MainActivity extends Activity {
 						meteringArea.add(new Area(new Rect(), 1000));
 
 						if(mCameraMode == 0 && mCamera1 != null) {
-							meteringArea.get(0).rect.set(-500, -250, 0, 250);
+							//meteringArea.get(0).rect.set(-500, -250, 0, 250);
+							meteringArea.get(0).rect.set(-250, -250, 250, 250);
 							parameters.setMeteringAreas(meteringArea);
 							mCamera.setParameters(parameters);
 
 							Parameters parameters_1=mCamera1.getParameters();
-							meteringArea.get(0).rect.set(0, -250, 500, 250);
+							//meteringArea.get(0).rect.set(0, -250, 500, 250);
+							meteringArea.get(0).rect.set(-250, -250, 250, 250);
 							parameters_1.setMeteringAreas(meteringArea);
 							mCamera1.setParameters(parameters_1);
 						}else{
