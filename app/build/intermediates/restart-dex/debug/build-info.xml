@@ -4,26 +4,26 @@
     api-level="23"
     density="xxhdpi"
     format="7"
-    timestamp="628615498119697" >
+    timestamp="187128717621554" >
 
     <task
         name="javac"
-        duration="975" />
+        duration="742" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="136" />
+        duration="113" />
     <task
         name="verifier"
-        duration="3" />
+        duration="37" />
 
     <artifact
         location="/home/sheldon/StudioProjects/CameraTest_For_Hades/app/build/outputs/apk/app-debug.apk"
         type="MAIN" />
 
-    <build timestamp="628615498119697" >
+    <build timestamp="187128717621554" >
         <artifact
             location="/home/sheldon/StudioProjects/CameraTest_For_Hades/app/build/outputs/apk/app-debug.apk"
             type="MAIN" />

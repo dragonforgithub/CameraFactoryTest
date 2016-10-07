@@ -319,7 +319,7 @@ public class MainActivity extends Activity {
 					break;
 			}
 
-			//parameters.setPictureFormat(256);  //0x11:NV21 / 0x100 : JPEG
+			parameters.setPictureFormat(256);  //0x11:NV21 / 0x100 : JPEG
 			if(mCameraMode == 0 && mCamera1 != null) {
 				mCamera.setParameters(parameters);
 				surfaceView = (SurfaceView) findViewById(R.id.camera_preview);
@@ -901,6 +901,7 @@ public class MainActivity extends Activity {
 				}
 			}
 			*/
+			/*
 			parameters.setPictureFormat(256); //0x11:NV21 / 0x100 : JPEG
 			mCamera.setParameters(parameters);
 
@@ -909,6 +910,7 @@ public class MainActivity extends Activity {
 				parameters_1.setPictureFormat(256); //0x11:NV21 / 0x100 : JPEG
 				mCamera1.setParameters(parameters_1);
 			}
+			*/
 
 			if(raw_need==1)
 			{
