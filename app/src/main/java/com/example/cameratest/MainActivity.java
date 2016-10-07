@@ -319,7 +319,7 @@ public class MainActivity extends Activity {
 					break;
 			}
 
-			//parameters.setPictureFormat(256);  //0x11:NV21 / 0x100 : JPEG
+			parameters.setPictureFormat(256);  //0x11:NV21 / 0x100 : JPEG
 			if(mCameraMode == 0 && mCamera1 != null) {
 				mCamera.setParameters(parameters);
 				surfaceView = (SurfaceView) findViewById(R.id.camera_preview);
@@ -539,20 +539,17 @@ public class MainActivity extends Activity {
 		}
 
 		if(mCameraMode == 0) {
-			if(mCamera != null){
-				mCamera.stopPreview();
-				mCamera.setPreviewCallback(null);
-				mCamera.lock();
-				mCamera.release();
-				mCamera = null;
-			}
-
-			if(mCamera1 != null){
+			if(mCamera != null && mCamera1 != null){
 				mCamera1.stopPreview();
+				mCamera.stopPreview();
 				mCamera1.setPreviewCallback(null);
+				mCamera.setPreviewCallback(null);
 				mCamera1.lock();
+				mCamera.lock();
 				mCamera1.release();
+				mCamera.release();
 				mCamera1 = null;
+				mCamera = null;
 			}
 		}else {
 			if(mCamera != null){
@@ -901,6 +898,7 @@ public class MainActivity extends Activity {
 				}
 			}
 			*/
+			/*
 			parameters.setPictureFormat(256); //0x11:NV21 / 0x100 : JPEG
 			mCamera.setParameters(parameters);
 
@@ -909,6 +907,7 @@ public class MainActivity extends Activity {
 				parameters_1.setPictureFormat(256); //0x11:NV21 / 0x100 : JPEG
 				mCamera1.setParameters(parameters_1);
 			}
+			*/
 
 			if(raw_need==1)
 			{
