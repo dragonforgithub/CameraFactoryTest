@@ -17,16 +17,58 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/taskArtifacts.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" afterPath="$PROJECT_DIR$/.gradle/2.10/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/tasks/_app_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" afterPath="$PROJECT_DIR$/.gradle/2.10/tasks/_app_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" />
+<<<<<<< HEAD
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar" />
+=======
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/cameratest/MainActivity$2.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/cameratest/MainActivity$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/cameratest/MainActivity$3.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/cameratest/MainActivity$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/cameratest/MainActivity$4.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/cameratest/MainActivity$4.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/cameratest/MainActivity$5.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/cameratest/MainActivity$5.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/cameratest/MainActivity$6.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/cameratest/MainActivity$6.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/cameratest/MainActivity$7.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/cameratest/MainActivity$7.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/cameratest/MainActivity$MyOrientationDetector.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/cameratest/MainActivity$MyOrientationDetector.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/cameratest/MainActivity.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/example/cameratest/MainActivity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/example/cameratest/MainActivity$2.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/example/cameratest/MainActivity$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/example/cameratest/MainActivity$3.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/example/cameratest/MainActivity$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/example/cameratest/MainActivity$4.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/example/cameratest/MainActivity$4.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/example/cameratest/MainActivity$5.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/example/cameratest/MainActivity$5.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/example/cameratest/MainActivity$6.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/example/cameratest/MainActivity$6.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/example/cameratest/MainActivity$7.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/example/cameratest/MainActivity$7.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/example/cameratest/MainActivity$MyOrientationDetector.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/example/cameratest/MainActivity$MyOrientationDetector.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/example/cameratest/MainActivity.class" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/example/cameratest/MainActivity.class" />
+>>>>>>> e78acf7b0934ef0297d7e3a96148836ec9521797
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/instant-run-support/debug/classes.zip" afterPath="$PROJECT_DIR$/app/build/intermediates/instant-run-support/debug/classes.zip" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/instant-run-support/debug/resources.zip" afterPath="$PROJECT_DIR$/app/build/intermediates/instant-run-support/debug/resources.zip" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/resources-debug-androidTest.ap_" afterPath="$PROJECT_DIR$/app/build/intermediates/res/resources-debug-androidTest.ap_" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/resources-debug.ap_" afterPath="$PROJECT_DIR$/app/build/intermediates/res/resources-debug.ap_" />
+<<<<<<< HEAD
+=======
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_3/classes.dex" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_3/classes.dex" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/example/cameratest/MainActivity$2.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/example/cameratest/MainActivity$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/example/cameratest/MainActivity$3.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/example/cameratest/MainActivity$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/example/cameratest/MainActivity$4.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/example/cameratest/MainActivity$4.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/example/cameratest/MainActivity$5.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/example/cameratest/MainActivity$5.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/example/cameratest/MainActivity$6.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/example/cameratest/MainActivity$6.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/example/cameratest/MainActivity$7.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/example/cameratest/MainActivity$7.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/example/cameratest/MainActivity$MyOrientationDetector.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/example/cameratest/MainActivity$MyOrientationDetector.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/example/cameratest/MainActivity.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/folders/1/5/main/com/example/cameratest/MainActivity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_3/com/example/cameratest/MainActivity$2.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_3/com/example/cameratest/MainActivity$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_3/com/example/cameratest/MainActivity$3.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_3/com/example/cameratest/MainActivity$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_3/com/example/cameratest/MainActivity$4.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_3/com/example/cameratest/MainActivity$4.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_3/com/example/cameratest/MainActivity$5.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_3/com/example/cameratest/MainActivity$5.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_3/com/example/cameratest/MainActivity$6.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_3/com/example/cameratest/MainActivity$6.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_3/com/example/cameratest/MainActivity$7.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_3/com/example/cameratest/MainActivity$7.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_3/com/example/cameratest/MainActivity$MyOrientationDetector.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_3/com/example/cameratest/MainActivity$MyOrientationDetector.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_3/com/example/cameratest/MainActivity.class" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRunSlicer/debug/folders/1/5/slice_3/com/example/cameratest/MainActivity.class" />
+>>>>>>> e78acf7b0934ef0297d7e3a96148836ec9521797
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/outputs/apk/app-debug-unaligned.apk" afterPath="$PROJECT_DIR$/app/build/outputs/apk/app-debug-unaligned.apk" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/outputs/apk/app-debug.apk" afterPath="$PROJECT_DIR$/app/build/outputs/apk/app-debug.apk" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/instant-run-support/debug/reload-changes.txt" afterPath="$PROJECT_DIR$/app/build/intermediates/instant-run-support/debug/reload-changes.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/restart-dex/debug/build-info.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/restart-dex/debug/build-info.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" afterPath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" />
     </list>
@@ -52,6 +94,7 @@
       <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/cameratest/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state vertical-scroll-proportion="2.3144655">
               <caret line="542" column="16" selection-start-line="542" selection-start-column="16" selection-end-line="542" selection-end-column="16" />
               <folding>
@@ -75,11 +118,37 @@
                 <element signature="e#24248#24249#0" expanded="true" />
                 <element signature="e#24291#24589#0" expanded="true" />
                 <element signature="e#24588#24589#0" expanded="true" />
+=======
+            <state vertical-scroll-proportion="0.17586207">
+              <caret line="264" column="0" selection-start-line="264" selection-start-column="0" selection-end-line="264" selection-end-column="0" />
+              <folding>
+                <element signature="e#10414#15066#0" expanded="true" />
+                <element signature="e#15065#15066#0" expanded="true" />
+                <element signature="e#17731#17732#0" expanded="true" />
+                <element signature="e#17755#17756#0" expanded="true" />
+                <element signature="e#19925#20552#0" expanded="true" />
+                <element signature="e#20551#20552#0" expanded="true" />
+                <element signature="e#20602#20910#0" expanded="true" />
+                <element signature="e#20909#20910#0" expanded="true" />
+                <element signature="e#20961#21275#0" expanded="true" />
+                <element signature="e#21274#21275#0" expanded="true" />
+                <element signature="e#21318#21686#0" expanded="true" />
+                <element signature="e#21685#21686#0" expanded="true" />
+                <element signature="e#21723#23062#0" expanded="true" />
+                <element signature="e#23061#23062#0" expanded="true" />
+                <element signature="e#23101#23812#0" expanded="true" />
+                <element signature="e#23811#23812#0" expanded="true" />
+                <element signature="e#23852#24260#0" expanded="true" />
+                <element signature="e#24259#24260#0" expanded="true" />
+                <element signature="e#24302#24600#0" expanded="true" />
+                <element signature="e#24599#24600#0" expanded="true" />
+>>>>>>> e78acf7b0934ef0297d7e3a96148836ec9521797
               </folding>
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="Activity.java" pinned="false" current-in-tab="false">
         <entry file="file://$USER_HOME$/Android/Sdk/sources/android-23/android/app/Activity.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -93,6 +162,8 @@
           </provider>
         </entry>
       </file>
+=======
+>>>>>>> e78acf7b0934ef0297d7e3a96148836ec9521797
       <file leaf-file-name="CameraPreview.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/cameratest/CameraPreview.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -1770,6 +1841,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+<<<<<<< HEAD
       <pane id="PackagesPane" />
       <pane id="Scope">
         <subPane subId="Project Files">
@@ -1781,6 +1853,8 @@
           </PATH>
         </subPane>
       </pane>
+=======
+>>>>>>> e78acf7b0934ef0297d7e3a96148836ec9521797
       <pane id="AndroidView">
         <subPane>
           <PATH>
@@ -1801,8 +1875,24 @@
           </PATH>
         </subPane>
       </pane>
+<<<<<<< HEAD
       <pane id="Scratches" />
       <pane id="ProjectPane" />
+=======
+      <pane id="ProjectPane" />
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+>>>>>>> e78acf7b0934ef0297d7e3a96148836ec9521797
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -2110,6 +2200,7 @@
       <option name="project" value="LOCAL" />
       <updated>1475241777201</updated>
     </task>
+<<<<<<< HEAD
     <task id="LOCAL-00005" summary="only setPictureFormat when open">
       <created>1475831075612</created>
       <option name="number" value="00005" />
@@ -2117,6 +2208,9 @@
       <updated>1475831075612</updated>
     </task>
     <option name="localTasksCounter" value="6" />
+=======
+    <option name="localTasksCounter" value="5" />
+>>>>>>> e78acf7b0934ef0297d7e3a96148836ec9521797
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -2128,7 +2222,11 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32975295" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD
       <window_info id="Android Monitor" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.7969925" sideWeight="0.4936639" order="7" side_tool="false" content_ui="tabs" />
+=======
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.820623" sideWeight="0.4936639" order="7" side_tool="false" content_ui="tabs" />
+>>>>>>> e78acf7b0934ef0297d7e3a96148836ec9521797
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
@@ -2169,8 +2267,12 @@
     <MESSAGE value="detect snapdragon camera &amp; check camera close state" />
     <MESSAGE value="fix flash mode setting &amp; correct picture orientation" />
     <MESSAGE value="correct focus area in dual camera mode" />
+<<<<<<< HEAD
     <MESSAGE value="only setPictureFormat when open" />
     <option name="LAST_COMMIT_MESSAGE" value="only setPictureFormat when open" />
+=======
+    <option name="LAST_COMMIT_MESSAGE" value="correct focus area in dual camera mode" />
+>>>>>>> e78acf7b0934ef0297d7e3a96148836ec9521797
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -2184,6 +2286,7 @@
           <folding>
             <element signature="e#10414#15066#0" expanded="true" />
             <element signature="e#15065#15066#0" expanded="true" />
+<<<<<<< HEAD
             <element signature="e#17720#17721#0" expanded="true" />
             <element signature="e#17744#17745#0" expanded="true" />
             <element signature="e#19914#20541#0" expanded="true" />
@@ -2202,6 +2305,26 @@
             <element signature="e#24248#24249#0" expanded="true" />
             <element signature="e#24291#24589#0" expanded="true" />
             <element signature="e#24588#24589#0" expanded="true" />
+=======
+            <element signature="e#17731#17732#0" expanded="true" />
+            <element signature="e#17755#17756#0" expanded="true" />
+            <element signature="e#19925#20552#0" expanded="true" />
+            <element signature="e#20551#20552#0" expanded="true" />
+            <element signature="e#20602#20910#0" expanded="true" />
+            <element signature="e#20909#20910#0" expanded="true" />
+            <element signature="e#20961#21275#0" expanded="true" />
+            <element signature="e#21274#21275#0" expanded="true" />
+            <element signature="e#21318#21686#0" expanded="true" />
+            <element signature="e#21685#21686#0" expanded="true" />
+            <element signature="e#21723#23062#0" expanded="true" />
+            <element signature="e#23061#23062#0" expanded="true" />
+            <element signature="e#23101#23812#0" expanded="true" />
+            <element signature="e#23811#23812#0" expanded="true" />
+            <element signature="e#23852#24260#0" expanded="true" />
+            <element signature="e#24259#24260#0" expanded="true" />
+            <element signature="e#24302#24600#0" expanded="true" />
+            <element signature="e#24599#24600#0" expanded="true" />
+>>>>>>> e78acf7b0934ef0297d7e3a96148836ec9521797
           </folding>
         </state>
       </provider>
@@ -2267,6 +2390,7 @@
           <folding>
             <element signature="e#10414#15066#0" expanded="true" />
             <element signature="e#15065#15066#0" expanded="true" />
+<<<<<<< HEAD
             <element signature="e#17720#17721#0" expanded="true" />
             <element signature="e#17744#17745#0" expanded="true" />
             <element signature="e#19914#20541#0" expanded="true" />
@@ -2285,6 +2409,26 @@
             <element signature="e#24248#24249#0" expanded="true" />
             <element signature="e#24291#24589#0" expanded="true" />
             <element signature="e#24588#24589#0" expanded="true" />
+=======
+            <element signature="e#17731#17732#0" expanded="true" />
+            <element signature="e#17755#17756#0" expanded="true" />
+            <element signature="e#19925#20552#0" expanded="true" />
+            <element signature="e#20551#20552#0" expanded="true" />
+            <element signature="e#20602#20910#0" expanded="true" />
+            <element signature="e#20909#20910#0" expanded="true" />
+            <element signature="e#20961#21275#0" expanded="true" />
+            <element signature="e#21274#21275#0" expanded="true" />
+            <element signature="e#21318#21686#0" expanded="true" />
+            <element signature="e#21685#21686#0" expanded="true" />
+            <element signature="e#21723#23062#0" expanded="true" />
+            <element signature="e#23061#23062#0" expanded="true" />
+            <element signature="e#23101#23812#0" expanded="true" />
+            <element signature="e#23811#23812#0" expanded="true" />
+            <element signature="e#23852#24260#0" expanded="true" />
+            <element signature="e#24259#24260#0" expanded="true" />
+            <element signature="e#24302#24600#0" expanded="true" />
+            <element signature="e#24599#24600#0" expanded="true" />
+>>>>>>> e78acf7b0934ef0297d7e3a96148836ec9521797
           </folding>
         </state>
       </provider>
@@ -2329,6 +2473,7 @@
           <folding>
             <element signature="e#10414#15066#0" expanded="true" />
             <element signature="e#15065#15066#0" expanded="true" />
+<<<<<<< HEAD
             <element signature="e#17720#17721#0" expanded="true" />
             <element signature="e#17744#17745#0" expanded="true" />
             <element signature="e#19914#20541#0" expanded="true" />
@@ -2347,6 +2492,26 @@
             <element signature="e#24248#24249#0" expanded="true" />
             <element signature="e#24291#24589#0" expanded="true" />
             <element signature="e#24588#24589#0" expanded="true" />
+=======
+            <element signature="e#17731#17732#0" expanded="true" />
+            <element signature="e#17755#17756#0" expanded="true" />
+            <element signature="e#19925#20552#0" expanded="true" />
+            <element signature="e#20551#20552#0" expanded="true" />
+            <element signature="e#20602#20910#0" expanded="true" />
+            <element signature="e#20909#20910#0" expanded="true" />
+            <element signature="e#20961#21275#0" expanded="true" />
+            <element signature="e#21274#21275#0" expanded="true" />
+            <element signature="e#21318#21686#0" expanded="true" />
+            <element signature="e#21685#21686#0" expanded="true" />
+            <element signature="e#21723#23062#0" expanded="true" />
+            <element signature="e#23061#23062#0" expanded="true" />
+            <element signature="e#23101#23812#0" expanded="true" />
+            <element signature="e#23811#23812#0" expanded="true" />
+            <element signature="e#23852#24260#0" expanded="true" />
+            <element signature="e#24259#24260#0" expanded="true" />
+            <element signature="e#24302#24600#0" expanded="true" />
+            <element signature="e#24599#24600#0" expanded="true" />
+>>>>>>> e78acf7b0934ef0297d7e3a96148836ec9521797
           </folding>
         </state>
       </provider>
@@ -2391,6 +2556,7 @@
           <folding>
             <element signature="e#10414#15066#0" expanded="true" />
             <element signature="e#15065#15066#0" expanded="true" />
+<<<<<<< HEAD
             <element signature="e#17720#17721#0" expanded="true" />
             <element signature="e#17744#17745#0" expanded="true" />
             <element signature="e#19914#20541#0" expanded="true" />
@@ -2409,6 +2575,26 @@
             <element signature="e#24248#24249#0" expanded="true" />
             <element signature="e#24291#24589#0" expanded="true" />
             <element signature="e#24588#24589#0" expanded="true" />
+=======
+            <element signature="e#17731#17732#0" expanded="true" />
+            <element signature="e#17755#17756#0" expanded="true" />
+            <element signature="e#19925#20552#0" expanded="true" />
+            <element signature="e#20551#20552#0" expanded="true" />
+            <element signature="e#20602#20910#0" expanded="true" />
+            <element signature="e#20909#20910#0" expanded="true" />
+            <element signature="e#20961#21275#0" expanded="true" />
+            <element signature="e#21274#21275#0" expanded="true" />
+            <element signature="e#21318#21686#0" expanded="true" />
+            <element signature="e#21685#21686#0" expanded="true" />
+            <element signature="e#21723#23062#0" expanded="true" />
+            <element signature="e#23061#23062#0" expanded="true" />
+            <element signature="e#23101#23812#0" expanded="true" />
+            <element signature="e#23811#23812#0" expanded="true" />
+            <element signature="e#23852#24260#0" expanded="true" />
+            <element signature="e#24259#24260#0" expanded="true" />
+            <element signature="e#24302#24600#0" expanded="true" />
+            <element signature="e#24599#24600#0" expanded="true" />
+>>>>>>> e78acf7b0934ef0297d7e3a96148836ec9521797
           </folding>
         </state>
       </provider>
@@ -2453,6 +2639,7 @@
           <folding>
             <element signature="e#10414#15066#0" expanded="true" />
             <element signature="e#15065#15066#0" expanded="true" />
+<<<<<<< HEAD
             <element signature="e#17720#17721#0" expanded="true" />
             <element signature="e#17744#17745#0" expanded="true" />
             <element signature="e#19914#20541#0" expanded="true" />
@@ -2471,6 +2658,26 @@
             <element signature="e#24248#24249#0" expanded="true" />
             <element signature="e#24291#24589#0" expanded="true" />
             <element signature="e#24588#24589#0" expanded="true" />
+=======
+            <element signature="e#17731#17732#0" expanded="true" />
+            <element signature="e#17755#17756#0" expanded="true" />
+            <element signature="e#19925#20552#0" expanded="true" />
+            <element signature="e#20551#20552#0" expanded="true" />
+            <element signature="e#20602#20910#0" expanded="true" />
+            <element signature="e#20909#20910#0" expanded="true" />
+            <element signature="e#20961#21275#0" expanded="true" />
+            <element signature="e#21274#21275#0" expanded="true" />
+            <element signature="e#21318#21686#0" expanded="true" />
+            <element signature="e#21685#21686#0" expanded="true" />
+            <element signature="e#21723#23062#0" expanded="true" />
+            <element signature="e#23061#23062#0" expanded="true" />
+            <element signature="e#23101#23812#0" expanded="true" />
+            <element signature="e#23811#23812#0" expanded="true" />
+            <element signature="e#23852#24260#0" expanded="true" />
+            <element signature="e#24259#24260#0" expanded="true" />
+            <element signature="e#24302#24600#0" expanded="true" />
+            <element signature="e#24599#24600#0" expanded="true" />
+>>>>>>> e78acf7b0934ef0297d7e3a96148836ec9521797
           </folding>
         </state>
       </provider>
@@ -2498,6 +2705,7 @@
           <folding>
             <element signature="e#10414#15066#0" expanded="true" />
             <element signature="e#15065#15066#0" expanded="true" />
+<<<<<<< HEAD
             <element signature="e#17720#17721#0" expanded="true" />
             <element signature="e#17744#17745#0" expanded="true" />
             <element signature="e#19914#20541#0" expanded="true" />
@@ -2516,6 +2724,26 @@
             <element signature="e#24248#24249#0" expanded="true" />
             <element signature="e#24291#24589#0" expanded="true" />
             <element signature="e#24588#24589#0" expanded="true" />
+=======
+            <element signature="e#17731#17732#0" expanded="true" />
+            <element signature="e#17755#17756#0" expanded="true" />
+            <element signature="e#19925#20552#0" expanded="true" />
+            <element signature="e#20551#20552#0" expanded="true" />
+            <element signature="e#20602#20910#0" expanded="true" />
+            <element signature="e#20909#20910#0" expanded="true" />
+            <element signature="e#20961#21275#0" expanded="true" />
+            <element signature="e#21274#21275#0" expanded="true" />
+            <element signature="e#21318#21686#0" expanded="true" />
+            <element signature="e#21685#21686#0" expanded="true" />
+            <element signature="e#21723#23062#0" expanded="true" />
+            <element signature="e#23061#23062#0" expanded="true" />
+            <element signature="e#23101#23812#0" expanded="true" />
+            <element signature="e#23811#23812#0" expanded="true" />
+            <element signature="e#23852#24260#0" expanded="true" />
+            <element signature="e#24259#24260#0" expanded="true" />
+            <element signature="e#24302#24600#0" expanded="true" />
+            <element signature="e#24599#24600#0" expanded="true" />
+>>>>>>> e78acf7b0934ef0297d7e3a96148836ec9521797
           </folding>
         </state>
       </provider>
@@ -2535,6 +2763,7 @@
           <folding>
             <element signature="e#10414#15066#0" expanded="true" />
             <element signature="e#15065#15066#0" expanded="true" />
+<<<<<<< HEAD
             <element signature="e#17720#17721#0" expanded="true" />
             <element signature="e#17744#17745#0" expanded="true" />
             <element signature="e#19914#20541#0" expanded="true" />
@@ -2553,6 +2782,26 @@
             <element signature="e#24248#24249#0" expanded="true" />
             <element signature="e#24291#24589#0" expanded="true" />
             <element signature="e#24588#24589#0" expanded="true" />
+=======
+            <element signature="e#17731#17732#0" expanded="true" />
+            <element signature="e#17755#17756#0" expanded="true" />
+            <element signature="e#19925#20552#0" expanded="true" />
+            <element signature="e#20551#20552#0" expanded="true" />
+            <element signature="e#20602#20910#0" expanded="true" />
+            <element signature="e#20909#20910#0" expanded="true" />
+            <element signature="e#20961#21275#0" expanded="true" />
+            <element signature="e#21274#21275#0" expanded="true" />
+            <element signature="e#21318#21686#0" expanded="true" />
+            <element signature="e#21685#21686#0" expanded="true" />
+            <element signature="e#21723#23062#0" expanded="true" />
+            <element signature="e#23061#23062#0" expanded="true" />
+            <element signature="e#23101#23812#0" expanded="true" />
+            <element signature="e#23811#23812#0" expanded="true" />
+            <element signature="e#23852#24260#0" expanded="true" />
+            <element signature="e#24259#24260#0" expanded="true" />
+            <element signature="e#24302#24600#0" expanded="true" />
+            <element signature="e#24599#24600#0" expanded="true" />
+>>>>>>> e78acf7b0934ef0297d7e3a96148836ec9521797
           </folding>
         </state>
       </provider>
@@ -2572,6 +2821,7 @@
           <folding>
             <element signature="e#10414#15066#0" expanded="true" />
             <element signature="e#15065#15066#0" expanded="true" />
+<<<<<<< HEAD
             <element signature="e#17720#17721#0" expanded="true" />
             <element signature="e#17744#17745#0" expanded="true" />
             <element signature="e#19914#20541#0" expanded="true" />
@@ -2590,6 +2840,26 @@
             <element signature="e#24248#24249#0" expanded="true" />
             <element signature="e#24291#24589#0" expanded="true" />
             <element signature="e#24588#24589#0" expanded="true" />
+=======
+            <element signature="e#17731#17732#0" expanded="true" />
+            <element signature="e#17755#17756#0" expanded="true" />
+            <element signature="e#19925#20552#0" expanded="true" />
+            <element signature="e#20551#20552#0" expanded="true" />
+            <element signature="e#20602#20910#0" expanded="true" />
+            <element signature="e#20909#20910#0" expanded="true" />
+            <element signature="e#20961#21275#0" expanded="true" />
+            <element signature="e#21274#21275#0" expanded="true" />
+            <element signature="e#21318#21686#0" expanded="true" />
+            <element signature="e#21685#21686#0" expanded="true" />
+            <element signature="e#21723#23062#0" expanded="true" />
+            <element signature="e#23061#23062#0" expanded="true" />
+            <element signature="e#23101#23812#0" expanded="true" />
+            <element signature="e#23811#23812#0" expanded="true" />
+            <element signature="e#23852#24260#0" expanded="true" />
+            <element signature="e#24259#24260#0" expanded="true" />
+            <element signature="e#24302#24600#0" expanded="true" />
+            <element signature="e#24599#24600#0" expanded="true" />
+>>>>>>> e78acf7b0934ef0297d7e3a96148836ec9521797
           </folding>
         </state>
       </provider>
@@ -2609,6 +2879,7 @@
           <folding>
             <element signature="e#10414#15066#0" expanded="true" />
             <element signature="e#15065#15066#0" expanded="true" />
+<<<<<<< HEAD
             <element signature="e#17720#17721#0" expanded="true" />
             <element signature="e#17744#17745#0" expanded="true" />
             <element signature="e#19914#20541#0" expanded="true" />
@@ -2627,6 +2898,26 @@
             <element signature="e#24248#24249#0" expanded="true" />
             <element signature="e#24291#24589#0" expanded="true" />
             <element signature="e#24588#24589#0" expanded="true" />
+=======
+            <element signature="e#17731#17732#0" expanded="true" />
+            <element signature="e#17755#17756#0" expanded="true" />
+            <element signature="e#19925#20552#0" expanded="true" />
+            <element signature="e#20551#20552#0" expanded="true" />
+            <element signature="e#20602#20910#0" expanded="true" />
+            <element signature="e#20909#20910#0" expanded="true" />
+            <element signature="e#20961#21275#0" expanded="true" />
+            <element signature="e#21274#21275#0" expanded="true" />
+            <element signature="e#21318#21686#0" expanded="true" />
+            <element signature="e#21685#21686#0" expanded="true" />
+            <element signature="e#21723#23062#0" expanded="true" />
+            <element signature="e#23061#23062#0" expanded="true" />
+            <element signature="e#23101#23812#0" expanded="true" />
+            <element signature="e#23811#23812#0" expanded="true" />
+            <element signature="e#23852#24260#0" expanded="true" />
+            <element signature="e#24259#24260#0" expanded="true" />
+            <element signature="e#24302#24600#0" expanded="true" />
+            <element signature="e#24599#24600#0" expanded="true" />
+>>>>>>> e78acf7b0934ef0297d7e3a96148836ec9521797
           </folding>
         </state>
       </provider>
@@ -2646,6 +2937,7 @@
           <folding>
             <element signature="e#10414#15066#0" expanded="true" />
             <element signature="e#15065#15066#0" expanded="true" />
+<<<<<<< HEAD
             <element signature="e#17720#17721#0" expanded="true" />
             <element signature="e#17744#17745#0" expanded="true" />
             <element signature="e#19914#20541#0" expanded="true" />
@@ -2664,6 +2956,26 @@
             <element signature="e#24248#24249#0" expanded="true" />
             <element signature="e#24291#24589#0" expanded="true" />
             <element signature="e#24588#24589#0" expanded="true" />
+=======
+            <element signature="e#17731#17732#0" expanded="true" />
+            <element signature="e#17755#17756#0" expanded="true" />
+            <element signature="e#19925#20552#0" expanded="true" />
+            <element signature="e#20551#20552#0" expanded="true" />
+            <element signature="e#20602#20910#0" expanded="true" />
+            <element signature="e#20909#20910#0" expanded="true" />
+            <element signature="e#20961#21275#0" expanded="true" />
+            <element signature="e#21274#21275#0" expanded="true" />
+            <element signature="e#21318#21686#0" expanded="true" />
+            <element signature="e#21685#21686#0" expanded="true" />
+            <element signature="e#21723#23062#0" expanded="true" />
+            <element signature="e#23061#23062#0" expanded="true" />
+            <element signature="e#23101#23812#0" expanded="true" />
+            <element signature="e#23811#23812#0" expanded="true" />
+            <element signature="e#23852#24260#0" expanded="true" />
+            <element signature="e#24259#24260#0" expanded="true" />
+            <element signature="e#24302#24600#0" expanded="true" />
+            <element signature="e#24599#24600#0" expanded="true" />
+>>>>>>> e78acf7b0934ef0297d7e3a96148836ec9521797
           </folding>
         </state>
       </provider>
@@ -2683,6 +2995,7 @@
           <folding>
             <element signature="e#10414#15066#0" expanded="true" />
             <element signature="e#15065#15066#0" expanded="true" />
+<<<<<<< HEAD
             <element signature="e#17720#17721#0" expanded="true" />
             <element signature="e#17744#17745#0" expanded="true" />
             <element signature="e#19914#20541#0" expanded="true" />
@@ -2701,6 +3014,26 @@
             <element signature="e#24248#24249#0" expanded="true" />
             <element signature="e#24291#24589#0" expanded="true" />
             <element signature="e#24588#24589#0" expanded="true" />
+=======
+            <element signature="e#17731#17732#0" expanded="true" />
+            <element signature="e#17755#17756#0" expanded="true" />
+            <element signature="e#19925#20552#0" expanded="true" />
+            <element signature="e#20551#20552#0" expanded="true" />
+            <element signature="e#20602#20910#0" expanded="true" />
+            <element signature="e#20909#20910#0" expanded="true" />
+            <element signature="e#20961#21275#0" expanded="true" />
+            <element signature="e#21274#21275#0" expanded="true" />
+            <element signature="e#21318#21686#0" expanded="true" />
+            <element signature="e#21685#21686#0" expanded="true" />
+            <element signature="e#21723#23062#0" expanded="true" />
+            <element signature="e#23061#23062#0" expanded="true" />
+            <element signature="e#23101#23812#0" expanded="true" />
+            <element signature="e#23811#23812#0" expanded="true" />
+            <element signature="e#23852#24260#0" expanded="true" />
+            <element signature="e#24259#24260#0" expanded="true" />
+            <element signature="e#24302#24600#0" expanded="true" />
+            <element signature="e#24599#24600#0" expanded="true" />
+>>>>>>> e78acf7b0934ef0297d7e3a96148836ec9521797
           </folding>
         </state>
       </provider>
@@ -2720,6 +3053,7 @@
           <folding>
             <element signature="e#10414#15066#0" expanded="true" />
             <element signature="e#15065#15066#0" expanded="true" />
+<<<<<<< HEAD
             <element signature="e#17720#17721#0" expanded="true" />
             <element signature="e#17744#17745#0" expanded="true" />
             <element signature="e#19914#20541#0" expanded="true" />
@@ -2738,6 +3072,26 @@
             <element signature="e#24248#24249#0" expanded="true" />
             <element signature="e#24291#24589#0" expanded="true" />
             <element signature="e#24588#24589#0" expanded="true" />
+=======
+            <element signature="e#17731#17732#0" expanded="true" />
+            <element signature="e#17755#17756#0" expanded="true" />
+            <element signature="e#19925#20552#0" expanded="true" />
+            <element signature="e#20551#20552#0" expanded="true" />
+            <element signature="e#20602#20910#0" expanded="true" />
+            <element signature="e#20909#20910#0" expanded="true" />
+            <element signature="e#20961#21275#0" expanded="true" />
+            <element signature="e#21274#21275#0" expanded="true" />
+            <element signature="e#21318#21686#0" expanded="true" />
+            <element signature="e#21685#21686#0" expanded="true" />
+            <element signature="e#21723#23062#0" expanded="true" />
+            <element signature="e#23061#23062#0" expanded="true" />
+            <element signature="e#23101#23812#0" expanded="true" />
+            <element signature="e#23811#23812#0" expanded="true" />
+            <element signature="e#23852#24260#0" expanded="true" />
+            <element signature="e#24259#24260#0" expanded="true" />
+            <element signature="e#24302#24600#0" expanded="true" />
+            <element signature="e#24599#24600#0" expanded="true" />
+>>>>>>> e78acf7b0934ef0297d7e3a96148836ec9521797
           </folding>
         </state>
       </provider>
@@ -2802,6 +3156,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.3573807">
           <caret line="85" column="13" selection-start-line="85" selection-start-column="13" selection-end-line="85" selection-end-column="13" />
+<<<<<<< HEAD
+=======
+          <folding />
+>>>>>>> e78acf7b0934ef0297d7e3a96148836ec9521797
         </state>
       </provider>
     </entry>
@@ -2813,6 +3171,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$USER_HOME$/Android/Sdk/sources/android-23/android/app/Activity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -2821,11 +3180,19 @@
             <element signature="e#208671#208672#0" expanded="true" />
             <element signature="e#208700#208701#0" expanded="true" />
           </folding>
+=======
+    <entry file="file://$USER_HOME$/Android/Sdk/sources/android-23/android/hardware/Camera.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="579" column="29" selection-start-line="579" selection-start-column="29" selection-end-line="579" selection-end-column="29" />
+          <folding />
+>>>>>>> e78acf7b0934ef0297d7e3a96148836ec9521797
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/cameratest/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state vertical-scroll-proportion="2.3144655">
           <caret line="542" column="16" selection-start-line="542" selection-start-column="16" selection-end-line="542" selection-end-column="16" />
           <folding>
@@ -2849,6 +3216,31 @@
             <element signature="e#24248#24249#0" expanded="true" />
             <element signature="e#24291#24589#0" expanded="true" />
             <element signature="e#24588#24589#0" expanded="true" />
+=======
+        <state vertical-scroll-proportion="0.17586207">
+          <caret line="264" column="0" selection-start-line="264" selection-start-column="0" selection-end-line="264" selection-end-column="0" />
+          <folding>
+            <element signature="e#10414#15066#0" expanded="true" />
+            <element signature="e#15065#15066#0" expanded="true" />
+            <element signature="e#17731#17732#0" expanded="true" />
+            <element signature="e#17755#17756#0" expanded="true" />
+            <element signature="e#19925#20552#0" expanded="true" />
+            <element signature="e#20551#20552#0" expanded="true" />
+            <element signature="e#20602#20910#0" expanded="true" />
+            <element signature="e#20909#20910#0" expanded="true" />
+            <element signature="e#20961#21275#0" expanded="true" />
+            <element signature="e#21274#21275#0" expanded="true" />
+            <element signature="e#21318#21686#0" expanded="true" />
+            <element signature="e#21685#21686#0" expanded="true" />
+            <element signature="e#21723#23062#0" expanded="true" />
+            <element signature="e#23061#23062#0" expanded="true" />
+            <element signature="e#23101#23812#0" expanded="true" />
+            <element signature="e#23811#23812#0" expanded="true" />
+            <element signature="e#23852#24260#0" expanded="true" />
+            <element signature="e#24259#24260#0" expanded="true" />
+            <element signature="e#24302#24600#0" expanded="true" />
+            <element signature="e#24599#24600#0" expanded="true" />
+>>>>>>> e78acf7b0934ef0297d7e3a96148836ec9521797
           </folding>
         </state>
       </provider>

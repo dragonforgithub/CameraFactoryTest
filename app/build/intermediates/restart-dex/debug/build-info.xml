@@ -4,26 +4,45 @@
     api-level="23"
     density="xxhdpi"
     format="7"
+<<<<<<< HEAD
     timestamp="195512323161907" >
 
     <task
         name="javac"
         duration="55" />
+=======
+    timestamp="187128717621554" >
+
+    <task
+        name="javac"
+        duration="742" />
+>>>>>>> e78acf7b0934ef0297d7e3a96148836ec9521797
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
+<<<<<<< HEAD
         duration="20" />
     <task
         name="verifier"
         duration="1" />
+=======
+        duration="113" />
+    <task
+        name="verifier"
+        duration="37" />
+>>>>>>> e78acf7b0934ef0297d7e3a96148836ec9521797
 
     <artifact
         location="/home/sheldon/StudioProjects/CameraTest_For_Hades/app/build/outputs/apk/app-debug.apk"
         type="MAIN" />
 
+<<<<<<< HEAD
     <build timestamp="195512323161907" >
+=======
+    <build timestamp="187128717621554" >
+>>>>>>> e78acf7b0934ef0297d7e3a96148836ec9521797
         <artifact
             location="/home/sheldon/StudioProjects/CameraTest_For_Hades/app/build/outputs/apk/app-debug.apk"
             type="MAIN" />
