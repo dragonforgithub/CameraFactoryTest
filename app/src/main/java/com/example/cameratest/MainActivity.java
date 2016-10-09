@@ -544,8 +544,6 @@ public class MainActivity extends Activity {
 				mCamera.stopPreview();
 				mCamera1.setPreviewCallback(null);
 				mCamera.setPreviewCallback(null);
-				mCamera1.lock();
-				mCamera.lock();
 				mCamera1.release();
 				mCamera.release();
 				mCamera1 = null;
@@ -555,7 +553,6 @@ public class MainActivity extends Activity {
 			if(mCamera != null){
 				mCamera.stopPreview();
 				mCamera.setPreviewCallback(null);
-				mCamera.lock();
 				mCamera.release();
 				mCamera = null;
 			}
