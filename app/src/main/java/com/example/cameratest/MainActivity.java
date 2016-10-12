@@ -74,7 +74,7 @@ public class MainActivity extends Activity {
 	private boolean isSupportFocuse=false;
 	private boolean isSupportFocuse_1=false;
 
-    public Handler mHandler;
+	public Handler mHandler;
 	private MyOrientationDetector mOrientationListener = null;
 
 	@Override
@@ -159,6 +159,46 @@ public class MainActivity extends Activity {
 	protected void onPause() {
 		super.onPause();
 		Log.v(TAG, "onPause");
+	}
+
+	@Override
+	protected void onDestroy() {
+		// TODO Auto-generated method stub
+		Log.v(TAG,"onDestroy enter");
+		if(mOrientationListener != null){
+			mOrientationListener.disable();
+		}
+
+		if(mCamReceiver!=null){
+			this.unregisterReceiver(mCamReceiver);
+			mCamReceiver=null;
+		}
+
+		if(mCameraMode == 0) {
+			if(mCamera != null && mCamera1 != null){
+				//mCamera1.stopPreview();
+				//mCamera.stopPreview();
+				//mCamera1.setPreviewCallback(null);
+				//mCamera.setPreviewCallback(null);
+				mCamera.release();
+				mCamera1.release();
+				mCamera = null;
+				mCamera1 = null;
+			}
+		}else {
+			if(mCamera != null){
+				//mCamera.stopPreview();
+				//mCamera.setPreviewCallback(null);
+				mCamera.release();
+				mCamera = null;
+			}
+		}
+
+		wlog("close camera finish");
+		Log.e(TAG,"onDestroy&System.exit(0):");
+		super.onDestroy();
+		finish();
+		System.exit(0);
 	}
 
 	@Override
@@ -341,17 +381,17 @@ public class MainActivity extends Activity {
 			Log.i(TAG,"onResume done.");
 		} catch (Exception e) {
 			// TODO: handle exception
-			 wlog("camera open fail");
-			 wlog(e.getMessage());
-			 Toast.makeText(this, "camera open fail", Toast.LENGTH_LONG).show();
-			 finish();
-			 return;
+			wlog("camera open fail");
+			wlog(e.getMessage());
+			Toast.makeText(this, "camera open fail", Toast.LENGTH_LONG).show();
+			finish();
+			return;
 		}
 
 		if(mHandler == null){
-			    Log.v(TAG, "mCamReceiver==null");
+			Log.v(TAG, "mCamReceiver==null");
 
-			    mHandler = new Handler() {
+			mHandler = new Handler() {
 				public void handleMessage(Message msg)
 				{
 					switch (msg.what) {
@@ -528,45 +568,6 @@ public class MainActivity extends Activity {
 		}
 	}
 
-	@Override
-	protected void onDestroy() {
-		// TODO Auto-generated method stub
-		super.onDestroy();
-		Log.v(TAG,"onDestroy enter");
-
-		if(mOrientationListener != null){
-			mOrientationListener.disable();
-		}
-
-		if(mCameraMode == 0) {
-			if(mCamera != null && mCamera1 != null){
-				mCamera1.stopPreview();
-				mCamera.stopPreview();
-				mCamera1.setPreviewCallback(null);
-				mCamera.setPreviewCallback(null);
-				mCamera1.release();
-				mCamera.release();
-				mCamera1 = null;
-				mCamera = null;
-			}
-		}else {
-			if(mCamera != null){
-				mCamera.stopPreview();
-				mCamera.setPreviewCallback(null);
-				mCamera.release();
-				mCamera = null;
-			}
-		}
-
-		if(mCamReceiver!=null){
-			this.unregisterReceiver(mCamReceiver);
-			mCamReceiver=null;
-		}
-
-		Log.e(TAG,"release camera done.");
-		wlog("close camera finish");
-		finish();
-	}
 
 	private int FindBackCamera0() {
 		Camera.CameraInfo cameraInfo = new Camera.CameraInfo();
@@ -849,37 +850,37 @@ public class MainActivity extends Activity {
 		}
 	};
 
-		public  void wlog(String msg)
-		{
-			if(msg!=null){
-				Log.v(TAG, msg+" to "+mLogPath);
-			}
-			WriteLog.appendLog(getApplicationContext(),msg, mLogPath);
+	public  void wlog(String msg)
+	{
+		if(msg!=null){
+			Log.v(TAG, msg+" to "+mLogPath);
+		}
+		WriteLog.appendLog(getApplicationContext(),msg, mLogPath);
+	}
+
+
+	private void takePic(int focus_need,int raw_need)
+	{
+		Log.e(TAG,"takePic enter:");
+		if(mSavaPath==null||mSavaPath.length()==0){
+			mbTkPicture=false;
+			mbTkPicture_1=false;
+			Toast.makeText(MainActivity.this, "picture path no input parameter", Toast.LENGTH_LONG).show();
+			return;
 		}
 
-
-		private void takePic(int focus_need,int raw_need)
-		{
-			Log.e(TAG,"takePic enter:");
-			if(mSavaPath==null||mSavaPath.length()==0){
-				mbTkPicture=false;
-				mbTkPicture_1=false;
-				Toast.makeText(MainActivity.this, "picture path no input parameter", Toast.LENGTH_LONG).show();
-				return;
+		if(mbTkPicture && mbTkPicture_1){
+			Toast.makeText(MainActivity.this, "last take picture failed,retry...", Toast.LENGTH_LONG).show();
+			//if you need protect take picture, open this:
+			//return;
+		}else{
+			mbTkPicture = true;
+			if(mCameraMode == 0 && mCamera1 != null) {
+				mbTkPicture_1 = true;
 			}
+		}
 
-			if(mbTkPicture && mbTkPicture_1){
-				Toast.makeText(MainActivity.this, "last take picture failed,retry...", Toast.LENGTH_LONG).show();
-				//if you need protect take picture, open this:
-				//return;
-			}else{
-				mbTkPicture = true;
-				if(mCameraMode == 0 && mCamera1 != null) {
-					mbTkPicture_1 = true;
-				}
-			}
-
-			Parameters parameters = mCamera.getParameters();
+		Parameters parameters = mCamera.getParameters();
 			/*List<Integer> mSupportedPictureFormats = parameters.getSupportedPictureFormats();
 			for (int i = 0; i < mSupportedPictureFormats.size(); ++i) {
 				Integer format = mSupportedPictureFormats.get(i);
@@ -906,77 +907,77 @@ public class MainActivity extends Activity {
 			}
 			*/
 
-			if(raw_need==1)
-			{
-				try {
-					//mCamera.stopPreview();
-					wlog("take raw pic");
-					//if(mCameraMode == 0 && mCamera1 != null) {
-					//	mCamera1.stopPreview();
-					//}
-					//mCamera.startPreview();
-					mCamera.takePicture(null, null, mRawPictureCallback);
-				} catch (Exception e) {
-					// TODO: handle exception
-					mbTkPicture=false;
-					mbTkPicture_1=false;
-					Log.v(TAG, e.getMessage());
-					wlog(e.getMessage());
-				}
-			}
-			else if(focus_need==1 && isSupportFocuse)
-			{
-
-				mCamera.cancelAutoFocus(); //reset focusState=0
-				parameters.setFocusMode(Parameters.FOCUS_MODE_AUTO);
-				mCamera.setParameters(parameters);
-
-				if(mCameraMode == 0 && mCamera1 != null && isSupportFocuse_1) {
-					mCamera1.cancelAutoFocus(); //reset focusState=0
-					Parameters parameters_1 = mCamera1.getParameters();
-					parameters_1.setFocusMode(Parameters.FOCUS_MODE_AUTO);
-					mCamera1.setParameters(parameters_1);
-				}
-
-				try {
-						setFocusArea(mCameraMode);
-						Log.e(TAG, "setFocusArea end");
-						mCamera.autoFocus(mAutoFocusCallback);
-						Log.e(TAG, "autoFocus end");
-				} catch (Exception e) {
-						// TODO: handle exception
-						Log.e(TAG, "autoFocus error!");
-						mbTkPicture=false;
-						mbTkPicture_1=false;
-						wlog(e.getMessage());
-				}
-			}
-			else{
-				try {
-						Log.i(TAG,"take picture start without af");
-						//if(mCameraMode == 0 && mCamera1 != null) {
-						//	mCamera1.stopPreview();
-						//}
-						mCamera.takePicture(null, null, mPictureCallback);
-				} catch (Exception e) {
-						// TODO: handle exception
-						mbTkPicture=false;
-						mbTkPicture_1=false;
-						Log.v(TAG, e.getMessage());
-						wlog(e.getMessage());
-				}
+		if(raw_need==1)
+		{
+			try {
+				//mCamera.stopPreview();
+				wlog("take raw pic");
+				//if(mCameraMode == 0 && mCamera1 != null) {
+				//	mCamera1.stopPreview();
+				//}
+				//mCamera.startPreview();
+				mCamera.takePicture(null, null, mRawPictureCallback);
+			} catch (Exception e) {
+				// TODO: handle exception
+				mbTkPicture=false;
+				mbTkPicture_1=false;
+				Log.v(TAG, e.getMessage());
+				wlog(e.getMessage());
 			}
 		}
+		else if(focus_need==1 && isSupportFocuse)
+		{
 
-		public void setFocusArea(int CameraMode)
-		 {
-			if(Build.VERSION.SDK_INT>=14 )
+			mCamera.cancelAutoFocus(); //reset focusState=0
+			parameters.setFocusMode(Parameters.FOCUS_MODE_AUTO);
+			mCamera.setParameters(parameters);
+
+			if(mCameraMode == 0 && mCamera1 != null && isSupportFocuse_1) {
+				mCamera1.cancelAutoFocus(); //reset focusState=0
+				Parameters parameters_1 = mCamera1.getParameters();
+				parameters_1.setFocusMode(Parameters.FOCUS_MODE_AUTO);
+				mCamera1.setParameters(parameters_1);
+			}
+
+			try {
+				setFocusArea(mCameraMode);
+				Log.e(TAG, "setFocusArea end");
+				mCamera.autoFocus(mAutoFocusCallback);
+				Log.e(TAG, "autoFocus end");
+			} catch (Exception e) {
+				// TODO: handle exception
+				Log.e(TAG, "autoFocus error!");
+				mbTkPicture=false;
+				mbTkPicture_1=false;
+				wlog(e.getMessage());
+			}
+		}
+		else{
+			try {
+				Log.i(TAG,"take picture start without af");
+				//if(mCameraMode == 0 && mCamera1 != null) {
+				//	mCamera1.stopPreview();
+				//}
+				mCamera.takePicture(null, null, mPictureCallback);
+			} catch (Exception e) {
+				// TODO: handle exception
+				mbTkPicture=false;
+				mbTkPicture_1=false;
+				Log.v(TAG, e.getMessage());
+				wlog(e.getMessage());
+			}
+		}
+	}
+
+	public void setFocusArea(int CameraMode)
+	{
+		if(Build.VERSION.SDK_INT>=14 )
+		{
+			Parameters parameters=mCamera.getParameters();
+			int focusAreaNum=parameters.getMaxNumFocusAreas() ;
+			Log.e(TAG,"focusAreaNum="+focusAreaNum+", CameraMode="+CameraMode);
+			if(focusAreaNum>0 )
 			{
-				Parameters parameters=mCamera.getParameters();
-				int focusAreaNum=parameters.getMaxNumFocusAreas() ;
-				Log.e(TAG,"focusAreaNum="+focusAreaNum+", CameraMode="+CameraMode);
-				if(focusAreaNum>0 )
-				{
 					/*
 					List<Area> areallist=parameters.getFocusAreas();
 					Log.e(TAG,"areallist="+areallist);
@@ -990,33 +991,33 @@ public class MainActivity extends Activity {
 						}
 					}else{
 					*/
-						ArrayList<Area> focusArea = new ArrayList<Area>();
-						focusArea.add(new Area(new Rect(), 1000));
-						Log.e(TAG,"set focusArea start:");
+				ArrayList<Area> focusArea = new ArrayList<Area>();
+				focusArea.add(new Area(new Rect(), 1000));
+				Log.e(TAG,"set focusArea start:");
 
-						if(CameraMode == 0 && mCamera1 != null){
-							//focusArea.get(0).rect.set(-500, -250, 0, 250);
-							focusArea.get(0).rect.set(-250, -250, 250, 250);
-							parameters.setFocusAreas(focusArea);
-							mCamera.setParameters(parameters);
+				if(CameraMode == 0 && mCamera1 != null){
+					//focusArea.get(0).rect.set(-500, -250, 0, 250);
+					focusArea.get(0).rect.set(-250, -250, 250, 250);
+					parameters.setFocusAreas(focusArea);
+					mCamera.setParameters(parameters);
 
-							Parameters parameters_1=mCamera1.getParameters();
-							//focusArea.get(0).rect.set(0, -250, 500, 250);
-							focusArea.get(0).rect.set(-250, -250, 250, 250);
-							parameters_1.setFocusAreas(focusArea);
-							mCamera1.setParameters(parameters_1);
-						}else{
-							focusArea.get(0).rect.set(-250, -250, 250, 250);
-							parameters.setFocusAreas(focusArea);
-							mCamera.setParameters(parameters);
-						}
-						Log.e(TAG,"set focusArea end.");
-					//}
+					Parameters parameters_1=mCamera1.getParameters();
+					//focusArea.get(0).rect.set(0, -250, 500, 250);
+					focusArea.get(0).rect.set(-250, -250, 250, 250);
+					parameters_1.setFocusAreas(focusArea);
+					mCamera1.setParameters(parameters_1);
+				}else{
+					focusArea.get(0).rect.set(-250, -250, 250, 250);
+					parameters.setFocusAreas(focusArea);
+					mCamera.setParameters(parameters);
 				}
+				Log.e(TAG,"set focusArea end.");
+				//}
+			}
 
-				int meteringAreaNum = parameters.getMaxNumMeteringAreas();
-				Log.e(TAG,"max metering area = " + meteringAreaNum);
-				if (meteringAreaNum > 0) {
+			int meteringAreaNum = parameters.getMaxNumMeteringAreas();
+			Log.e(TAG,"max metering area = " + meteringAreaNum);
+			if (meteringAreaNum > 0) {
 					/*
 					List<Area> meteringAreaList = parameters.getMeteringAreas();
 					if (meteringAreaList != null) {
@@ -1028,27 +1029,27 @@ public class MainActivity extends Activity {
 						}
 					} else {
 					*/
-						ArrayList<Area> meteringArea = new ArrayList<Area>();
-						meteringArea.add(new Area(new Rect(), 1000));
+				ArrayList<Area> meteringArea = new ArrayList<Area>();
+				meteringArea.add(new Area(new Rect(), 1000));
 
-						if(mCameraMode == 0 && mCamera1 != null) {
-							//meteringArea.get(0).rect.set(-500, -250, 0, 250);
-							meteringArea.get(0).rect.set(-250, -250, 250, 250);
-							parameters.setMeteringAreas(meteringArea);
-							mCamera.setParameters(parameters);
+				if(mCameraMode == 0 && mCamera1 != null) {
+					//meteringArea.get(0).rect.set(-500, -250, 0, 250);
+					meteringArea.get(0).rect.set(-250, -250, 250, 250);
+					parameters.setMeteringAreas(meteringArea);
+					mCamera.setParameters(parameters);
 
-							Parameters parameters_1=mCamera1.getParameters();
-							//meteringArea.get(0).rect.set(0, -250, 500, 250);
-							meteringArea.get(0).rect.set(-250, -250, 250, 250);
-							parameters_1.setMeteringAreas(meteringArea);
-							mCamera1.setParameters(parameters_1);
-						}else{
-							meteringArea.get(0).rect.set(-250, -250, 250, 250);
-							parameters.setMeteringAreas(meteringArea);
-							mCamera.setParameters(parameters);
-						}
-					//}
+					Parameters parameters_1=mCamera1.getParameters();
+					//meteringArea.get(0).rect.set(0, -250, 500, 250);
+					meteringArea.get(0).rect.set(-250, -250, 250, 250);
+					parameters_1.setMeteringAreas(meteringArea);
+					mCamera1.setParameters(parameters_1);
+				}else{
+					meteringArea.get(0).rect.set(-250, -250, 250, 250);
+					parameters.setMeteringAreas(meteringArea);
+					mCamera.setParameters(parameters);
 				}
+				//}
 			}
 		}
+	}
 }
