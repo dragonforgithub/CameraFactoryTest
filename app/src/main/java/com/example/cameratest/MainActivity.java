@@ -531,9 +531,7 @@ public class MainActivity extends Activity {
 	@Override
 	protected void onDestroy() {
 		// TODO Auto-generated method stub
-		super.onDestroy();
 		Log.v(TAG,"onDestroy enter");
-
 		if(mOrientationListener != null){
 			mOrientationListener.disable();
 		}
@@ -563,9 +561,10 @@ public class MainActivity extends Activity {
 			mCamReceiver=null;
 		}
 
-		Log.e(TAG,"release camera done.");
 		wlog("close camera finish");
-		finish();
+		Log.e(TAG,"onDestroy&System.exit(0):");
+		super.onDestroy();
+		System.exit(0);
 	}
 
 	private int FindBackCamera0() {
