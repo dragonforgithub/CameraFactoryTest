@@ -197,7 +197,6 @@ public class MainActivity extends Activity {
 		wlog("close camera finish");
 		Log.e(TAG,"onDestroy&System.exit(0):");
 		super.onDestroy();
-		finish();
 		System.exit(0);
 	}
 
@@ -567,48 +566,6 @@ public class MainActivity extends Activity {
 			Log.v(TAG, "setHandler done.");
 		}
 	}
-
-<<<<<<< HEAD
-=======
-	@Override
-	protected void onDestroy() {
-		// TODO Auto-generated method stub
-		Log.v(TAG,"onDestroy enter");
-		if(mOrientationListener != null){
-			mOrientationListener.disable();
-		}
-
-		if(mCameraMode == 0) {
-			if(mCamera != null && mCamera1 != null){
-				mCamera1.stopPreview();
-				mCamera.stopPreview();
-				mCamera1.setPreviewCallback(null);
-				mCamera.setPreviewCallback(null);
-				mCamera1.release();
-				mCamera.release();
-				mCamera1 = null;
-				mCamera = null;
-			}
-		}else {
-			if(mCamera != null){
-				mCamera.stopPreview();
-				mCamera.setPreviewCallback(null);
-				mCamera.release();
-				mCamera = null;
-			}
-		}
-
-		if(mCamReceiver!=null){
-			this.unregisterReceiver(mCamReceiver);
-			mCamReceiver=null;
-		}
-
-		wlog("close camera finish");
-		Log.e(TAG,"onDestroy&System.exit(0):");
-		super.onDestroy();
-		System.exit(0);
-	}
->>>>>>> c98fbfe326e501c67fc74c9f66b8d3a47f529a80
 
 	private int FindBackCamera0() {
 		Camera.CameraInfo cameraInfo = new Camera.CameraInfo();
