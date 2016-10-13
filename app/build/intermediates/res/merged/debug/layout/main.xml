@@ -12,13 +12,13 @@
         <android.view.SurfaceView
             android:id="@+id/camera_preview"
             android:layout_width="match_parent"
-            android:layout_height="280dp"
+            android:layout_height="300dp"
             android:layout_weight="0.5" />
 
         <android.view.SurfaceView
             android:id="@+id/camera_preview1"
             android:layout_width="match_parent"
-            android:layout_height="280dp"
+            android:layout_height="300dp"
             android:layout_weight="0.5"
             android:layout_gravity="center_horizontal|bottom" />
 

@@ -176,14 +176,14 @@ public class MainActivity extends Activity {
 
 		if(mCameraMode == 0) {
 			if(mCamera != null && mCamera1 != null){
-				//mCamera1.stopPreview();
 				//mCamera.stopPreview();
+				//mCamera1.stopPreview();
 				//mCamera1.setPreviewCallback(null);
 				//mCamera.setPreviewCallback(null);
-				mCamera.release();
 				mCamera1.release();
-				mCamera = null;
+				mCamera.release();
 				mCamera1 = null;
+				mCamera = null;
 			}
 		}else {
 			if(mCamera != null){
@@ -197,6 +197,7 @@ public class MainActivity extends Activity {
 		wlog("close camera finish");
 		Log.e(TAG,"onDestroy&System.exit(0):");
 		super.onDestroy();
+		//finish();
 		System.exit(0);
 	}
 
