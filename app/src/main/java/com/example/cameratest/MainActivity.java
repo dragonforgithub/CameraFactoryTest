@@ -366,6 +366,7 @@ public class MainActivity extends Activity {
 				mPreview = new CameraPreview(this, mCamera ,surfaceView, mOpenCamIndex, mCameraMode);
 				mPreview.setlogPath(mLogPath);
 
+				parameters_1.setPictureFormat(256);  //0x11:NV21 / 0x100 : JPEG
 				mCamera1.setParameters(parameters_1);
 				surfaceView1 = (SurfaceView) findViewById(R.id.camera_preview1);
 				mPreview1 = new CameraPreview(this, mCamera1 ,surfaceView1, mOpenCamIndex1, mCameraMode);
@@ -926,6 +927,17 @@ public class MainActivity extends Activity {
 		}
 		else if(focus_need==1 && isSupportFocuse)
 		{
+
+			if(isSupportFocuse){
+				parameters.setFocusMode(Parameters.FOCUS_MODE_INFINITY);
+				mCamera.setParameters(parameters);
+			}
+
+			if(isSupportFocuse_1 && mCameraMode == 0 && mCamera1 != null){
+				Parameters parameters_1 = mCamera1.getParameters();
+				parameters_1.setFocusMode(Parameters.FOCUS_MODE_INFINITY);
+				mCamera1.setParameters(parameters_1);
+			}
 
 			mCamera.cancelAutoFocus(); //reset focusState=0
 			parameters.setFocusMode(Parameters.FOCUS_MODE_AUTO);
