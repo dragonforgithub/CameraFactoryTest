@@ -91,8 +91,19 @@ public class CameraPreview extends SurfaceView implements SurfaceHolder.Callback
         // start preview with new settings
         try {
             mCamera.setPreviewDisplay(mHolder);
-            mCamera.startPreview();
-            Log.e(TAG,"[ok] start preview : "+cameraID);
+            /*
+            if(mCameraMode == 0){
+                if(cameraID == 0) {
+                    mCamera.startPreview();
+                    Log.i(TAG, "[DualMode] only start preview : " + cameraID);
+                } else{
+                    Log.i(TAG, "[DualMode] not start preview : " + cameraID);
+                }
+            }else{
+            */
+                mCamera.startPreview();
+                Log.i(TAG,"[ok] start preview : "+cameraID);
+            //}
             wlog("finish startPreview"+cameraID);
         } catch (Exception e){
             Log.e(TAG,"[fail] start preview : "+cameraID);
@@ -113,7 +124,7 @@ public class CameraPreview extends SurfaceView implements SurfaceHolder.Callback
             List<Size> mSupportedPictureSizes = parameters.getSupportedPictureSizes();
             for (int i = 0; i < mSupportedPictureSizes.size(); ++i) {
                 Size size = mSupportedPictureSizes.get(i);
-                Log.i(TAG, "mSupportedPictureSizes:" + size.width + "x" + size.height );
+                //Log.i(TAG, "mSupportedPictureSizes:" + size.width + "x" + size.height );
                 if (size.width > lw || size.height > lh) {
                     lw = size.width;
                     lh = size.height;
@@ -130,11 +141,11 @@ public class CameraPreview extends SurfaceView implements SurfaceHolder.Callback
             List<Size> mSupportedPreviewSizes = parameters.getSupportedPreviewSizes();
             for (int i = 0; i < mSupportedPreviewSizes.size(); ++i) {
                 Size size = mSupportedPreviewSizes.get(i);
-                Log.i(TAG, "mSupportedPreviewSizes:" + size.width + "x" + size.height );
+                //Log.i(TAG, "mSupportedPreviewSizes:" + size.width + "x" + size.height );
                 if (size.width > lw || size.height > lh) {
                     preScale = (float)size.width/(float)size.height;
                     diff = Math.abs(preScale - picScale);
-                    Log.v(TAG, "Scale diff = " + diff); //keep preview FOV same as picture
+                    //Log.v(TAG, "Scale diff = " + diff); //keep preview FOV same as picture
                     if(Math.abs(diff) < 0.1 ){
                         lw = size.width;
                         lh = size.height;

@@ -133,8 +133,7 @@ public class MainActivity extends Activity {
 
 		//get current camera number and information
 		mCameraNumber = Camera.getNumberOfCameras();
-		Log.e(TAG,"exist camera number : "+mCameraNumber);
-
+		Log.i(TAG,"exist camera number : "+mCameraNumber);
 
 		String Model=Build.MODEL;
 		Log.v(TAG, "phone model is "+Model);
@@ -142,17 +141,15 @@ public class MainActivity extends Activity {
 		Intent intent = getIntent();
 		mCameraMode = intent.getIntExtra("cameramode", -1);
 		mLogPath = intent.getStringExtra("logpath");
+		Log.v(TAG, "CameraID="+mCameraMode+";log path="+mLogPath);
 
 		if(mCameraMode==-1 || mLogPath==null || mCameraNumber==0){
-			finish();
-			return;
+			System.exit(0);
 		}
 
 		Log.i(TAG,"mOrientationListener start:");
 		mOrientationListener = new MyOrientationDetector(this);
 		mOrientationListener.enable();
-
-		Log.v(TAG, "CameraID="+mCameraMode+";log path="+mLogPath);
 	}
 
 	@Override
@@ -174,10 +171,12 @@ public class MainActivity extends Activity {
 			mCamReceiver=null;
 		}
 
+
 		if(mCameraMode == 0) {
 			if(mCamera != null && mCamera1 != null){
-				//mCamera.stopPreview();
+
 				//mCamera1.stopPreview();
+				//mCamera.stopPreview();
 				//mCamera1.setPreviewCallback(null);
 				//mCamera.setPreviewCallback(null);
 				mCamera1.release();
@@ -194,11 +193,16 @@ public class MainActivity extends Activity {
 			}
 		}
 
-		wlog("close camera finish");
 		Log.e(TAG,"onDestroy&System.exit(0):");
 		super.onDestroy();
-		//finish();
-		System.exit(0);
+		//System.exit(0) after 300ms
+		//new Handler().postDelayed(new Runnable(){
+			//public void run() {
+				//execute the task
+				wlog("close camera finish");
+				System.exit(0);
+			//}
+		//}, 100);
 	}
 
 	@Override
@@ -285,9 +289,9 @@ public class MainActivity extends Activity {
 				Log.e(TAG, "supportedFlashMode : Null");
 			}else {
 				isSupportFlash = true;
-				for(int i=0 ;i<supportedFlashMode.size(); i++){
-					Log.e(TAG, "supportedFlashMode : "+supportedFlashMode.get(i).toString());
-				}
+				//for(int i=0 ;i<supportedFlashMode.size(); i++){
+				//	Log.i(TAG, "supportedFlashMode : "+supportedFlashMode.get(i).toString());
+				//}
 			}
 
 			if(mCameraMode == 0 && parameters_1 != null) {
@@ -297,9 +301,9 @@ public class MainActivity extends Activity {
 					Log.e(TAG, "supportedFlashMode : Null");
 				}else {
 					isSupportFlash_1 = true;
-					for(int i=0 ;i<supportedFlashMode_1.size(); i++){
-						Log.e(TAG, "supportedFlashMode_1 : "+supportedFlashMode_1.get(i).toString());
-					}
+					//for(int i=0 ;i<supportedFlashMode_1.size(); i++){
+					//	Log.i(TAG, "supportedFlashMode_1 : "+supportedFlashMode_1.get(i).toString());
+					//}
 				}
 			}
 
@@ -309,7 +313,7 @@ public class MainActivity extends Activity {
 				Log.e(TAG, "supportedFocuseMode : Null");
 			}else {
 				for(int i=0;i<supportedFocuseMode.size();i++){
-					Log.e(TAG, "supportedFocuseMode : "+supportedFocuseMode.get(i).toString());
+					//Log.i(TAG, "supportedFocuseMode : "+supportedFocuseMode.get(i).toString());
 					if(supportedFocuseMode.get(i).toString().equals("auto")){
 						isSupportFocuse = true;
 					}
@@ -323,7 +327,7 @@ public class MainActivity extends Activity {
 					Log.e(TAG, "supportedFocuseMode_1 : Null");
 				}else {
 					for(int i=0;i<supportedFocuseMode_1.size();i++){
-						Log.e(TAG, "supportedFocuseMode_1 : "+supportedFocuseMode_1.get(i).toString());
+						//Log.i(TAG, "supportedFocuseMode_1 : "+supportedFocuseMode_1.get(i).toString());
 						if(supportedFocuseMode_1.get(i).toString().equals("auto")){
 							isSupportFocuse_1 = true;
 						}
@@ -378,8 +382,8 @@ public class MainActivity extends Activity {
 				mPreview.setlogPath(mLogPath);
 			}
 
-			wlog("camera open finish");
 			Log.i(TAG,"onResume done.");
+			wlog("camera open finish");
 		} catch (Exception e) {
 			// TODO: handle exception
 			wlog("camera open fail");
@@ -401,11 +405,9 @@ public class MainActivity extends Activity {
 
 							onDestroy();
 							break;
-
 						case HandleMsg.MSG_SET_SAVE_PATH:
 
 							mSavaPath=(String)msg.obj;
-
 							break;
 						case HandleMsg.MSG_TAKE_PIC:
 
@@ -416,7 +418,6 @@ public class MainActivity extends Activity {
 
 							takePic(focusneed,rawneed);
 							break;
-
 						case HandleMsg.MSG_SET_PARAMETER:
 
 							Bundle bundle=msg.getData();
@@ -477,8 +478,8 @@ public class MainActivity extends Activity {
 										if(isSupportFocuse){
 											parameters.setFocusMode(Parameters.FOCUS_MODE_AUTO);
 											mCamera.setParameters(parameters);
+											Log.i(TAG, "do Focus wide :");
 											setFocusArea(mCameraMode);
-											Log.e(TAG, "do Focus :");
 											mCamera.autoFocus(mAutoFocusCallbackParameter);
 										}
 
@@ -486,8 +487,8 @@ public class MainActivity extends Activity {
 											Parameters parameters_1 = mCamera1.getParameters();
 											parameters_1.setFocusMode(Parameters.FOCUS_MODE_AUTO);
 											mCamera1.setParameters(parameters_1);
+											Log.i(TAG, "do Focus tele :");
 											setFocusArea(mCameraMode);
-											Log.e(TAG, "do Focus tele :");
 											mCamera1.autoFocus(mAutoFocusCallbackPrameter_1);
 										}
 										break;
@@ -574,7 +575,7 @@ public class MainActivity extends Activity {
 		for (int camIdx = 0; camIdx < mCameraNumber; camIdx++) {
 			Camera.getCameraInfo(camIdx, cameraInfo); // get camerainfo
 			if (cameraInfo.facing == Camera.CameraInfo.CAMERA_FACING_BACK) {
-				Log.e(TAG,"FindBackCamera0 index =  "+camIdx);
+				Log.i(TAG,"FindBackCamera0 index =  "+camIdx);
 				return camIdx;
 			}
 		}
@@ -589,7 +590,7 @@ public class MainActivity extends Activity {
 			Camera.getCameraInfo(camIdx, cameraInfo); // get camerainfo
 			if (cameraInfo.facing == Camera.CameraInfo.CAMERA_FACING_BACK) {
 				if(findFirst == true || !mRear0Exist){
-					Log.e(TAG,"FindBackCamera1 index =  "+camIdx);
+					Log.i(TAG,"FindBackCamera1 index =  "+camIdx);
 					return camIdx;
 				}else {
 					findFirst=true;
@@ -604,7 +605,7 @@ public class MainActivity extends Activity {
 		for (int camIdx = 0; camIdx < mCameraNumber; camIdx++) {
 			Camera.getCameraInfo(camIdx, cameraInfo); // get camerainfo
 			if (cameraInfo.facing == Camera.CameraInfo.CAMERA_FACING_FRONT) {
-				Log.e(TAG,"FindFrontCamera index =  "+camIdx);
+				Log.i(TAG,"FindFrontCamera index =  "+camIdx);
 				return camIdx;
 			}
 		}
@@ -640,7 +641,7 @@ public class MainActivity extends Activity {
 				return;
 			}
 
-			Log.e(TAG,"mPicOrientation:"+mPicOrientation);
+			//Log.e(TAG,"mPicOrientation:"+mPicOrientation);
 
 			if(mPicOrientation == 0){
 				mPicOrientation = 90;
@@ -682,9 +683,7 @@ public class MainActivity extends Activity {
 			else {
 				Log.e(TAG,"error camera mode!");
 			}
-
-			Log.i(TAG,"set picture Orientation:"+mPicOrientation);
-			//Log.i(TAG,"set display Orientation:"+mDisOrientation);
+			//Log.i(TAG,"set picture Orientation:"+mPicOrientation);
 		}
 	}
 
@@ -692,7 +691,7 @@ public class MainActivity extends Activity {
 		@Override
 		public void onAutoFocus(boolean success, Camera camera) {
 			// TODO Auto-generated method stub
-			Log.e(TAG, "mAutoFocusCallback:");
+			Log.d(TAG, "mAutoFocusCallback:");
 			if(success==false){
 				Log.e(TAG, "auto focus fail");
 				wlog("auto focus fail");
@@ -700,10 +699,10 @@ public class MainActivity extends Activity {
 
 			if(mCameraMode == 0 && mCamera1 != null) {
 				if(isSupportFocuse_1){
-					Log.e(TAG, "is SupportFocuse_1 :");
+					Log.i(TAG, "is SupportFocuse_1 :");
 					mCamera1.autoFocus(mAutoFocus_1Callback);
 				}else {
-					Log.e(TAG, "not SupportFocuse_1 :");
+					Log.i(TAG, "not SupportFocuse_1 :");
 					mCamera.takePicture(null, null, mPictureCallback);
 				}
 			}else{
@@ -712,11 +711,25 @@ public class MainActivity extends Activity {
 		}
 	};
 
+	AutoFocusCallback mAutoFocus_1Callback=new Camera.AutoFocusCallback() {
+		@Override
+		public void onAutoFocus(boolean success, Camera camera) {
+			// TODO Auto-generated method stub
+			Log.d(TAG, "mAutoFocus_1Callback:");
+			if(success==false){
+				Log.e(TAG, "auto focus_1 fail");
+				wlog("auto focus_1 fail");
+			}
+			//mCamera1.stopPreview();
+			mCamera.takePicture(null, null, mPictureCallback);
+		}
+	};
+
 	AutoFocusCallback mAutoFocusCallbackParameter=new Camera.AutoFocusCallback() {
 		@Override
 		public void onAutoFocus(boolean success, Camera camera) {
 			// TODO Auto-generated method stub
-			Log.e(TAG, "mAutoFocusCallback:parameter");
+			Log.d(TAG, "mAutoFocusCallback:parameter");
 			if(success==false){
 				Log.e(TAG, "parameter auto focus fail");
 				wlog("parameter auto focus fail");
@@ -728,7 +741,7 @@ public class MainActivity extends Activity {
 		@Override
 		public void onAutoFocus(boolean success, Camera camera) {
 			// TODO Auto-generated method stub
-			Log.e(TAG, "mAutoFocusCallback_1:parameter");
+			Log.d(TAG, "mAutoFocusCallback_1:parameter");
 			if(success==false){
 				Log.e(TAG, "parameter_1 auto focus fail");
 				wlog("parameter_1 auto focus fail");
@@ -736,25 +749,13 @@ public class MainActivity extends Activity {
 		}
 	};
 
-	AutoFocusCallback mAutoFocus_1Callback=new Camera.AutoFocusCallback() {
-		@Override
-		public void onAutoFocus(boolean success, Camera camera) {
-			// TODO Auto-generated method stub
-			Log.e(TAG, "mAutoFocus_1Callback:");
-			if(success==false){
-				Log.e(TAG, "auto focus_1 fail");
-				wlog("auto focus_1 fail");
-			}
-			//mCamera1.stopPreview();
-			mCamera.takePicture(null, null, mPictureCallback);
-		}
-	};
+
 
 	PictureCallback mPictureCallback=new Camera.PictureCallback() {
 		@Override
 		public void onPictureTaken(byte[] data, Camera camera) {
 			// TODO Auto-generated method stub
-			Log.e(TAG, "onPictureTaken");
+			Log.d(TAG, "onPictureTaken");
 			String savaPath = mSavaPath;
 			try {
 				if (data != null && mSavaPath != null){
@@ -771,7 +772,6 @@ public class MainActivity extends Activity {
 				wlog(e.getMessage());
 			}
 
-			Log.e(TAG, "takePicture finish to : "+savaPath);
 			wlog("takePicture finish");
 			mbTkPicture=false;
 
@@ -799,7 +799,7 @@ public class MainActivity extends Activity {
 		@Override
 		public void onPictureTaken(byte[] data, Camera camera) {
 			// TODO Auto-generated method stub
-			Log.e(TAG, "onPictureTaken_1");
+			Log.d(TAG, "onPictureTaken_1");
 			String savaPath="";
 			try {
 				if (data != null && mSavaPath != null){
@@ -814,11 +814,10 @@ public class MainActivity extends Activity {
 				wlog(e.getMessage());
 			}
 
-			Log.e(TAG, "takePicture_1 finish to : "+savaPath);
 			wlog("takePicture_1 finish");
 			mbTkPicture_1=false;
 			//mCamera.startPreview();
-			mCamera1.startPreview();
+			//mCamera1.startPreview();
 		}
 	};
 
@@ -826,7 +825,6 @@ public class MainActivity extends Activity {
 		@Override
 		public void onPictureTaken(byte[] data, Camera camera) {
 			// TODO Auto-generated method stub
-			Log.e(TAG, "takeRawPicture");
 			wlog("takeRawPicture finish");
 			mbTkPicture=false;
 
@@ -842,11 +840,10 @@ public class MainActivity extends Activity {
 		@Override
 		public void onPictureTaken(byte[] data, Camera camera) {
 			// TODO Auto-generated method stub
-			Log.e(TAG, "takeRawPicture_1");
 			wlog("takeRawPicture_1 finish");
 			mbTkPicture_1=false;
 			//mCamera.startPreview();
-			mCamera1.startPreview();
+			//mCamera1.startPreview();
 		}
 	};
 
@@ -861,7 +858,7 @@ public class MainActivity extends Activity {
 
 	private void takePic(int focus_need,int raw_need)
 	{
-		Log.e(TAG,"takePic enter:");
+		Log.i(TAG,"takePic enter:");
 		if(mSavaPath==null||mSavaPath.length()==0){
 			mbTkPicture=false;
 			mbTkPicture_1=false;
@@ -928,6 +925,7 @@ public class MainActivity extends Activity {
 		else if(focus_need==1 && isSupportFocuse)
 		{
 
+			/*
 			if(isSupportFocuse){
 				parameters.setFocusMode(Parameters.FOCUS_MODE_INFINITY);
 				mCamera.setParameters(parameters);
@@ -938,23 +936,23 @@ public class MainActivity extends Activity {
 				parameters_1.setFocusMode(Parameters.FOCUS_MODE_INFINITY);
 				mCamera1.setParameters(parameters_1);
 			}
+		    */
 
-			mCamera.cancelAutoFocus(); //reset focusState=0
 			parameters.setFocusMode(Parameters.FOCUS_MODE_AUTO);
 			mCamera.setParameters(parameters);
+			mCamera.cancelAutoFocus(); //reset focusState=0
 
 			if(mCameraMode == 0 && mCamera1 != null && isSupportFocuse_1) {
-				mCamera1.cancelAutoFocus(); //reset focusState=0
 				Parameters parameters_1 = mCamera1.getParameters();
 				parameters_1.setFocusMode(Parameters.FOCUS_MODE_AUTO);
 				mCamera1.setParameters(parameters_1);
+				mCamera1.cancelAutoFocus(); //reset focusState=0
 			}
 
 			try {
 				setFocusArea(mCameraMode);
-				Log.e(TAG, "setFocusArea end");
+				Log.i(TAG, "setFocusArea end");
 				mCamera.autoFocus(mAutoFocusCallback);
-				Log.e(TAG, "autoFocus end");
 			} catch (Exception e) {
 				// TODO: handle exception
 				Log.e(TAG, "autoFocus error!");
@@ -986,7 +984,7 @@ public class MainActivity extends Activity {
 		{
 			Parameters parameters=mCamera.getParameters();
 			int focusAreaNum=parameters.getMaxNumFocusAreas() ;
-			Log.e(TAG,"focusAreaNum="+focusAreaNum+", CameraMode="+CameraMode);
+			Log.i(TAG,"focusAreaNum="+focusAreaNum+", CameraMode="+CameraMode);
 			if(focusAreaNum>0 )
 			{
 					/*
@@ -1004,7 +1002,6 @@ public class MainActivity extends Activity {
 					*/
 				ArrayList<Area> focusArea = new ArrayList<Area>();
 				focusArea.add(new Area(new Rect(), 1000));
-				Log.e(TAG,"set focusArea start:");
 
 				if(CameraMode == 0 && mCamera1 != null){
 					//focusArea.get(0).rect.set(-500, -250, 0, 250);
@@ -1022,12 +1019,11 @@ public class MainActivity extends Activity {
 					parameters.setFocusAreas(focusArea);
 					mCamera.setParameters(parameters);
 				}
-				Log.e(TAG,"set focusArea end.");
 				//}
 			}
 
 			int meteringAreaNum = parameters.getMaxNumMeteringAreas();
-			Log.e(TAG,"max metering area = " + meteringAreaNum);
+			Log.i(TAG,"max metering area = " + meteringAreaNum);
 			if (meteringAreaNum > 0) {
 					/*
 					List<Area> meteringAreaList = parameters.getMeteringAreas();
