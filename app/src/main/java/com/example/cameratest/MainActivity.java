@@ -164,6 +164,7 @@ public class MainActivity extends Activity {
 		Log.v(TAG,"onDestroy enter");
 		if(mOrientationListener != null){
 			mOrientationListener.disable();
+			mOrientationListener=null;
 		}
 
 		if(mCamReceiver!=null){
@@ -309,8 +310,8 @@ public class MainActivity extends Activity {
 
 			supportedFocuseMode = parameters.getSupportedFocusModes();
 			if(supportedFocuseMode == null || supportedFocuseMode.isEmpty()){
-				isSupportFocuse = false;
-				Log.e(TAG, "supportedFocuseMode : Null");
+					isSupportFocuse = false;
+					Log.e(TAG, "supportedFocuseMode : Null");
 			}else {
 				for(int i=0;i<supportedFocuseMode.size();i++){
 					//Log.i(TAG, "supportedFocuseMode : "+supportedFocuseMode.get(i).toString());
@@ -698,6 +699,7 @@ public class MainActivity extends Activity {
 			}
 
 			if(mCameraMode == 0 && mCamera1 != null) {
+
 				if(isSupportFocuse_1){
 					Log.i(TAG, "is SupportFocuse_1 :");
 					mCamera1.autoFocus(mAutoFocus_1Callback);
@@ -721,6 +723,12 @@ public class MainActivity extends Activity {
 				wlog("auto focus_1 fail");
 			}
 			//mCamera1.stopPreview();
+			try {
+				Thread.sleep(200);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+
 			mCamera.takePicture(null, null, mPictureCallback);
 		}
 	};
@@ -985,7 +993,7 @@ public class MainActivity extends Activity {
 			Parameters parameters=mCamera.getParameters();
 			int focusAreaNum=parameters.getMaxNumFocusAreas() ;
 			Log.i(TAG,"focusAreaNum="+focusAreaNum+", CameraMode="+CameraMode);
-			if(focusAreaNum>0 )
+			if(focusAreaNum > 0)
 			{
 					/*
 					List<Area> areallist=parameters.getFocusAreas();
