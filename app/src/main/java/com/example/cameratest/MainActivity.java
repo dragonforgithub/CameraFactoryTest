@@ -479,20 +479,16 @@ public class MainActivity extends Activity {
 										if(isSupportFocuse){
 											parameters.setFocusMode(Parameters.FOCUS_MODE_AUTO);
 											mCamera.setParameters(parameters);
-											Log.i(TAG, "do Focus wide :");
-											setFocusArea(mCameraMode);
-											mCamera.autoFocus(mAutoFocusCallbackParameter);
 										}
 
 										if(isSupportFocuse_1 && mCameraMode == 0 && mCamera1 != null){
 											Parameters parameters_1 = mCamera1.getParameters();
 											parameters_1.setFocusMode(Parameters.FOCUS_MODE_AUTO);
 											mCamera1.setParameters(parameters_1);
-											Log.i(TAG, "do Focus tele :");
-											setFocusArea(mCameraMode);
-											mCamera1.autoFocus(mAutoFocusCallbackPrameter_1);
 										}
+										wlog("focus success");
 										break;
+
 									case 1:
 										if(isSupportFocuse){
 											parameters.setFocusMode(Parameters.FOCUS_MODE_INFINITY);
@@ -503,6 +499,25 @@ public class MainActivity extends Activity {
 											Parameters parameters_1 = mCamera1.getParameters();
 											parameters_1.setFocusMode(Parameters.FOCUS_MODE_INFINITY);
 											mCamera1.setParameters(parameters_1);
+										}
+										wlog("focus success");
+										break;
+									case 2:
+										if(isSupportFocuse){
+											parameters.setFocusMode(Parameters.FOCUS_MODE_AUTO);
+											mCamera.setParameters(parameters);
+
+											if(isSupportFocuse_1 && mCameraMode == 0 && mCamera1 != null){
+												Parameters parameters_1 = mCamera1.getParameters();
+												parameters_1.setFocusMode(Parameters.FOCUS_MODE_AUTO);
+												mCamera1.setParameters(parameters_1);
+											}
+											setFocusArea(mCameraMode);
+
+											Log.i(TAG, "do Focus wide :");
+											mCamera.autoFocus(mAutoFocusCallbackWide);
+										} else {
+											wlog("focus success");
 										}
 										break;
 								}
@@ -733,26 +748,33 @@ public class MainActivity extends Activity {
 		}
 	};
 
-	AutoFocusCallback mAutoFocusCallbackParameter=new Camera.AutoFocusCallback() {
+	AutoFocusCallback mAutoFocusCallbackWide=new Camera.AutoFocusCallback() {
 		@Override
 		public void onAutoFocus(boolean success, Camera camera) {
 			// TODO Auto-generated method stub
-			Log.d(TAG, "mAutoFocusCallback:parameter");
+			Log.d(TAG, "mAutoFocusCallbackWide:parameter");
 			if(success==false){
-				Log.e(TAG, "parameter auto focus fail");
-				wlog("parameter auto focus fail");
+				Log.e(TAG, "wide auto focus fail");
+			}else {
+				if(isSupportFocuse_1 && mCameraMode == 0 && mCamera1 != null){
+					Log.i(TAG, "do Focus tele :");
+					mCamera1.autoFocus(mAutoFocusCallbackTele);
+				}else{
+					wlog("focus success");
+				}
 			}
 		}
 	};
 
-	AutoFocusCallback mAutoFocusCallbackPrameter_1=new Camera.AutoFocusCallback() {
+	AutoFocusCallback mAutoFocusCallbackTele=new Camera.AutoFocusCallback() {
 		@Override
 		public void onAutoFocus(boolean success, Camera camera) {
 			// TODO Auto-generated method stub
-			Log.d(TAG, "mAutoFocusCallback_1:parameter");
+			Log.d(TAG, "mAutoFocusCallbackTele:parameter");
 			if(success==false){
-				Log.e(TAG, "parameter_1 auto focus fail");
-				wlog("parameter_1 auto focus fail");
+				Log.e(TAG, "tele auto focus fail");
+			}else {
+				wlog("focus success");
 			}
 		}
 	};
