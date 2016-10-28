@@ -33,13 +33,13 @@
 
         <TextView
             android:id="@+id/previewName"
-            android:text="RearCamera0"
+            android:text="RearCamera0 : active"
             android:layout_height="wrap_content"
             android:layout_width="wrap_content" />
 
         <TextView
             android:id="@+id/previewName_1"
-            android:text="RearCamera1"
+            android:text="RearCamera1 : standby"
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
             android:layout_gravity="left|center_vertical" />
