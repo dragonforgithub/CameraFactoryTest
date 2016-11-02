@@ -93,7 +93,7 @@ public class CameraPreview extends SurfaceView implements SurfaceHolder.Callback
             mCamera.setPreviewDisplay(mHolder);
 
             if(mCameraMode == 0){
-                if(cameraID == 2) {
+                if(cameraID == 0) {
                     mCamera.startPreview();
                     Log.i(TAG, "[DualMode] only start preview : " + cameraID);
                 } else{
@@ -102,8 +102,8 @@ public class CameraPreview extends SurfaceView implements SurfaceHolder.Callback
             }else{
                 mCamera.startPreview();
                 Log.i(TAG,"[ok] start preview : "+cameraID);
-                wlog("finish startPreview"+cameraID);
             }
+            wlog("finish startPreview"+cameraID);
         } catch (Exception e){
             Log.e(TAG,"[fail] start preview : "+cameraID);
             Log.e(TAG, "Error starting camera preview: " + e.getMessage());

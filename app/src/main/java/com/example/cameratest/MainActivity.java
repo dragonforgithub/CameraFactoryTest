@@ -73,7 +73,6 @@ public class MainActivity extends Activity {
 	private boolean isSupportFlash_1=false;
 	private boolean isSupportFocuse=false;
 	private boolean isSupportFocuse_1=false;
-	private boolean isNeedFocus=false;
 
 	public Handler mHandler;
 	private MyOrientationDetector mOrientationListener = null;
@@ -199,11 +198,11 @@ public class MainActivity extends Activity {
 		super.onDestroy();
 		//System.exit(0) after 300ms
 		//new Handler().postDelayed(new Runnable(){
-		//public void run() {
-		//execute the task
-		wlog("close camera finish");
-		System.exit(0);
-		//}
+			//public void run() {
+				//execute the task
+				wlog("close camera finish");
+				System.exit(0);
+			//}
 		//}, 100);
 	}
 
@@ -311,8 +310,8 @@ public class MainActivity extends Activity {
 
 			supportedFocuseMode = parameters.getSupportedFocusModes();
 			if(supportedFocuseMode == null || supportedFocuseMode.isEmpty()){
-				isSupportFocuse = false;
-				Log.e(TAG, "supportedFocuseMode : Null");
+					isSupportFocuse = false;
+					Log.e(TAG, "supportedFocuseMode : Null");
 			}else {
 				for(int i=0;i<supportedFocuseMode.size();i++){
 					//Log.i(TAG, "supportedFocuseMode : "+supportedFocuseMode.get(i).toString());
@@ -367,25 +366,16 @@ public class MainActivity extends Activity {
 
 			parameters.setPictureFormat(256);  //0x11:NV21 / 0x100 : JPEG
 			if(mCameraMode == 0 && mCamera1 != null) {
+				mCamera.setParameters(parameters);
+				surfaceView = (SurfaceView) findViewById(R.id.camera_preview);
+				mPreview = new CameraPreview(this, mCamera ,surfaceView, mOpenCamIndex, mCameraMode);
+				mPreview.setlogPath(mLogPath);
 
 				parameters_1.setPictureFormat(256);  //0x11:NV21 / 0x100 : JPEG
 				mCamera1.setParameters(parameters_1);
 				surfaceView1 = (SurfaceView) findViewById(R.id.camera_preview1);
 				mPreview1 = new CameraPreview(this, mCamera1 ,surfaceView1, mOpenCamIndex1, mCameraMode);
 				mPreview1.setlogPath(mLogPath);
-
-				mCamera.setParameters(parameters);
-				surfaceView = (SurfaceView) findViewById(R.id.camera_preview);
-				mPreview = new CameraPreview(this, mCamera ,surfaceView, mOpenCamIndex, mCameraMode);
-				mPreview.setlogPath(mLogPath);
-
-				new Handler().postDelayed(new Runnable(){
-					public void run() {
-						tele_to_wide();
-						wlog("finish startPreview"+mOpenCamIndex1);
-					}
-				}, 2050);
-
 			}else {
 				mCamera.setParameters(parameters);
 				surfaceView = (SurfaceView) findViewById(R.id.camera_preview2);
@@ -737,7 +727,25 @@ public class MainActivity extends Activity {
 				wlog("auto focus fail");
 			}
 
-			mCamera.takePicture(null, null, mPictureCallback);
+			if(mCameraMode == 0 && mCamera1 != null) {
+				if(isSupportFocuse_1){
+
+					wide_to_tele(); //switch rear camera
+
+					new Handler().postDelayed(new Runnable(){
+						public void run() {
+							Log.i(TAG, "is SupportFocuse_1 :");
+							mCamera1.autoFocus(mAutoFocus_1Callback);
+						}
+					}, 650);
+
+				}else {
+					Log.i(TAG, "not SupportFocuse_1 :");
+					mCamera.takePicture(null, null, mPictureCallback);
+				}
+			}else{
+				mCamera.takePicture(null, null, mPictureCallback);
+			}
 		}
 	};
 
@@ -751,12 +759,13 @@ public class MainActivity extends Activity {
 				wlog("auto focus_1 fail");
 			}
 
+			tele_to_wide(); //switch rear camera
+
 			new Handler().postDelayed(new Runnable(){
 				public void run() {
-					Log.i(TAG,"take picture_1 : ");
-					mCamera1.takePicture(null, null, mPicture_1Callback);
+					mCamera.takePicture(null, null, mPictureCallback);
 				}
-			}, 850);
+			}, 450);
 		}
 	};
 
@@ -774,11 +783,10 @@ public class MainActivity extends Activity {
 
 					new Handler().postDelayed(new Runnable(){
 						public void run() {
-							mCamera1.cancelAutoFocus(); //reset focusState=0
 							Log.i(TAG, "do Focus tele :");
 							mCamera1.autoFocus(mAutoFocusCallbackTele);
 						}
-					}, 1350);
+					}, 650);
 
 				}else{
 					wlog("focus success");
@@ -839,17 +847,11 @@ public class MainActivity extends Activity {
 
 				new Handler().postDelayed(new Runnable(){
 					public void run() {
-						if(isNeedFocus){
-							mCamera1.cancelAutoFocus(); //reset focusState=0
-							Log.i(TAG, "is SupportFocuse_1 :");
-							mCamera1.autoFocus(mAutoFocus_1Callback);
-						}else {
-							Log.i(TAG,"take picture_1 : ");
-							mCamera1.takePicture(null, null, mPicture_1Callback);
-						}
-
+						Log.i(TAG,"take picture_1 : ");
+						mCamera1.takePicture(null, null, mPicture_1Callback);
 					}
-				}, 1350);
+				}, 650);
+
 			}else{
 				//mCamera.startPreview();
 				try {
@@ -910,7 +912,7 @@ public class MainActivity extends Activity {
 					public void run() {
 						mCamera1.takePicture(null, null, mRawPicture_1Callback);
 					}
-				}, 1350);
+				}, 650);
 			}
 		}
 	};
@@ -991,11 +993,12 @@ public class MainActivity extends Activity {
 		if(raw_need==1)
 		{
 			try {
-				Log.d(TAG,"take raw pic");
+				//mCamera.stopPreview();
+				wlog("take raw pic");
 				//if(mCameraMode == 0 && mCamera1 != null) {
-				//	mCamera.stopPreview();
-				//	mCamera.startPreview();
+				//	mCamera1.stopPreview();
 				//}
+				//mCamera.startPreview();
 				mCamera.takePicture(null, null, mRawPictureCallback);
 			} catch (Exception e) {
 				// TODO: handle exception
@@ -1007,7 +1010,7 @@ public class MainActivity extends Activity {
 		}
 		else if(focus_need==1 && isSupportFocuse)
 		{
-			isNeedFocus=true;
+
 			/*
 			if(isSupportFocuse){
 				parameters.setFocusMode(Parameters.FOCUS_MODE_INFINITY);
@@ -1029,6 +1032,7 @@ public class MainActivity extends Activity {
 				Parameters parameters_1 = mCamera1.getParameters();
 				parameters_1.setFocusMode(Parameters.FOCUS_MODE_AUTO);
 				mCamera1.setParameters(parameters_1);
+				mCamera1.cancelAutoFocus(); //reset focusState=0
 			}
 
 			try {
@@ -1044,12 +1048,10 @@ public class MainActivity extends Activity {
 			}
 		}
 		else{
-			isNeedFocus=false;
 			try {
 				Log.i(TAG,"take picture start without af");
 				//if(mCameraMode == 0 && mCamera1 != null) {
-				//	mCamera.stopPreview();
-				//	mCamera.startPreview();
+				//	mCamera1.stopPreview();
 				//}
 				mCamera.takePicture(null, null, mPictureCallback);
 			} catch (Exception e) {
