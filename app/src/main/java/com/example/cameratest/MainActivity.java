@@ -737,14 +737,13 @@ public class MainActivity extends Activity {
 				Log.e(TAG, "auto focus_1 fail");
 				wlog("auto focus_1 fail");
 			}
-			//mCamera1.stopPreview();
-			try {
-				Thread.sleep(200);
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
 
-			mCamera.takePicture(null, null, mPictureCallback);
+			//new Handler().postDelayed(new Runnable(){
+			//	public void run() {
+					//take picture:
+					mCamera.takePicture(null, null, mPictureCallback);
+			//	}
+			//}, 500);
 		}
 	};
 
@@ -804,6 +803,7 @@ public class MainActivity extends Activity {
 
 			wlog("takePicture finish");
 			mbTkPicture=false;
+			mCamera.cancelAutoFocus();
 
 			if(mCameraMode == 0 && mCamera1 != null) {
 				//mCamera.stopPreview();
@@ -846,6 +846,8 @@ public class MainActivity extends Activity {
 
 			wlog("takePicture_1 finish");
 			mbTkPicture_1=false;
+			mCamera1.cancelAutoFocus();
+
 			//mCamera.startPreview();
 			//mCamera1.startPreview();
 		}
