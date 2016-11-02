@@ -628,20 +628,6 @@ public class MainActivity extends Activity {
 		return -1;
 	}
 
-	private void wide_to_tele(){
-		mCamera.stopPreview();
-		mCamera1.startPreview();
-		previewTV.setText("RearCamera0 : standby");
-		previewTV_1.setText("RearCamera1 : active");
-	}
-
-	private void tele_to_wide(){
-		mCamera1.stopPreview();
-		mCamera.startPreview();
-		previewTV_1.setText("RearCamera1 : standby");
-		previewTV.setText("RearCamera0 : active");
-	}
-
 	public class MyOrientationDetector extends OrientationEventListener {
 		public MyOrientationDetector( Context context ) {
 			super(context );
@@ -728,17 +714,10 @@ public class MainActivity extends Activity {
 			}
 
 			if(mCameraMode == 0 && mCamera1 != null) {
+
 				if(isSupportFocuse_1){
-
-					wide_to_tele(); //switch rear camera
-
-					new Handler().postDelayed(new Runnable(){
-						public void run() {
-							Log.i(TAG, "is SupportFocuse_1 :");
-							mCamera1.autoFocus(mAutoFocus_1Callback);
-						}
-					}, 650);
-
+					Log.i(TAG, "is SupportFocuse_1 :");
+					mCamera1.autoFocus(mAutoFocus_1Callback);
 				}else {
 					Log.i(TAG, "not SupportFocuse_1 :");
 					mCamera.takePicture(null, null, mPictureCallback);
@@ -758,14 +737,14 @@ public class MainActivity extends Activity {
 				Log.e(TAG, "auto focus_1 fail");
 				wlog("auto focus_1 fail");
 			}
+			//mCamera1.stopPreview();
+			try {
+				Thread.sleep(200);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
 
-			tele_to_wide(); //switch rear camera
-
-			new Handler().postDelayed(new Runnable(){
-				public void run() {
-					mCamera.takePicture(null, null, mPictureCallback);
-				}
-			}, 450);
+			mCamera.takePicture(null, null, mPictureCallback);
 		}
 	};
 
@@ -778,16 +757,8 @@ public class MainActivity extends Activity {
 				Log.e(TAG, "wide auto focus fail");
 			}else {
 				if(isSupportFocuse_1 && mCameraMode == 0 && mCamera1 != null){
-
-					wide_to_tele(); //switch rear camera
-
-					new Handler().postDelayed(new Runnable(){
-						public void run() {
-							Log.i(TAG, "do Focus tele :");
-							mCamera1.autoFocus(mAutoFocusCallbackTele);
-						}
-					}, 650);
-
+					Log.i(TAG, "do Focus tele :");
+					mCamera1.autoFocus(mAutoFocusCallbackTele);
 				}else{
 					wlog("focus success");
 				}
@@ -803,14 +774,7 @@ public class MainActivity extends Activity {
 			if(success==false){
 				Log.e(TAG, "tele auto focus fail");
 			}else {
-
-				tele_to_wide(); //switch rear camera
-
-				new Handler().postDelayed(new Runnable(){
-					public void run() {
-						wlog("focus success");
-					}
-				}, 350);
+				wlog("focus success");
 			}
 		}
 	};
@@ -842,16 +806,10 @@ public class MainActivity extends Activity {
 			mbTkPicture=false;
 
 			if(mCameraMode == 0 && mCamera1 != null) {
-
-				wide_to_tele(); //switch rear camera
-
-				new Handler().postDelayed(new Runnable(){
-					public void run() {
-						Log.i(TAG,"take picture_1 : ");
-						mCamera1.takePicture(null, null, mPicture_1Callback);
-					}
-				}, 650);
-
+				//mCamera.stopPreview();
+				//mCamera1.startPreview();
+				Log.i(TAG,"take picture_1 : ");
+				mCamera1.takePicture(null, null, mPicture_1Callback);
 			}else{
 				//mCamera.startPreview();
 				try {
@@ -886,14 +844,10 @@ public class MainActivity extends Activity {
 				wlog(e.getMessage());
 			}
 
-			tele_to_wide(); //switch rear camera
-
-			new Handler().postDelayed(new Runnable(){
-				public void run() {
-					wlog("takePicture_1 finish");
-					mbTkPicture_1=false;
-				}
-			}, 350);
+			wlog("takePicture_1 finish");
+			mbTkPicture_1=false;
+			//mCamera.startPreview();
+			//mCamera1.startPreview();
 		}
 	};
 
@@ -905,14 +859,9 @@ public class MainActivity extends Activity {
 			mbTkPicture=false;
 
 			if(mCameraMode == 0 && mCamera1 != null) {
-
-				wide_to_tele(); //switch rear camera
-
-				new Handler().postDelayed(new Runnable(){
-					public void run() {
-						mCamera1.takePicture(null, null, mRawPicture_1Callback);
-					}
-				}, 650);
+				//mCamera.stopPreview();
+				//mCamera1.startPreview();
+				mCamera1.takePicture(null, null, mRawPicture_1Callback);
 			}
 		}
 	};
@@ -921,15 +870,10 @@ public class MainActivity extends Activity {
 		@Override
 		public void onPictureTaken(byte[] data, Camera camera) {
 			// TODO Auto-generated method stub
-
-			tele_to_wide(); //switch rear camera
-
-			new Handler().postDelayed(new Runnable(){
-				public void run() {
-					mbTkPicture_1=false;
-					wlog("takeRawPicture_1 finish");
-				}
-			}, 350);
+			wlog("takeRawPicture_1 finish");
+			mbTkPicture_1=false;
+			//mCamera.startPreview();
+			//mCamera1.startPreview();
 		}
 	};
 
