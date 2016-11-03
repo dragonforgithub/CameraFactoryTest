@@ -738,12 +738,12 @@ public class MainActivity extends Activity {
 				wlog("auto focus_1 fail");
 			}
 
-			//new Handler().postDelayed(new Runnable(){
-			//	public void run() {
+			new Handler().postDelayed(new Runnable(){
+				public void run() {
 					//take picture:
 					mCamera.takePicture(null, null, mPictureCallback);
-			//	}
-			//}, 500);
+				}
+			}, 700);
 		}
 	};
 
