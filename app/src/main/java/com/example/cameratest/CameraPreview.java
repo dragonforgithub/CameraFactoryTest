@@ -153,6 +153,10 @@ public class CameraPreview extends SurfaceView implements SurfaceHolder.Callback
                     }
                 }
             }
+            if(mCameraMode == 0 && preScale < 1.4){ //for Hades
+                lw=1280;
+                lh=960;
+            }
             parameters.setPreviewSize(lw, lh);
             Log.v(TAG, "set previewsize:" + lw + "x" + lh );
 
