@@ -356,7 +356,7 @@ public class MainActivity extends Activity {
 					mCamera.setDisplayOrientation(mDisOrientation);
 					break;
 				case 3 : //front
-					parameters.setRotation(0);
+					parameters.setRotation(180);
 					mCamera.setDisplayOrientation(mDisOrientation);
 					break;
 				default:
@@ -384,7 +384,7 @@ public class MainActivity extends Activity {
 			}
 
 			Log.i(TAG,"onResume done.");
-			wlog("camera open finish");
+			//wlog("camera open finish");
 		} catch (Exception e) {
 			// TODO: handle exception
 			wlog("camera open fail");
@@ -665,6 +665,11 @@ public class MainActivity extends Activity {
 				mPicOrientation = 270;
 			}
 
+			//keep all picture orientation same as 270 for DIT
+			if(mPicOrientation != 270){
+				mPicOrientation += 180;
+			}
+
 			Parameters parameters = mCamera.getParameters();
 			if (mCameraMode == 0 && mCamera1 != null) {  //rear0 & rear1
 				mPicOrientation = (mPicOrientation+90)%360;
@@ -692,7 +697,7 @@ public class MainActivity extends Activity {
 				}else if(mPicOrientation == 180){
 					mPicOrientation = 0;
 				}
-				mPicOrientation = (mPicOrientation+90)%360;
+				mPicOrientation = (mPicOrientation+270)%360;
 				parameters.setRotation(mPicOrientation);
 				mCamera.setParameters(parameters);
 			}
@@ -898,7 +903,7 @@ public class MainActivity extends Activity {
 			return;
 		}
 
-		if(mbTkPicture && mbTkPicture_1){
+		if(mbTkPicture || mbTkPicture_1){
 			Toast.makeText(MainActivity.this, "last take picture failed,retry...", Toast.LENGTH_LONG).show();
 			//if you need protect take picture, open this:
 			//return;
