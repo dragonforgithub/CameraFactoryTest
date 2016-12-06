@@ -175,7 +175,6 @@ public class MainActivity extends Activity {
 
 		if(mCameraMode == 0) {
 			if(mCamera != null && mCamera1 != null){
-
 				//mCamera1.stopPreview();
 				//mCamera.stopPreview();
 				//mCamera1.setPreviewCallback(null);
@@ -216,7 +215,6 @@ public class MainActivity extends Activity {
 		List<String> supportedFocuseMode_1;
 
 		try {
-
 			previewTV = (TextView) findViewById(R.id.previewName);
 			previewTV_1 = (TextView) findViewById(R.id.previewName_1);
 
@@ -376,6 +374,18 @@ public class MainActivity extends Activity {
 				surfaceView1 = (SurfaceView) findViewById(R.id.camera_preview1);
 				mPreview1 = new CameraPreview(this, mCamera1 ,surfaceView1, mOpenCamIndex1, mCameraMode);
 				mPreview1.setlogPath(mLogPath);
+
+				mCamera.startPreview();
+				Log.i(TAG,"[ok] start preview : 0");
+				wlog("finish startPreview0");
+
+				new Handler().postDelayed(new Runnable(){
+					public void run() {
+						mCamera1.startPreview();
+						Log.i(TAG,"[ok] start preview : 2");
+						wlog("finish startPreview2");
+					}
+				}, 600);
 			}else {
 				mCamera.setParameters(parameters);
 				surfaceView = (SurfaceView) findViewById(R.id.camera_preview2);
@@ -719,10 +729,13 @@ public class MainActivity extends Activity {
 			}
 
 			if(mCameraMode == 0 && mCamera1 != null) {
-
 				if(isSupportFocuse_1){
-					Log.i(TAG, "is SupportFocuse_1 :");
-					mCamera1.autoFocus(mAutoFocus_1Callback);
+					new Handler().postDelayed(new Runnable(){
+						public void run() {
+							Log.i(TAG, "is SupportFocuse_1 :");
+							mCamera1.autoFocus(mAutoFocus_1Callback);
+						}
+					}, 300);
 				}else {
 					Log.i(TAG, "not SupportFocuse_1 :");
 					mCamera.takePicture(null, null, mPictureCallback);
@@ -748,7 +761,7 @@ public class MainActivity extends Activity {
 					//take picture:
 					mCamera.takePicture(null, null, mPictureCallback);
 				}
-			}, 700);
+			}, 600);
 		}
 	};
 
@@ -762,7 +775,12 @@ public class MainActivity extends Activity {
 			}else {
 				if(isSupportFocuse_1 && mCameraMode == 0 && mCamera1 != null){
 					Log.i(TAG, "do Focus tele :");
-					mCamera1.autoFocus(mAutoFocusCallbackTele);
+					new Handler().postDelayed(new Runnable(){
+						public void run() {
+							Log.i(TAG, "is SupportFocuse_1 :");
+							mCamera1.autoFocus(mAutoFocusCallbackTele);
+						}
+					}, 300);
 				}else{
 					wlog("focus success");
 				}
@@ -806,15 +824,18 @@ public class MainActivity extends Activity {
 				wlog(e.getMessage());
 			}
 
-			wlog("takePicture finish");
 			mbTkPicture=false;
-			mCamera.cancelAutoFocus();
+			//mCamera.startPreview();
+			//mCamera.cancelAutoFocus();
+			wlog("takePicture finish");
 
 			if(mCameraMode == 0 && mCamera1 != null) {
-				//mCamera.stopPreview();
-				//mCamera1.startPreview();
-				Log.i(TAG,"take picture_1 : ");
-				mCamera1.takePicture(null, null, mPicture_1Callback);
+				new Handler().postDelayed(new Runnable(){
+					public void run() {
+						Log.i(TAG,"take picture_1 : ");
+						mCamera1.takePicture(null, null, mPicture_1Callback);
+					}
+				}, 300);
 			}else{
 				//mCamera.startPreview();
 				try {
@@ -835,6 +856,7 @@ public class MainActivity extends Activity {
 		public void onPictureTaken(byte[] data, Camera camera) {
 			// TODO Auto-generated method stub
 			Log.d(TAG, "onPictureTaken_1");
+
 			String savaPath="";
 			try {
 				if (data != null && mSavaPath != null){
@@ -848,13 +870,10 @@ public class MainActivity extends Activity {
 				mbTkPicture_1=false;
 				wlog(e.getMessage());
 			}
-
-			wlog("takePicture_1 finish");
 			mbTkPicture_1=false;
-			mCamera1.cancelAutoFocus();
-
-			//mCamera.startPreview();
 			//mCamera1.startPreview();
+			//mCamera1.cancelAutoFocus();
+			wlog("takePicture_1 finish");
 		}
 	};
 
@@ -862,13 +881,16 @@ public class MainActivity extends Activity {
 		@Override
 		public void onPictureTaken(byte[] data, Camera camera) {
 			// TODO Auto-generated method stub
-			wlog("takeRawPicture finish");
 			mbTkPicture=false;
+			//mCamera.startPreview();
+			wlog("takeRawPicture finish");
 
 			if(mCameraMode == 0 && mCamera1 != null) {
-				//mCamera.stopPreview();
-				//mCamera1.startPreview();
-				mCamera1.takePicture(null, null, mRawPicture_1Callback);
+				new Handler().postDelayed(new Runnable(){
+					public void run() {
+						mCamera1.takePicture(null, null, mRawPicture_1Callback);
+					}
+				}, 300);
 			}
 		}
 	};
@@ -877,10 +899,9 @@ public class MainActivity extends Activity {
 		@Override
 		public void onPictureTaken(byte[] data, Camera camera) {
 			// TODO Auto-generated method stub
-			wlog("takeRawPicture_1 finish");
 			mbTkPicture_1=false;
-			//mCamera.startPreview();
 			//mCamera1.startPreview();
+			wlog("takeRawPicture_1 finish");
 		}
 	};
 
@@ -904,13 +925,35 @@ public class MainActivity extends Activity {
 		}
 
 		if(mbTkPicture || mbTkPicture_1){
-			Toast.makeText(MainActivity.this, "last take picture failed,retry...", Toast.LENGTH_LONG).show();
+			Toast.makeText(MainActivity.this, "last take picture failed,restart preview...", Toast.LENGTH_LONG).show();
 			//if you need protect take picture, open this:
+			Log.e(TAG,"take picture hang,restart preview:");
+			if(mbTkPicture && mCamera != null){
+				mCamera.stopPreview();
+				try {
+					Thread.sleep(200);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+				mCamera.startPreview();
+			}
+			if(mbTkPicture_1 && mCamera1 != null){
+				mCamera1.stopPreview();
+				try {
+					Thread.sleep(200);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+				mCamera1.startPreview();
+			}
+			Log.e(TAG,"restart preview done.");
 			//return;
 		}else{
 			mbTkPicture = true;
+			mCamera.startPreview();  //in case of last hang
 			if(mCameraMode == 0 && mCamera1 != null) {
 				mbTkPicture_1 = true;
+				mCamera1.startPreview();
 			}
 		}
 

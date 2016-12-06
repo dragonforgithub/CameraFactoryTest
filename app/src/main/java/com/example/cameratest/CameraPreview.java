@@ -88,24 +88,25 @@ public class CameraPreview extends SurfaceView implements SurfaceHolder.Callback
 
         // set preview size and make any resize, rotate or
         setMaxPreviewAndPictureSize(mCamera);
-        
         // start preview with new settings
         try {
             mCamera.setPreviewDisplay(mHolder);
-            mCamera.startPreview();
-
-            if(mCameraMode == 0 && cameraID == 2){
+            //mCamera.startPreview();
+            if(mCameraMode == 0){
+                /*
                 new Handler().postDelayed(new Runnable(){
                     public void run() {
                         wlog("finish startPreview"+cameraID);
                         Log.i(TAG,"[ok] start preview : "+cameraID);
                     }
-                }, 800);
+                }, 500);
+                */
+                Log.i(TAG,"[wait] start preview : "+cameraID);
             }else{
+                mCamera.startPreview();
                 wlog("finish startPreview"+cameraID);
                 Log.i(TAG,"[ok] start preview : "+cameraID);
             }
-
         } catch (Exception e){
             Log.e(TAG,"[fail] start preview : "+cameraID);
             Log.e(TAG, "Error starting camera preview: " + e.getMessage());
@@ -153,10 +154,10 @@ public class CameraPreview extends SurfaceView implements SurfaceHolder.Callback
                     }
                 }
             }
-            if(mCameraMode == 0 && preScale < 1.4){ //for Hades
-                lw=1280;
-                lh=960;
-            }
+            //if(mCameraMode == 0 && preScale < 1.4){ //for Hades
+            //    lw=1280;
+            //    lh=960;
+            //}
             parameters.setPreviewSize(lw, lh);
             Log.v(TAG, "set previewsize:" + lw + "x" + lh );
 
