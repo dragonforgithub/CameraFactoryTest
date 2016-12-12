@@ -374,18 +374,6 @@ public class MainActivity extends Activity {
 				surfaceView1 = (SurfaceView) findViewById(R.id.camera_preview1);
 				mPreview1 = new CameraPreview(this, mCamera1 ,surfaceView1, mOpenCamIndex1, mCameraMode);
 				mPreview1.setlogPath(mLogPath);
-
-				mCamera.startPreview();
-				Log.i(TAG,"[ok] start preview : 0");
-				wlog("finish startPreview0");
-
-				new Handler().postDelayed(new Runnable(){
-					public void run() {
-						mCamera1.startPreview();
-						Log.i(TAG,"[ok] start preview : 2");
-						wlog("finish startPreview2");
-					}
-				}, 600);
 			}else {
 				mCamera.setParameters(parameters);
 				surfaceView = (SurfaceView) findViewById(R.id.camera_preview2);
