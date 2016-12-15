@@ -66,6 +66,7 @@ public class MainActivity extends Activity {
 	String mLogPath = "";
 	private boolean mbTkPicture = false;
 	private boolean mbTkPicture_1 = false;
+	private int ispRestart = 0;
 	CamReceiver mCamReceiver =null;
 	private int mCameraMode=-1;
 
@@ -76,6 +77,8 @@ public class MainActivity extends Activity {
 
 	public Handler mHandler;
 	private MyOrientationDetector mOrientationListener = null;
+
+	private Process process_ISP = null;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -214,6 +217,15 @@ public class MainActivity extends Activity {
 		List<String> supportedFocuseMode;
 		List<String> supportedFocuseMode_1;
 
+		//init
+		try {
+			process_ISP = Runtime.getRuntime().exec("setprop persist.camera.isprestart 0");
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+		//handler.postDelayed(task, 1000);
+
 		try {
 			previewTV = (TextView) findViewById(R.id.previewName);
 			previewTV_1 = (TextView) findViewById(R.id.previewName_1);
@@ -223,11 +235,11 @@ public class MainActivity extends Activity {
 			switch (mCameraMode){
 				case 0 : //rear0 & rear1
 					if(mRear0Exist && mRear1Exist){
-						mOpenCamIndex = FindBackCamera0();
+						mOpenCamIndex = 0;//FindBackCamera0();
 						mCamera = Camera.open(mOpenCamIndex);
 						parameters = mCamera.getParameters();
 
-						mOpenCamIndex1 = FindBackCamera1();
+						mOpenCamIndex1 = 2;//FindBackCamera1();
 						mCamera1 = Camera.open(mOpenCamIndex1);
 						parameters_1 = mCamera1.getParameters();
 						Log.i(TAG, "open rear two cameraS!");
@@ -241,7 +253,7 @@ public class MainActivity extends Activity {
 					previewTV_1.setVisibility(View.INVISIBLE);
 
 					if(mRear0Exist){
-						mOpenCamIndex = FindBackCamera0();
+						mOpenCamIndex = 0;//FindBackCamera0();
 						mCamera = Camera.open(mOpenCamIndex);
 						parameters = mCamera.getParameters();
 						Log.i(TAG, "open rear 0 camera!");
@@ -255,7 +267,7 @@ public class MainActivity extends Activity {
 					previewTV_1.setVisibility(View.INVISIBLE);
 
 					if(mRear1Exist){
-						mOpenCamIndex = FindBackCamera1();
+						mOpenCamIndex = 2;//FindBackCamera1();
 						mCamera = Camera.open(mOpenCamIndex);
 						parameters = mCamera.getParameters();
 						Log.i(TAG, "open rear 1 camera!");
@@ -268,7 +280,7 @@ public class MainActivity extends Activity {
 					previewTV.setText("FrontCamera");
 					previewTV_1.setVisibility(View.INVISIBLE);
 					if(mFrontExist){
-						mOpenCamIndex = FindFrontCamera();
+						mOpenCamIndex = 1;//FindFrontCamera();
 						mCamera = Camera.open(mOpenCamIndex);
 						parameters = mCamera.getParameters();
 						Log.i(TAG, "open front camera!");
@@ -409,12 +421,12 @@ public class MainActivity extends Activity {
 							mSavaPath=(String)msg.obj;
 							break;
 						case HandleMsg.MSG_TAKE_PIC:
-
 							int focusneed=-1,rawneed=-1;
 
 							focusneed=msg.arg1;
 							rawneed=msg.arg2;
-
+							//check ISP restart status
+							check_ISP_status();
 							takePic(focusneed,rawneed);
 							break;
 						case HandleMsg.MSG_SET_PARAMETER:
@@ -502,6 +514,9 @@ public class MainActivity extends Activity {
 										break;
 									case 2:
 										if(isSupportFocuse){
+											//check ISP restart status
+											check_ISP_status();
+
 											parameters.setFocusMode(Parameters.FOCUS_MODE_AUTO);
 											mCamera.setParameters(parameters);
 
@@ -912,39 +927,6 @@ public class MainActivity extends Activity {
 			return;
 		}
 
-		if(mbTkPicture || mbTkPicture_1){
-			Toast.makeText(MainActivity.this, "last take picture failed,restart preview...", Toast.LENGTH_LONG).show();
-			//if you need protect take picture, open this:
-			Log.e(TAG,"take picture hang,restart preview:");
-			if(mbTkPicture && mCamera != null){
-				mCamera.stopPreview();
-				try {
-					Thread.sleep(200);
-				} catch (InterruptedException e) {
-					e.printStackTrace();
-				}
-				mCamera.startPreview();
-			}
-			if(mbTkPicture_1 && mCamera1 != null){
-				mCamera1.stopPreview();
-				try {
-					Thread.sleep(200);
-				} catch (InterruptedException e) {
-					e.printStackTrace();
-				}
-				mCamera1.startPreview();
-			}
-			Log.e(TAG,"restart preview done.");
-			//return;
-		}else{
-			mbTkPicture = true;
-			mCamera.startPreview();  //in case of last hang
-			if(mCameraMode == 0 && mCamera1 != null) {
-				mbTkPicture_1 = true;
-				mCamera1.startPreview();
-			}
-		}
-
 		Parameters parameters = mCamera.getParameters();
 			/*List<Integer> mSupportedPictureFormats = parameters.getSupportedPictureFormats();
 			for (int i = 0; i < mSupportedPictureFormats.size(); ++i) {
@@ -1035,6 +1017,7 @@ public class MainActivity extends Activity {
 				//if(mCameraMode == 0 && mCamera1 != null) {
 				//	mCamera1.stopPreview();
 				//}
+				setFocusArea(mCameraMode);
 				mCamera.takePicture(null, null, mPictureCallback);
 			} catch (Exception e) {
 				// TODO: handle exception
@@ -1127,4 +1110,88 @@ public class MainActivity extends Activity {
 			}
 		}
 	}
+
+	/*定时器设置,实现计时*/
+	/*
+	public Handler handler = new Handler();
+	public Runnable task = new Runnable() {
+		public void run() {
+			handler.postDelayed(this, 2000);
+			if(!cmd_busy){
+				Log.i(TAG, "timer check ISP status...");
+				check_ISP_status();
+			}
+		}
+	};
+	*/
+
+	////check isp restart>>>>>
+	void check_ISP_status(){
+		//read ISP restart status
+		try {
+			process_ISP = Runtime.getRuntime().exec("getprop persist.camera.isprestart");
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+		InputStreamReader ir_PJ = new InputStreamReader(process_ISP.getInputStream());
+		BufferedReader input_PJ = new BufferedReader(ir_PJ);
+
+		try {
+			String states = input_PJ.readLine();
+			Log.w(TAG, "isp restart = "+ states);
+			ispRestart = Integer.parseInt(states);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+		if(ispRestart==1) {
+			Toast.makeText(MainActivity.this, "ISP overflow restart preview...", Toast.LENGTH_LONG).show();
+			//if you need protect take picture, open this:
+			if (mCameraMode ==0 && mCamera1 != null) {
+				mCamera.stopPreview();
+				mPreview.setMaxPreviewAndPictureSize(mCamera);
+				try {
+					Thread.sleep(300);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+				mCamera.startPreview();
+
+				mCamera1.stopPreview();
+				mPreview1.setMaxPreviewAndPictureSize(mCamera1);
+				try {
+					Thread.sleep(300);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+				mCamera1.startPreview();
+
+				try {
+					Thread.sleep(200);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+			}else {
+				mCamera.stopPreview();
+				mPreview.setMaxPreviewAndPictureSize(mCamera);
+				mCamera.startPreview();
+				try {
+					Thread.sleep(300);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+			}
+
+			Log.i(TAG, "restart preview done.");
+			//reset property
+			try {
+				process_ISP = Runtime.getRuntime().exec("setprop persist.camera.isprestart 0");
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			//return;
+		}
+	}
+	////check isp restart<<<<<
 }

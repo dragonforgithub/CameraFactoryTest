@@ -90,14 +90,30 @@ public class CameraPreview extends SurfaceView implements SurfaceHolder.Callback
         setMaxPreviewAndPictureSize(mCamera);
         // start preview with new settings
         try {
-            mCamera.setPreviewDisplay(mHolder);
-            mCamera.startPreview();
+                if(mCameraMode==0 && cameraID==2){
+                    new Handler().postDelayed(new Runnable(){
+                        public void run() {
+                            //execute the task
+                            try {
+                                mCamera.setPreviewDisplay(mHolder);
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
+                            mCamera.startPreview();
+                            wlog("finish startPreview"+cameraID);
+                            Log.i(TAG,"[ok] start preview : "+cameraID);
+                        }
+                    }, 350);
+                }else {
+                    mCamera.setPreviewDisplay(mHolder);
+                    mCamera.startPreview();
+                    wlog("finish startPreview"+cameraID);
+                    Log.i(TAG,"[ok] start preview : "+cameraID);
+                }
 
-            wlog("finish startPreview"+cameraID);
-            Log.i(TAG,"[ok] start preview : "+cameraID);
         } catch (Exception e){
-            Log.e(TAG,"[fail] start preview : "+cameraID);
-            Log.e(TAG, "Error starting camera preview: " + e.getMessage());
+                Log.e(TAG,"[fail] start preview : "+cameraID);
+                Log.e(TAG, "Error starting camera preview: " + e.getMessage());
         }
     }
 
