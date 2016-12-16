@@ -1,5 +1,6 @@
 package com.example.cameratest;
 
+import android.graphics.Rect;
 import android.os.Handler;
 import android.view.SurfaceView;
 import android.hardware.Camera;
@@ -7,6 +8,7 @@ import android.hardware.Camera.Size;
 import android.content.Context;
 import android.view.SurfaceHolder;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import android.hardware.Camera.Parameters;
@@ -103,14 +105,13 @@ public class CameraPreview extends SurfaceView implements SurfaceHolder.Callback
                             wlog("finish startPreview"+cameraID);
                             Log.i(TAG,"[ok] start preview : "+cameraID);
                         }
-                    }, 350);
+                    }, 300);
                 }else {
                     mCamera.setPreviewDisplay(mHolder);
                     mCamera.startPreview();
                     wlog("finish startPreview"+cameraID);
                     Log.i(TAG,"[ok] start preview : "+cameraID);
                 }
-
         } catch (Exception e){
                 Log.e(TAG,"[fail] start preview : "+cameraID);
                 Log.e(TAG, "Error starting camera preview: " + e.getMessage());

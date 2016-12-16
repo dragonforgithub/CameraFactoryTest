@@ -224,8 +224,6 @@ public class MainActivity extends Activity {
 			e.printStackTrace();
 		}
 
-		//handler.postDelayed(task, 1000);
-
 		try {
 			previewTV = (TextView) findViewById(R.id.previewName);
 			previewTV_1 = (TextView) findViewById(R.id.previewName_1);
@@ -392,7 +390,6 @@ public class MainActivity extends Activity {
 				mPreview = new CameraPreview(this, mCamera ,surfaceView, mOpenCamIndex, mCameraMode);
 				mPreview.setlogPath(mLogPath);
 			}
-
 			Log.i(TAG,"onResume done.");
 			//wlog("camera open finish");
 		} catch (Exception e) {
@@ -498,7 +495,6 @@ public class MainActivity extends Activity {
 										}
 										wlog("focus success");
 										break;
-
 									case 1:
 										if(isSupportFocuse){
 											parameters.setFocusMode(Parameters.FOCUS_MODE_INFINITY);
@@ -526,7 +522,6 @@ public class MainActivity extends Activity {
 												mCamera1.setParameters(parameters_1);
 											}
 											setFocusArea(mCameraMode);
-
 											Log.i(TAG, "do Focus wide :");
 											mCamera.autoFocus(mAutoFocusCallbackWide);
 										} else {
@@ -1000,6 +995,7 @@ public class MainActivity extends Activity {
 			}
 
 			try {
+				//set ROI:
 				setFocusArea(mCameraMode);
 				Log.i(TAG, "setFocusArea end");
 				mCamera.autoFocus(mAutoFocusCallback);
@@ -1017,7 +1013,6 @@ public class MainActivity extends Activity {
 				//if(mCameraMode == 0 && mCamera1 != null) {
 				//	mCamera1.stopPreview();
 				//}
-				setFocusArea(mCameraMode);
 				mCamera.takePicture(null, null, mPictureCallback);
 			} catch (Exception e) {
 				// TODO: handle exception
@@ -1036,21 +1031,9 @@ public class MainActivity extends Activity {
 			Parameters parameters=mCamera.getParameters();
 			int focusAreaNum=parameters.getMaxNumFocusAreas() ;
 			Log.i(TAG,"focusAreaNum="+focusAreaNum+", CameraMode="+CameraMode);
+
 			if(focusAreaNum > 0)
 			{
-					/*
-					List<Area> areallist=parameters.getFocusAreas();
-					Log.e(TAG,"areallist="+areallist);
-					if(areallist!=null){
-						Log.i(TAG, "size="+areallist.size());
-						for (int i = 0; i < areallist.size(); i++)
-						{
-							Area area=areallist.get(i);
-							Rect rect=area.rect;
-							Log.i(TAG,"test rect left="+rect.left+"right"+rect.right+"top="+rect.top+"bottom="+rect.bottom);
-						}
-					}else{
-					*/
 				ArrayList<Area> focusArea = new ArrayList<Area>();
 				focusArea.add(new Area(new Rect(), 1000));
 
@@ -1076,17 +1059,7 @@ public class MainActivity extends Activity {
 			int meteringAreaNum = parameters.getMaxNumMeteringAreas();
 			Log.i(TAG,"max metering area = " + meteringAreaNum);
 			if (meteringAreaNum > 0) {
-					/*
-					List<Area> meteringAreaList = parameters.getMeteringAreas();
-					if (meteringAreaList != null) {
-						Log.v(TAG, "metering areas size =" + meteringAreaList.size());
-						for (int i = 0; i < meteringAreaList.size(); i++) {
-							Area area = meteringAreaList.get(i);
-							Rect rect = area.rect;
-							Log.v(TAG,"test rect left="+rect.left+"right"+rect.right+"top="+rect.top+"bottom="+rect.bottom);
-						}
-					} else {
-					*/
+
 				ArrayList<Area> meteringArea = new ArrayList<Area>();
 				meteringArea.add(new Area(new Rect(), 1000));
 
@@ -1152,7 +1125,7 @@ public class MainActivity extends Activity {
 				mCamera.stopPreview();
 				mPreview.setMaxPreviewAndPictureSize(mCamera);
 				try {
-					Thread.sleep(300);
+					Thread.sleep(200);
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
@@ -1161,14 +1134,14 @@ public class MainActivity extends Activity {
 				mCamera1.stopPreview();
 				mPreview1.setMaxPreviewAndPictureSize(mCamera1);
 				try {
-					Thread.sleep(300);
+					Thread.sleep(200);
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
 				mCamera1.startPreview();
 
 				try {
-					Thread.sleep(200);
+					Thread.sleep(100);
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
@@ -1182,7 +1155,6 @@ public class MainActivity extends Activity {
 					e.printStackTrace();
 				}
 			}
-
 			Log.i(TAG, "restart preview done.");
 			//reset property
 			try {
