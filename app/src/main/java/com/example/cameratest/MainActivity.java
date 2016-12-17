@@ -379,22 +379,48 @@ public class MainActivity extends Activity {
 				surfaceView = (SurfaceView) findViewById(R.id.camera_preview);
 				mPreview = new CameraPreview(this, mCamera ,surfaceView, mOpenCamIndex, mCameraMode);
 				mPreview.setlogPath(mLogPath);
-				Thread.sleep(300); //delay
+				Thread.sleep(100); //delay
 
 				parameters_1.setPictureFormat(256);  //0x11:NV21 / 0x100 : JPEG
 				mCamera1.setParameters(parameters_1);
 				surfaceView1 = (SurfaceView) findViewById(R.id.camera_preview1);
 				mPreview1 = new CameraPreview(this, mCamera1 ,surfaceView1, mOpenCamIndex1, mCameraMode);
 				mPreview1.setlogPath(mLogPath);
-				Thread.sleep(300); //delay
 			}else {
 				mCamera.setParameters(parameters);
 				surfaceView = (SurfaceView) findViewById(R.id.camera_preview2);
 				mPreview = new CameraPreview(this, mCamera ,surfaceView, mOpenCamIndex, mCameraMode);
 				mPreview.setlogPath(mLogPath);
-				Thread.sleep(300); //delay
 			}
-			Log.i(TAG,"onResume done.");
+
+			new Handler().postDelayed(new Runnable(){
+				public void run() {
+					//execute the task
+					//check after open camera
+					check_ISP_status();
+
+					if(mCameraMode == 0 && mCamera1 !=null){
+						Parameters parameters=mCamera.getParameters();
+						parameters.setFocusMode(Parameters.FOCUS_MODE_AUTO);
+						mCamera.setParameters(parameters);
+						wlog("finish startPreview"+mOpenCamIndex);
+						Log.i(TAG,"[ok] start preview : "+mOpenCamIndex);
+
+						Parameters parameters_1 = mCamera1.getParameters();
+						parameters_1.setFocusMode(Parameters.FOCUS_MODE_AUTO);
+						mCamera1.setParameters(parameters_1);
+						wlog("finish startPreview"+mOpenCamIndex1);
+						Log.i(TAG,"[ok] start preview : "+mOpenCamIndex1);
+					}else {
+						Parameters parameters=mCamera.getParameters();
+						parameters.setFocusMode(Parameters.FOCUS_MODE_AUTO);
+						mCamera.setParameters(parameters);
+						wlog("finish startPreview"+mOpenCamIndex);
+						Log.i(TAG,"[ok] start preview : "+mOpenCamIndex);
+					}
+					Log.i(TAG,"onResume done.");
+				}
+			}, 1500);
 			//wlog("camera open finish");
 		} catch (Exception e) {
 			// TODO: handle exception
@@ -1129,7 +1155,7 @@ public class MainActivity extends Activity {
 				mCamera.stopPreview();
 				mPreview.setMaxPreviewAndPictureSize(mCamera);
 				try {
-					Thread.sleep(200);
+					Thread.sleep(100);
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
@@ -1138,7 +1164,7 @@ public class MainActivity extends Activity {
 				mCamera1.stopPreview();
 				mPreview1.setMaxPreviewAndPictureSize(mCamera1);
 				try {
-					Thread.sleep(200);
+					Thread.sleep(100);
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
@@ -1154,7 +1180,7 @@ public class MainActivity extends Activity {
 				mPreview.setMaxPreviewAndPictureSize(mCamera);
 				mCamera.startPreview();
 				try {
-					Thread.sleep(300);
+					Thread.sleep(100);
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}

@@ -91,23 +91,14 @@ public class CameraPreview extends SurfaceView implements SurfaceHolder.Callback
 
         // set preview size and ROI:
         setMaxPreviewAndPictureSize(mCamera);
+        //init ROI and update
         setFocusArea(mCamera);
 
         // start preview with new settings
         try {
                 //set preview display
                 mCamera.setPreviewDisplay(mHolder);
-                /*
-                if(mCameraMode==0 && cameraID==2){
-                    mCamera.startPreview();
-                    wlog("finish startPreview" + cameraID);
-                    Log.i(TAG, "[ok] start preview : " + cameraID);
-                }else {
-                */
-                    mCamera.startPreview();
-                    wlog("finish startPreview"+cameraID);
-                    Log.i(TAG,"[ok] start preview : "+cameraID);
-                //}
+                mCamera.startPreview();
         } catch (Exception e){
                 Log.e(TAG,"[fail] start preview : "+cameraID);
                 Log.e(TAG, "Error starting camera preview: " + e.getMessage());
@@ -127,7 +118,6 @@ public class CameraPreview extends SurfaceView implements SurfaceHolder.Callback
 
                 focusArea.get(0).rect.set(-250, -250, 250, 250);
                 parameters.setFocusAreas(focusArea);
-                rCamera.setParameters(parameters);
             }
 
             int meteringAreaNum = parameters.getMaxNumMeteringAreas();
@@ -138,8 +128,9 @@ public class CameraPreview extends SurfaceView implements SurfaceHolder.Callback
 
                 meteringArea.get(0).rect.set(-250, -250, 250, 250);
                 parameters.setMeteringAreas(meteringArea);
-                rCamera.setParameters(parameters);
             }
+
+            rCamera.setParameters(parameters);
         }
     }
 
@@ -198,7 +189,6 @@ public class CameraPreview extends SurfaceView implements SurfaceHolder.Callback
                 lp.width = lh;
                 mSurfaceView.setLayoutParams(lp);
             }
-
 			mCamera.setParameters(parameters);
         }   
     }
