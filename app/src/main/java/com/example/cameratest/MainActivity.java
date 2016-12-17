@@ -223,6 +223,7 @@ public class MainActivity extends Activity {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		Log.i(TAG, "setprop persist.camera.isprestart 0");
 
 		try {
 			previewTV = (TextView) findViewById(R.id.previewName);
@@ -378,17 +379,20 @@ public class MainActivity extends Activity {
 				surfaceView = (SurfaceView) findViewById(R.id.camera_preview);
 				mPreview = new CameraPreview(this, mCamera ,surfaceView, mOpenCamIndex, mCameraMode);
 				mPreview.setlogPath(mLogPath);
+				Thread.sleep(300); //delay
 
 				parameters_1.setPictureFormat(256);  //0x11:NV21 / 0x100 : JPEG
 				mCamera1.setParameters(parameters_1);
 				surfaceView1 = (SurfaceView) findViewById(R.id.camera_preview1);
 				mPreview1 = new CameraPreview(this, mCamera1 ,surfaceView1, mOpenCamIndex1, mCameraMode);
 				mPreview1.setlogPath(mLogPath);
+				Thread.sleep(300); //delay
 			}else {
 				mCamera.setParameters(parameters);
 				surfaceView = (SurfaceView) findViewById(R.id.camera_preview2);
 				mPreview = new CameraPreview(this, mCamera ,surfaceView, mOpenCamIndex, mCameraMode);
 				mPreview.setlogPath(mLogPath);
+				Thread.sleep(300); //delay
 			}
 			Log.i(TAG,"onResume done.");
 			//wlog("camera open finish");
@@ -1162,6 +1166,9 @@ public class MainActivity extends Activity {
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
+
+			//set ROI
+			setFocusArea(mCameraMode);
 			//return;
 		}
 	}

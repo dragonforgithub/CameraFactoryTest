@@ -1,6 +1,7 @@
 package com.example.cameratest;
 
 import android.graphics.Rect;
+import android.os.Build;
 import android.os.Handler;
 import android.view.SurfaceView;
 import android.hardware.Camera;
@@ -88,33 +89,57 @@ public class CameraPreview extends SurfaceView implements SurfaceHolder.Callback
           // ignore: tried to stop a non-existent preview
         }*/
 
-        // set preview size and make any resize, rotate or
+        // set preview size and ROI:
         setMaxPreviewAndPictureSize(mCamera);
+        setFocusArea(mCamera);
+
         // start preview with new settings
         try {
+                //set preview display
+                mCamera.setPreviewDisplay(mHolder);
+                /*
                 if(mCameraMode==0 && cameraID==2){
-                    new Handler().postDelayed(new Runnable(){
-                        public void run() {
-                            //execute the task
-                            try {
-                                mCamera.setPreviewDisplay(mHolder);
-                            } catch (IOException e) {
-                                e.printStackTrace();
-                            }
-                            mCamera.startPreview();
-                            wlog("finish startPreview"+cameraID);
-                            Log.i(TAG,"[ok] start preview : "+cameraID);
-                        }
-                    }, 300);
+                    mCamera.startPreview();
+                    wlog("finish startPreview" + cameraID);
+                    Log.i(TAG, "[ok] start preview : " + cameraID);
                 }else {
-                    mCamera.setPreviewDisplay(mHolder);
+                */
                     mCamera.startPreview();
                     wlog("finish startPreview"+cameraID);
                     Log.i(TAG,"[ok] start preview : "+cameraID);
-                }
+                //}
         } catch (Exception e){
                 Log.e(TAG,"[fail] start preview : "+cameraID);
                 Log.e(TAG, "Error starting camera preview: " + e.getMessage());
+        }
+    }
+
+    public void setFocusArea(Camera rCamera)
+    {
+        if(Build.VERSION.SDK_INT>=14 )
+        {
+            Parameters parameters=rCamera.getParameters();
+
+            int focusAreaNum=parameters.getMaxNumFocusAreas() ;
+            if(focusAreaNum > 0) {
+                ArrayList<Camera.Area> focusArea = new ArrayList<Camera.Area>();
+                focusArea.add(new Camera.Area(new Rect(), 1000));
+
+                focusArea.get(0).rect.set(-250, -250, 250, 250);
+                parameters.setFocusAreas(focusArea);
+                rCamera.setParameters(parameters);
+            }
+
+            int meteringAreaNum = parameters.getMaxNumMeteringAreas();
+            Log.i(TAG,"max metering area = " + meteringAreaNum);
+            if (meteringAreaNum > 0) {
+                ArrayList<Camera.Area> meteringArea = new ArrayList<Camera.Area>();
+                meteringArea.add(new Camera.Area(new Rect(), 1000));
+
+                meteringArea.get(0).rect.set(-250, -250, 250, 250);
+                parameters.setMeteringAreas(meteringArea);
+                rCamera.setParameters(parameters);
+            }
         }
     }
 
