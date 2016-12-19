@@ -218,12 +218,14 @@ public class MainActivity extends Activity {
 		List<String> supportedFocuseMode_1;
 
 		//init
+		/*
 		try {
 			process_ISP = Runtime.getRuntime().exec("setprop persist.camera.isprestart 0");
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 		Log.i(TAG, "setprop persist.camera.isprestart 0");
+		*/
 
 		try {
 			previewTV = (TextView) findViewById(R.id.previewName);
@@ -379,7 +381,6 @@ public class MainActivity extends Activity {
 				surfaceView = (SurfaceView) findViewById(R.id.camera_preview);
 				mPreview = new CameraPreview(this, mCamera ,surfaceView, mOpenCamIndex, mCameraMode);
 				mPreview.setlogPath(mLogPath);
-				Thread.sleep(100); //delay
 
 				parameters_1.setPictureFormat(256);  //0x11:NV21 / 0x100 : JPEG
 				mCamera1.setParameters(parameters_1);
@@ -392,36 +393,7 @@ public class MainActivity extends Activity {
 				mPreview = new CameraPreview(this, mCamera ,surfaceView, mOpenCamIndex, mCameraMode);
 				mPreview.setlogPath(mLogPath);
 			}
-
-			new Handler().postDelayed(new Runnable(){
-				public void run() {
-					//execute the task
-					//check after open camera
-					check_ISP_status();
-
-					if(mCameraMode == 0 && mCamera1 !=null){
-						Parameters parameters=mCamera.getParameters();
-						parameters.setFocusMode(Parameters.FOCUS_MODE_AUTO);
-						mCamera.setParameters(parameters);
-						wlog("finish startPreview"+mOpenCamIndex);
-						Log.i(TAG,"[ok] start preview : "+mOpenCamIndex);
-
-						Parameters parameters_1 = mCamera1.getParameters();
-						parameters_1.setFocusMode(Parameters.FOCUS_MODE_AUTO);
-						mCamera1.setParameters(parameters_1);
-						wlog("finish startPreview"+mOpenCamIndex1);
-						Log.i(TAG,"[ok] start preview : "+mOpenCamIndex1);
-					}else {
-						Parameters parameters=mCamera.getParameters();
-						parameters.setFocusMode(Parameters.FOCUS_MODE_AUTO);
-						mCamera.setParameters(parameters);
-						wlog("finish startPreview"+mOpenCamIndex);
-						Log.i(TAG,"[ok] start preview : "+mOpenCamIndex);
-					}
-					Log.i(TAG,"onResume done.");
-				}
-			}, 1500);
-			//wlog("camera open finish");
+			Log.i(TAG,"onResume done.");
 		} catch (Exception e) {
 			// TODO: handle exception
 			wlog("camera open fail");

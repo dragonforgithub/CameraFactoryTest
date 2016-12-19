@@ -82,12 +82,12 @@ public class CameraPreview extends SurfaceView implements SurfaceHolder.Callback
         }
 
         // stop preview before making changes
-        /*
         try {
             mCamera.stopPreview();
         } catch (Exception e){
           // ignore: tried to stop a non-existent preview
-        }*/
+            Log.e(TAG, "Error starting camera preview: " + e.getMessage());
+        }
 
         // set preview size and ROI:
         setMaxPreviewAndPictureSize(mCamera);
@@ -97,8 +97,14 @@ public class CameraPreview extends SurfaceView implements SurfaceHolder.Callback
         // start preview with new settings
         try {
                 //set preview display
+                if(mCameraMode == 0 && cameraID==2){
+                    Thread.sleep(500); //delay
+                    Log.i(TAG,"DaulCamera mode delay 500ms");
+                }
                 mCamera.setPreviewDisplay(mHolder);
                 mCamera.startPreview();
+                wlog("finish startPreview"+cameraID);
+                Log.i(TAG,"[ok] start preview : "+cameraID);
         } catch (Exception e){
                 Log.e(TAG,"[fail] start preview : "+cameraID);
                 Log.e(TAG, "Error starting camera preview: " + e.getMessage());
