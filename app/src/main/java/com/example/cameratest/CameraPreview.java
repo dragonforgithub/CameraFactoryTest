@@ -81,14 +81,6 @@ public class CameraPreview extends SurfaceView implements SurfaceHolder.Callback
             return;
         }
 
-        // stop preview before making changes
-        try {
-            mCamera.stopPreview();
-        } catch (Exception e){
-          // ignore: tried to stop a non-existent preview
-            Log.e(TAG, "Error starting camera preview: " + e.getMessage());
-        }
-
         // set preview size and ROI:
         setMaxPreviewAndPictureSize(mCamera);
         //init ROI and update
@@ -96,13 +88,13 @@ public class CameraPreview extends SurfaceView implements SurfaceHolder.Callback
 
         // start preview with new settings
         try {
-                //set preview display
-                if(mCameraMode == 0 && cameraID==2){
-                    Thread.sleep(500); //delay
-                    Log.i(TAG,"DaulCamera mode delay 500ms");
-                }
+                //set preview display delay
                 mCamera.setPreviewDisplay(mHolder);
                 mCamera.startPreview();
+                if(mCameraMode == 0){
+                    Thread.sleep(500); //delay 500ms
+                    Log.i(TAG,"DaulCamera mode delay 1000ms");
+                }
                 wlog("finish startPreview"+cameraID);
                 Log.i(TAG,"[ok] start preview : "+cameraID);
         } catch (Exception e){
@@ -181,10 +173,7 @@ public class CameraPreview extends SurfaceView implements SurfaceHolder.Callback
                     }
                 }
             }
-            //if(mCameraMode == 0 && preScale < 1.4){ //for Hades
-            //    lw=1280;
-            //    lh=960;
-            //}
+
             parameters.setPreviewSize(lw, lh);
             Log.v(TAG, "set previewsize:" + lw + "x" + lh );
 
