@@ -92,11 +92,17 @@ public class CameraPreview extends SurfaceView implements SurfaceHolder.Callback
                 mCamera.setPreviewDisplay(mHolder);
                 mCamera.startPreview();
                 if(mCameraMode == 0){
-                    Thread.sleep(500); //delay 500ms
-                    Log.i(TAG,"DaulCamera mode delay 1000ms");
+                    Thread.sleep(900); //delay 900ms
+                    Log.i(TAG,"DaulCamera mode delay 900ms");
                 }
-                wlog("finish startPreview"+cameraID);
-                Log.i(TAG,"[ok] start preview : "+cameraID);
+
+                //new Handler().postDelayed(new Runnable(){
+                  //  public void run() {
+                        wlog("finish startPreview"+cameraID);
+                        Log.i(TAG,"[ok] start preview : "+cameraID);
+                    //}
+                //}, 800);
+
         } catch (Exception e){
                 Log.e(TAG,"[fail] start preview : "+cameraID);
                 Log.e(TAG, "Error starting camera preview: " + e.getMessage());

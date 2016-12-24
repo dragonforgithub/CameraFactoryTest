@@ -8,5 +8,5 @@ public class HandleMsg {
 	 public static final int MSG_SET_SAVE_PATH=4;
 	 public static final int SET_ISO =5;
 	 public static final int SET_EXP =6;
-	 public static final int EMPTY=-1;
+	 public static final int CHECK_ISP=7;
 }
