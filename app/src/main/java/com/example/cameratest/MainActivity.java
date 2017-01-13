@@ -232,13 +232,16 @@ public class MainActivity extends Activity {
 			switch (mCameraMode){
 				case 0 : //rear0 & rear1
 					if(mRear0Exist && mRear1Exist){
-						mOpenCamIndex = 0;//FindBackCamera0();
+						mOpenCamIndex = FindBackCamera0();
 						mCamera = Camera.open(mOpenCamIndex);
+						Thread.sleep(1000);
 						parameters = mCamera.getParameters();
 
-						mOpenCamIndex1 = 2;//FindBackCamera1();
+						mOpenCamIndex1 = FindBackCamera1();
 						mCamera1 = Camera.open(mOpenCamIndex1);
+						Thread.sleep(1000);
 						parameters_1 = mCamera1.getParameters();
+
 						Log.i(TAG, "open rear two cameraS!");
 					}else {
 						Log.e(TAG, "mRear0Exist:"+mRear0Exist+",mRear1Exist:"+mRear1Exist);
@@ -250,7 +253,7 @@ public class MainActivity extends Activity {
 					previewTV_1.setVisibility(View.INVISIBLE);
 
 					if(mRear0Exist){
-						mOpenCamIndex = 0;//FindBackCamera0();
+						mOpenCamIndex = FindBackCamera0();
 						mCamera = Camera.open(mOpenCamIndex);
 						parameters = mCamera.getParameters();
 						Log.i(TAG, "open rear 0 camera!");
@@ -264,7 +267,7 @@ public class MainActivity extends Activity {
 					previewTV_1.setVisibility(View.INVISIBLE);
 
 					if(mRear1Exist){
-						mOpenCamIndex = 2;//FindBackCamera1();
+						mOpenCamIndex = FindBackCamera1();
 						mCamera = Camera.open(mOpenCamIndex);
 						parameters = mCamera.getParameters();
 						Log.i(TAG, "open rear 1 camera!");
@@ -277,7 +280,7 @@ public class MainActivity extends Activity {
 					previewTV.setText("FrontCamera");
 					previewTV_1.setVisibility(View.INVISIBLE);
 					if(mFrontExist){
-						mOpenCamIndex = 1;//FindFrontCamera();
+						mOpenCamIndex = FindFrontCamera();
 						mCamera = Camera.open(mOpenCamIndex);
 						parameters = mCamera.getParameters();
 						Log.i(TAG, "open front camera!");
