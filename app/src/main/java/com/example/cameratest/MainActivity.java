@@ -138,6 +138,8 @@ public class MainActivity extends Activity {
 		Log.v(TAG, "phone model is "+Model);
 
 		Intent intent = getIntent();
+		//先清除堆顶的Activity，然后再以singleTop的启动模式打开，这样生命周期就从onCreate()开始调用。
+		intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
 		mCameraMode = intent.getIntExtra("cameramode", -1);
 		mLogPath = intent.getStringExtra("logpath");
 		Log.v(TAG, "CameraID="+mCameraMode+";log path="+mLogPath);
@@ -255,6 +257,7 @@ public class MainActivity extends Activity {
 					if(mRear0Exist){
 						mOpenCamIndex = FindBackCamera0();
 						mCamera = Camera.open(mOpenCamIndex);
+						Thread.sleep(500);
 						parameters = mCamera.getParameters();
 						Log.i(TAG, "open rear 0 camera!");
 					}else {
@@ -269,6 +272,7 @@ public class MainActivity extends Activity {
 					if(mRear1Exist){
 						mOpenCamIndex = FindBackCamera1();
 						mCamera = Camera.open(mOpenCamIndex);
+						Thread.sleep(500);
 						parameters = mCamera.getParameters();
 						Log.i(TAG, "open rear 1 camera!");
 					}else {
@@ -282,6 +286,7 @@ public class MainActivity extends Activity {
 					if(mFrontExist){
 						mOpenCamIndex = FindFrontCamera();
 						mCamera = Camera.open(mOpenCamIndex);
+						Thread.sleep(500);
 						parameters = mCamera.getParameters();
 						Log.i(TAG, "open front camera!");
 					}else {
