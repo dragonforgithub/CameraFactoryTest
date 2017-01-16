@@ -142,7 +142,7 @@ public class MainActivity extends Activity {
 		intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
 		mCameraMode = intent.getIntExtra("cameramode", -1);
 		mLogPath = intent.getStringExtra("logpath");
-		Log.v(TAG, "CameraID="+mCameraMode+";log path="+mLogPath);
+		Log.i(TAG, "CameraID="+mCameraMode+";log path="+mLogPath);
 
 		if(mCameraMode==-1 || mLogPath==null || mCameraNumber==0){
 			System.exit(0);
@@ -156,13 +156,38 @@ public class MainActivity extends Activity {
 	@Override
 	protected void onPause() {
 		super.onPause();
-		Log.v(TAG, "onPause");
+		Log.v(TAG, "onPause : release camera");
+		if(mOrientationListener != null){
+			mOrientationListener.disable();
+			mOrientationListener=null;
+		}
+
+		if(mCameraMode == 0) {
+			if(mCamera != null && mCamera1 != null){
+				mCamera1.setPreviewCallback(null);
+				mCamera.setPreviewCallback(null);
+				mCamera1.release();
+				mCamera.release();
+				mCamera1 = null;
+				mCamera = null;
+			}
+		}else {
+			if(mCamera != null){
+				mCamera.setPreviewCallback(null);
+				mCamera.release();
+				mCamera = null;
+			}
+		}
+		cmd_excuting=false;
+		Log.e(TAG,"onDestroy&System.exit(0):");
+		super.onDestroy();
+		System.exit(0);
 	}
 
 	@Override
 	protected void onDestroy() {
 		// TODO Auto-generated method stub
-		Log.v(TAG,"onDestroy enter");
+		Log.v(TAG,"onDestroy enter : release camera");
 		if(mOrientationListener != null){
 			mOrientationListener.disable();
 			mOrientationListener=null;
