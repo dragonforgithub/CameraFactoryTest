@@ -60,7 +60,6 @@ public class MainActivity extends Activity {
 	String mLogPath = "";
 	private boolean mbTkPicture = false;
 	private boolean mbTkPicture_1 = false;
-	private int ispRestart = 0;
 	CamReceiver mCamReceiver =null;
 	private int mCameraMode=-1;
 
@@ -69,12 +68,8 @@ public class MainActivity extends Activity {
 	private boolean isSupportFocuse=false;
 	private boolean isSupportFocuse_1=false;
 
-	private boolean cmd_excuting=false;
-
 	public Handler mHandler;
 	private MyOrientationDetector mOrientationListener = null;
-
-	private Process process_ISP = null;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -178,7 +173,7 @@ public class MainActivity extends Activity {
 				mCamera = null;
 			}
 		}
-		cmd_excuting=false;
+
 		Log.e(TAG,"onDestroy&System.exit(0):");
 		super.onDestroy();
 		System.exit(0);
@@ -218,7 +213,7 @@ public class MainActivity extends Activity {
 				mCamera = null;
 			}
 		}
-		cmd_excuting=false;
+
 		Log.e(TAG,"onDestroy&System.exit(0):");
 		super.onDestroy();
 		//System.exit(0) after 300ms
@@ -240,16 +235,6 @@ public class MainActivity extends Activity {
 		List<String> supportedFocuseMode;
 		List<String> supportedFocuseMode_1;
 
-		//init
-		/*
-		try {
-			process_ISP = Runtime.getRuntime().exec("setprop persist.camera.isprestart 0");
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		Log.i(TAG, "setprop persist.camera.isprestart 0");
-		*/
-
 		try {
 			previewTV = (TextView) findViewById(R.id.previewName);
 			previewTV_1 = (TextView) findViewById(R.id.previewName_1);
@@ -261,11 +246,12 @@ public class MainActivity extends Activity {
 					if(mRear0Exist && mRear1Exist){
 						mOpenCamIndex = 0;//FindBackCamera0();
 						mCamera = Camera.open(mOpenCamIndex);
-						parameters = mCamera.getParameters();
 						Thread.sleep(300);
+						parameters = mCamera.getParameters();
 
 						mOpenCamIndex1 = 2;//FindBackCamera1();
 						mCamera1 = Camera.open(mOpenCamIndex1);
+						Thread.sleep(300);
 						parameters_1 = mCamera1.getParameters();
 
 						Log.i(TAG, "open rear two cameraS!");
@@ -281,6 +267,7 @@ public class MainActivity extends Activity {
 					if(mRear0Exist){
 						mOpenCamIndex = 0;//FindBackCamera0();
 						mCamera = Camera.open(mOpenCamIndex);
+						Thread.sleep(300);
 						parameters = mCamera.getParameters();
 						Log.i(TAG, "open rear 0 camera!");
 					}else {
@@ -295,6 +282,7 @@ public class MainActivity extends Activity {
 					if(mRear1Exist){
 						mOpenCamIndex = 2;//FindBackCamera1();
 						mCamera = Camera.open(mOpenCamIndex);
+						Thread.sleep(300);
 						parameters = mCamera.getParameters();
 						Log.i(TAG, "open rear 1 camera!");
 					}else {
@@ -308,6 +296,7 @@ public class MainActivity extends Activity {
 					if(mFrontExist){
 						mOpenCamIndex = 1;//FindFrontCamera();
 						mCamera = Camera.open(mOpenCamIndex);
+						Thread.sleep(300);
 						parameters = mCamera.getParameters();
 						Log.i(TAG, "open front camera!");
 					}else {
@@ -438,7 +427,6 @@ public class MainActivity extends Activity {
 					switch (msg.what) {
 
 						case HandleMsg.MSG_CLOSE_CAMERA:
-							cmd_excuting=true;
 							onDestroy();
 							break;
 
