@@ -259,15 +259,14 @@ public class MainActivity extends Activity {
 			switch (mCameraMode){
 				case 0 : //rear0 & rear1
 					if(mRear0Exist && mRear1Exist){
-						mOpenCamIndex1 = 2;//FindBackCamera1();
-						mCamera1 = Camera.open(mOpenCamIndex1);
-						Thread.sleep(1000);
-						parameters_1 = mCamera1.getParameters();
-
 						mOpenCamIndex = 0;//FindBackCamera0();
 						mCamera = Camera.open(mOpenCamIndex);
-						Thread.sleep(500);
 						parameters = mCamera.getParameters();
+						Thread.sleep(300);
+
+						mOpenCamIndex1 = 2;//FindBackCamera1();
+						mCamera1 = Camera.open(mOpenCamIndex1);
+						parameters_1 = mCamera1.getParameters();
 
 						Log.i(TAG, "open rear two cameraS!");
 					}else {
@@ -282,7 +281,6 @@ public class MainActivity extends Activity {
 					if(mRear0Exist){
 						mOpenCamIndex = 0;//FindBackCamera0();
 						mCamera = Camera.open(mOpenCamIndex);
-						Thread.sleep(500);
 						parameters = mCamera.getParameters();
 						Log.i(TAG, "open rear 0 camera!");
 					}else {
@@ -297,7 +295,6 @@ public class MainActivity extends Activity {
 					if(mRear1Exist){
 						mOpenCamIndex = 2;//FindBackCamera1();
 						mCamera = Camera.open(mOpenCamIndex);
-						Thread.sleep(500);
 						parameters = mCamera.getParameters();
 						Log.i(TAG, "open rear 1 camera!");
 					}else {
@@ -311,7 +308,6 @@ public class MainActivity extends Activity {
 					if(mFrontExist){
 						mOpenCamIndex = 1;//FindFrontCamera();
 						mCamera = Camera.open(mOpenCamIndex);
-						Thread.sleep(500);
 						parameters = mCamera.getParameters();
 						Log.i(TAG, "open front camera!");
 					}else {
@@ -417,9 +413,6 @@ public class MainActivity extends Activity {
 				mPreview1 = new CameraPreview(this, mCamera1 ,surfaceView1, mOpenCamIndex1, mCameraMode);
 				mPreview1.setlogPath(mLogPath);
 
-				//start the isp status check thread
-				Log.i(TAG,"Add isp check timer in DualCamera mode:");
-				new Thread(new ThreadCheckISP()).start();
 			}else {
 				mCamera.setParameters(parameters);
 				surfaceView = (SurfaceView) findViewById(R.id.camera_preview2);
@@ -444,15 +437,6 @@ public class MainActivity extends Activity {
 				{
 					switch (msg.what) {
 
-						case HandleMsg.CHECK_ISP:
-							if(cmd_excuting || ispRestart==1 || (mbTkPicture||mbTkPicture_1)){
-								Log.e(TAG, "busy,not restart preview!");
-								break;
-							}
-							Log.d(TAG, "timer check ISP status...");
-							check_ISP_status();
-							break;
-
 						case HandleMsg.MSG_CLOSE_CAMERA:
 							cmd_excuting=true;
 							onDestroy();
@@ -467,17 +451,6 @@ public class MainActivity extends Activity {
 
 							focusneed=msg.arg1;
 							rawneed=msg.arg2;
-
-							if(ispRestart==1){
-								try {
-									Thread.sleep(2000);
-								} catch (InterruptedException e) {
-									e.printStackTrace();
-								}
-							}else {
-								check_ISP_status();
-							}
-
 							takePic(focusneed,rawneed);
 							break;
 
@@ -575,17 +548,6 @@ public class MainActivity extends Activity {
 											}
 											setFocusArea(mCameraMode);
 											Log.i(TAG, "do Focus wide :");
-
-											if(ispRestart==1){
-												try {
-													Thread.sleep(2000);
-												} catch (InterruptedException e) {
-													e.printStackTrace();
-												}
-											}else {
-												check_ISP_status();
-											}
-
 											mCamera.autoFocus(mAutoFocusCallbackWide);
 										} else {
 											wlog("focus success");
@@ -1132,107 +1094,4 @@ public class MainActivity extends Activity {
 			}
 		}
 	}
-
-	// 线程类
-	class ThreadCheckISP implements Runnable {
-		@Override
-		public void run() {
-			// TODO Auto-generated method stub
-			while (true) {
-				try {
-					//execute the task
-					Message msg = new Message();
-					msg.what = HandleMsg.CHECK_ISP;
-					Thread.sleep(10000);
-					mHandler.sendMessage(msg);
-				} catch (Exception e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-			}
-		}
-	}
-
-	////check isp restart>>>>>
-	void check_ISP_status(){
-		//read ISP restart status
-		try {
-			process_ISP = Runtime.getRuntime().exec("getprop persist.camera.isprestart");
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-
-		InputStreamReader ir_PJ = new InputStreamReader(process_ISP.getInputStream());
-		BufferedReader input_PJ = new BufferedReader(ir_PJ);
-
-		try {
-			String states = input_PJ.readLine();
-			ispRestart = Integer.parseInt(states);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-
-		if(ispRestart==1) {
-			Toast.makeText(MainActivity.this, "ISP overflow restart preview...", Toast.LENGTH_LONG).show();
-			try {
-				process_ISP = Runtime.getRuntime().exec("setprop persist.camera.dumpimg 16");
-				process_ISP = Runtime.getRuntime().exec("setprop persist.camera.zsl_raw 1");
-				process_ISP = Runtime.getRuntime().exec("setprop persist.camera.raw_yuv 1");
-				process_ISP = Runtime.getRuntime().exec("setprop persist.camera.snapshot_raw 1");
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-			if (mCameraMode ==0 && mCamera1 != null) {
-				//mCamera.stopPreview();
-				mCamera1.stopPreview();
-				try {
-					Thread.sleep(100);
-				} catch (InterruptedException e) {
-					e.printStackTrace();
-				}
-				//set ROI
-				setFocusArea(mCameraMode);
-				/*
-				mPreview.setMaxPreviewAndPictureSize(mCamera);
-				mCamera.startPreview();
-				try {
-					Thread.sleep(300);
-				} catch (InterruptedException e) {
-					e.printStackTrace();
-				}
-				*/
-				mPreview1.setMaxPreviewAndPictureSize(mCamera1);
-				mCamera1.startPreview();
-			}else {
-				mCamera.stopPreview();
-				try {
-					Thread.sleep(100);
-				} catch (InterruptedException e) {
-					e.printStackTrace();
-				}
-				mPreview.setMaxPreviewAndPictureSize(mCamera);
-				mCamera.startPreview();
-			}
-			Log.i(TAG, "restart preview done.");
-
-			try {
-				Thread.sleep(500);
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
-
-			//reset property
-			try {
-				process_ISP = Runtime.getRuntime().exec("setprop persist.camera.isprestart 0");
-				process_ISP = Runtime.getRuntime().exec("setprop persist.camera.dumpimg 0");
-				process_ISP = Runtime.getRuntime().exec("setprop persist.camera.zsl_raw 0");
-				process_ISP = Runtime.getRuntime().exec("setprop persist.camera.raw_yuv 0");
-				process_ISP = Runtime.getRuntime().exec("setprop persist.camera.snapshot_raw 0");
-				ispRestart=0;
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-		}
-	}
-	////check isp restart<<<<<
 }
