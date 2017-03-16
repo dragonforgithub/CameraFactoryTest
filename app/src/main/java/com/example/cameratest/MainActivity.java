@@ -49,12 +49,8 @@ public class MainActivity extends Activity {
 	private int mOpenCamIndex =-1;
 	private int mOpenCamIndex1 =-1;
 
-	private boolean mRear0Exist=false;
-	private boolean mFrontExist=false;
-	private boolean mRear1Exist=false;
 	private int mCameraNumber=0;
 	private int mPicOrientation=0;
-	private int mDisOrientation=0;
 
 	String mSavaPath = "";
 	String mLogPath = "";
@@ -102,28 +98,6 @@ public class MainActivity extends Activity {
 		}
 		*/
 
-		//Read Module Name------
-		File file_RearModule_1=new File("/proc/driver/RearModule");
-		File file_FrontModule=new File("/proc/driver/FrontModule");
-		File file_RearModule_2=new File("/proc/driver/RearModule2");
-
-		if(file_RearModule_1.exists()) {
-			mRear0Exist=true;
-		}else {
-			Log.e(TAG,"RearModule not Exist!");
-		}
-
-		if(file_FrontModule.exists()) {
-			mFrontExist=true;
-		}else {
-			Log.e(TAG,"FrontModule not Exist!");
-		}
-
-		if(file_RearModule_2.exists()) {
-			mRear1Exist=true;
-		}else {
-			Log.e(TAG,"RearModule2 not Exist!");
-		}
 
 		//get current camera number and information
 		mCameraNumber = Camera.getNumberOfCameras();
@@ -157,7 +131,7 @@ public class MainActivity extends Activity {
 			mOrientationListener=null;
 		}
 
-		if(mCameraMode == 0) {
+		if(mCamera1 != null) {
 			if(mCamera != null && mCamera1 != null){
 				mCamera1.setPreviewCallback(null);
 				mCamera.setPreviewCallback(null);
@@ -194,7 +168,7 @@ public class MainActivity extends Activity {
 		}
 
 
-		if(mCameraMode == 0) {
+		if(mCamera1 != null) {
 			if(mCamera != null && mCamera1 != null){
 				mCamera1.stopPreview();
 				mCamera.stopPreview();
@@ -216,20 +190,16 @@ public class MainActivity extends Activity {
 
 		Log.e(TAG,"onDestroy&System.exit(0):");
 		super.onDestroy();
-		//System.exit(0) after 300ms
-		new Handler().postDelayed(new Runnable(){
-			public void run() {
-				//execute the task
-				wlog("close camera finish");
-				System.exit(0);
-			}
-		}, 500);
+
+		//execute the task
+		wlog("close camera finish");
+		System.exit(0);
 	}
 
 	@Override
 	protected void onResume() {
 		super.onResume();
-		Log.v(TAG, "onResume");
+		Log.v(TAG, "onResume mode : "+mCameraMode);
 		List<String> supportedFlashMode;
 		List<String> supportedFlashMode_1;
 		List<String> supportedFocuseMode;
@@ -243,66 +213,67 @@ public class MainActivity extends Activity {
 			Parameters parameters_1 = null;
 			switch (mCameraMode){
 				case 0 : //rear0 & rear1
-					if(mRear0Exist && mRear1Exist){
-						mOpenCamIndex = 0;//FindBackCamera0();
-						mCamera = Camera.open(mOpenCamIndex);
-						Thread.sleep(300);
-						parameters = mCamera.getParameters();
+					previewTV.setText("RearCamera0");
+					previewTV.setVisibility(View.VISIBLE);
+					mOpenCamIndex = 0;//FindBackCamera0();
+					mCamera = Camera.open(mOpenCamIndex);
+					//Thread.sleep(300);
+					parameters = mCamera.getParameters();
+					Log.i(TAG, "open main camera!");
 
-						mOpenCamIndex1 = 2;//FindBackCamera1();
-						mCamera1 = Camera.open(mOpenCamIndex1);
-						Thread.sleep(300);
-						parameters_1 = mCamera1.getParameters();
-
-						Log.i(TAG, "open rear two cameraS!");
-					}else {
-						Log.e(TAG, "mRear0Exist:"+mRear0Exist+",mRear1Exist:"+mRear1Exist);
-						finish();
-					}
+					previewTV_1.setText("RearCamera1");
+					previewTV_1.setVisibility(View.VISIBLE);
+					mOpenCamIndex1 = 2;//FindBackCamera1();
+					mCamera1 = Camera.open(mOpenCamIndex1);
+					//Thread.sleep(300);
+					parameters_1 = mCamera1.getParameters();
+					Log.i(TAG, "open sub camera!");
 					break;
 				case 1 : //rear0
-					previewTV.setText("RearCamera0");
+					previewTV.setText("RearCamera");
 					previewTV_1.setVisibility(View.INVISIBLE);
 
-					if(mRear0Exist){
-						mOpenCamIndex = 0;//FindBackCamera0();
-						mCamera = Camera.open(mOpenCamIndex);
-						Thread.sleep(300);
-						parameters = mCamera.getParameters();
-						Log.i(TAG, "open rear 0 camera!");
-					}else {
-						Log.e(TAG, "No Rear0 Camera!");
-						finish();
-					}
+					mOpenCamIndex = 0;//FindBackCamera0();
+					mCamera = Camera.open(mOpenCamIndex);
+					//Thread.sleep(300);
+					parameters = mCamera.getParameters();
+					Log.i(TAG, "open rear 0 camera!");
 					break;
-				case 2 : //rear1
-					previewTV.setText("RearCamera1");
+				case 2 : //rear1 || front1
+					previewTV.setText("SubCamera");
 					previewTV_1.setVisibility(View.INVISIBLE);
 
-					if(mRear1Exist){
-						mOpenCamIndex = 2;//FindBackCamera1();
-						mCamera = Camera.open(mOpenCamIndex);
-						Thread.sleep(300);
-						parameters = mCamera.getParameters();
-						Log.i(TAG, "open rear 1 camera!");
-					}else {
-						Log.e(TAG, "No Rear1 Camera!");
-						finish();
-					}
+					mOpenCamIndex = 2;//FindBackCamera1();
+					mCamera = Camera.open(mOpenCamIndex);
+					//Thread.sleep(300);
+					parameters = mCamera.getParameters();
+					Log.i(TAG, "open rear 1 camera!");
 					break;
-				case 3 : //front
+				case 3 : //front0
 					previewTV.setText("FrontCamera");
 					previewTV_1.setVisibility(View.INVISIBLE);
-					if(mFrontExist){
-						mOpenCamIndex = 1;//FindFrontCamera();
-						mCamera = Camera.open(mOpenCamIndex);
-						Thread.sleep(300);
-						parameters = mCamera.getParameters();
-						Log.i(TAG, "open front camera!");
-					}else {
-						Log.e(TAG, "No Front Camera!");
-						finish();
-					}
+
+					mOpenCamIndex = 1;//FindFrontCamera();
+					mCamera = Camera.open(mOpenCamIndex);
+					//Thread.sleep(300);
+					parameters = mCamera.getParameters();
+					Log.i(TAG, "open front camera!");
+					break;
+				case 4 : //front0 & front1
+ 					previewTV.setText("FrontCamera0");
+					previewTV.setVisibility(View.VISIBLE);
+					mOpenCamIndex = 1;
+					mCamera = Camera.open(mOpenCamIndex);
+					parameters = mCamera.getParameters();
+					Log.i(TAG, "open main camera!");
+
+					//Thread.sleep(500);
+					previewTV_1.setText("FrontCamera1");
+					previewTV_1.setVisibility(View.VISIBLE);
+					mOpenCamIndex1 = 2;
+					mCamera1 = Camera.open(mOpenCamIndex1);
+					parameters_1 = mCamera1.getParameters();
+					Log.i(TAG, "open sub camera!");
 					break;
 				default:
 					Log.e(TAG, "Invalid Camera ID!");
@@ -320,7 +291,7 @@ public class MainActivity extends Activity {
 				//}
 			}
 
-			if(mCameraMode == 0 && parameters_1 != null) {
+			if(mCameraMode == 0  || mCameraMode == 4) {
 				supportedFlashMode_1 = parameters_1.getSupportedFlashModes();
 				if(supportedFlashMode_1 == null || supportedFlashMode_1.isEmpty()){
 					isSupportFlash_1 = false;
@@ -346,7 +317,7 @@ public class MainActivity extends Activity {
 				}
 			}
 
-			if(mCameraMode == 0 && parameters_1 != null) {
+			if(mCameraMode == 0  || mCameraMode == 4) {
 				supportedFocuseMode_1 = parameters_1.getSupportedFocusModes();
 				if(supportedFocuseMode_1 == null || supportedFocuseMode_1.isEmpty()){
 					isSupportFocuse_1 = false;
@@ -363,26 +334,32 @@ public class MainActivity extends Activity {
 
 			Log.i(TAG,"set default rotation:");
 			//set default rotation
-			mDisOrientation=90;
 			switch (mCameraMode){
 				case 0 : //rear0&rear1
-					parameters.setRotation(0);
-					mCamera.setDisplayOrientation(mDisOrientation);
+					parameters.setRotation(0); //picture rotation
+					mCamera.setDisplayOrientation(90); //display rotation
 
 					parameters_1.setRotation(0);
-					mCamera1.setDisplayOrientation(mDisOrientation);
+					mCamera1.setDisplayOrientation(90);
 					break;
 				case 1 : //rear0
 					parameters.setRotation(0);
-					mCamera.setDisplayOrientation(mDisOrientation);
+					mCamera.setDisplayOrientation(90);
 					break;
 				case 2 : //rear1
 					parameters.setRotation(0);
-					mCamera.setDisplayOrientation(mDisOrientation);
+					mCamera.setDisplayOrientation(270);
 					break;
 				case 3 : //front
 					parameters.setRotation(180);
-					mCamera.setDisplayOrientation(mDisOrientation);
+					mCamera.setDisplayOrientation(90);
+					break;
+				case 4 : //front0 & front1
+					parameters.setRotation(0);
+					mCamera.setDisplayOrientation(90);
+
+					parameters_1.setRotation(0);
+					mCamera1.setDisplayOrientation(270);
 					break;
 				default:
 					Log.e(TAG,"error mCameraMode!");
@@ -390,7 +367,7 @@ public class MainActivity extends Activity {
 			}
 
 			parameters.setPictureFormat(256);  //0x11:NV21 / 0x100 : JPEG
-			if(mCameraMode == 0 && mCamera1 != null) {
+			if(mCamera1 != null) {
 				mCamera.setParameters(parameters);
 				surfaceView = (SurfaceView) findViewById(R.id.camera_preview);
 				mPreview = new CameraPreview(this, mCamera ,surfaceView, mOpenCamIndex, mCameraMode);
@@ -447,11 +424,7 @@ public class MainActivity extends Activity {
 							Bundle bundle=msg.getData();
 							int flashmode= bundle.getInt("flashmode");
 							int focusmode= bundle.getInt("focusmode");
-							//int zoom= bundle.getInt("zoom");
-							//mCamera.stopPreview();
-							//if(mCameraMode == 0 && mCamera1 != null){
-							//	mCamera1.stopPreview();
-							//}
+
 							Parameters parameters = mCamera.getParameters();
 							if(flashmode!=-1)
 							{
@@ -462,7 +435,7 @@ public class MainActivity extends Activity {
 											mCamera.setParameters(parameters);
 										}
 
-										if(isSupportFlash_1 && mCameraMode == 0 && mCamera1 != null){
+										if(isSupportFlash_1 && mCamera1 != null){
 											Parameters parameters_1 = mCamera1.getParameters();
 											parameters_1.setFlashMode(Parameters.FLASH_MODE_OFF);
 											mCamera1.setParameters(parameters_1);
@@ -474,7 +447,7 @@ public class MainActivity extends Activity {
 											mCamera.setParameters(parameters);
 										}
 
-										if(isSupportFlash_1 && mCameraMode == 0 && mCamera1 != null){
+										if(isSupportFlash_1 && mCamera1 != null){
 											Parameters parameters_1 = mCamera1.getParameters();
 											parameters_1.setFlashMode(Parameters.FLASH_MODE_ON);
 											mCamera1.setParameters(parameters_1);
@@ -486,7 +459,7 @@ public class MainActivity extends Activity {
 											mCamera.setParameters(parameters);
 										}
 
-										if(isSupportFlash_1 && mCameraMode == 0 && mCamera1 != null){
+										if(isSupportFlash_1 && mCamera1 != null){
 											Parameters parameters_1 = mCamera1.getParameters();
 											parameters_1.setFlashMode(Parameters.FLASH_MODE_AUTO);
 											mCamera1.setParameters(parameters_1);
@@ -504,7 +477,7 @@ public class MainActivity extends Activity {
 											mCamera.setParameters(parameters);
 										}
 
-										if(isSupportFocuse_1 && mCameraMode == 0 && mCamera1 != null){
+										if(isSupportFocuse_1 && mCamera1 != null){
 											Parameters parameters_1 = mCamera1.getParameters();
 											parameters_1.setFocusMode(Parameters.FOCUS_MODE_AUTO);
 											mCamera1.setParameters(parameters_1);
@@ -517,7 +490,7 @@ public class MainActivity extends Activity {
 											mCamera.setParameters(parameters);
 										}
 
-										if(isSupportFocuse_1 && mCameraMode == 0 && mCamera1 != null){
+										if(isSupportFocuse_1 && mCamera1 != null){
 											Parameters parameters_1 = mCamera1.getParameters();
 											parameters_1.setFocusMode(Parameters.FOCUS_MODE_INFINITY);
 											mCamera1.setParameters(parameters_1);
@@ -529,7 +502,7 @@ public class MainActivity extends Activity {
 											parameters.setFocusMode(Parameters.FOCUS_MODE_AUTO);
 											mCamera.setParameters(parameters);
 
-											if(isSupportFocuse_1 && mCameraMode == 0 && mCamera1 != null){
+											if(isSupportFocuse_1 && mCamera1 != null){
 												Parameters parameters_1 = mCamera1.getParameters();
 												parameters_1.setFocusMode(Parameters.FOCUS_MODE_AUTO);
 												mCamera1.setParameters(parameters_1);
@@ -549,17 +522,14 @@ public class MainActivity extends Activity {
 							int exp=msg.arg1;
 							int cameraIDexp=msg.arg2;
 							Log.i(TAG,"exp = "+exp+",cameraIDexp = "+cameraIDexp);
-							switch(mCameraMode){
-								case 0:
-									if(cameraIDexp == 0) {
-										mPreview.setExp(exp);
-									}else if(cameraIDexp == 2) {
-										mPreview1.setExp(exp);
-									}
-									break;
-								default:
+							if(mCamera1 != null){
+								if(cameraIDexp == 0) {
 									mPreview.setExp(exp);
-									break;
+								}else if(cameraIDexp == 2) {
+									mPreview1.setExp(exp);
+								}
+							}else{
+								mPreview.setExp(exp);
 							}
 							break;
 
@@ -567,17 +537,15 @@ public class MainActivity extends Activity {
 							int iso=msg.arg1;
 							int cameraIDiso=msg.arg2;
 							Log.i(TAG,"iso = "+iso+",cameraIDiso = "+cameraIDiso);
-							switch(mCameraMode){
-								case 0:
-									if(cameraIDiso == 0) {
-										mPreview.setiso(iso);
-									}else if(cameraIDiso == 2) {
-										mPreview1.setiso(iso);
-									}
-									break;
-								default:
+
+							if(mCamera1 != null){
+								if(cameraIDiso == 0) {
 									mPreview.setiso(iso);
-									break;
+								}else if(cameraIDiso == 2) {
+									mPreview1.setiso(iso);
+								}
+							}else{
+								mPreview.setiso(iso);
 							}
 							break;
 
@@ -602,47 +570,49 @@ public class MainActivity extends Activity {
 		}
 	}
 
-	private int FindBackCamera0() {
-		Camera.CameraInfo cameraInfo = new Camera.CameraInfo();
-		for (int camIdx = 0; camIdx < mCameraNumber; camIdx++) {
-			Camera.getCameraInfo(camIdx, cameraInfo); // get camerainfo
-			if (cameraInfo.facing == Camera.CameraInfo.CAMERA_FACING_BACK) {
-				Log.i(TAG,"FindBackCamera0 index =  "+camIdx);
-				return camIdx;
-			}
-		}
-		return -1;
-	}
+	/*
+        private int FindBackCamera0() {
+            Camera.CameraInfo cameraInfo = new Camera.CameraInfo();
+            for (int camIdx = 0; camIdx < mCameraNumber; camIdx++) {
+                Camera.getCameraInfo(camIdx, cameraInfo); // get camerainfo
+                if (cameraInfo.facing == Camera.CameraInfo.CAMERA_FACING_BACK) {
+                    Log.i(TAG,"FindBackCamera0 index =  "+camIdx);
+                    return camIdx;
+                }
+            }
+            return -1;
+        }
 
-	private int FindBackCamera1() {
-		boolean findFirst;
-		Camera.CameraInfo cameraInfo = new Camera.CameraInfo();
-		findFirst=false; //init
-		for (int camIdx = 0; camIdx < mCameraNumber; camIdx++) {
-			Camera.getCameraInfo(camIdx, cameraInfo); // get camerainfo
-			if (cameraInfo.facing == Camera.CameraInfo.CAMERA_FACING_BACK) {
-				if(findFirst == true || !mRear0Exist){
-					Log.i(TAG,"FindBackCamera1 index =  "+camIdx);
-					return camIdx;
-				}else {
-					findFirst=true;
-				}
-			}
-		}
-		return -1;
-	}
+        private int FindBackCamera1() {
+            boolean findFirst;
+            Camera.CameraInfo cameraInfo = new Camera.CameraInfo();
+            findFirst=false; //init
+            for (int camIdx = 0; camIdx < mCameraNumber; camIdx++) {
+                Camera.getCameraInfo(camIdx, cameraInfo); // get camerainfo
+                if (cameraInfo.facing == Camera.CameraInfo.CAMERA_FACING_BACK) {
+                    if(findFirst == true){
+                        Log.i(TAG,"FindBackCamera1 index =  "+camIdx);
+                        return camIdx;
+                    }else {
+                        findFirst=true;
+                    }
+                }
+            }
+            return -1;
+        }
 
-	private int FindFrontCamera() {
-		Camera.CameraInfo cameraInfo = new Camera.CameraInfo();
-		for (int camIdx = 0; camIdx < mCameraNumber; camIdx++) {
-			Camera.getCameraInfo(camIdx, cameraInfo); // get camerainfo
-			if (cameraInfo.facing == Camera.CameraInfo.CAMERA_FACING_FRONT) {
-				Log.i(TAG,"FindFrontCamera index =  "+camIdx);
-				return camIdx;
-			}
-		}
-		return -1;
-	}
+        private int FindFrontCamera() {
+            Camera.CameraInfo cameraInfo = new Camera.CameraInfo();
+            for (int camIdx = 0; camIdx < mCameraNumber; camIdx++) {
+                Camera.getCameraInfo(camIdx, cameraInfo); // get camerainfo
+                if (cameraInfo.facing == Camera.CameraInfo.CAMERA_FACING_FRONT) {
+                    Log.i(TAG,"FindFrontCamera index =  "+camIdx);
+                    return camIdx;
+                }
+            }
+            return -1;
+        }
+    */
 
 	public class MyOrientationDetector extends OrientationEventListener {
 		public MyOrientationDetector( Context context ) {
@@ -687,7 +657,7 @@ public class MainActivity extends Activity {
 			}
 
 			Parameters parameters = mCamera.getParameters();
-			if (mCameraMode == 0 && mCamera1 != null) {  //rear0 & rear1
+			if (mCamera1 != null) {  //rear0 & rear1
 				mPicOrientation = (mPicOrientation+90)%360;
 
 				parameters.setRotation(mPicOrientation);
@@ -734,7 +704,7 @@ public class MainActivity extends Activity {
 				wlog("auto focus fail");
 			}
 
-			if(mCameraMode == 0 && mCamera1 != null) {
+			if(mCameraMode == 0  || mCameraMode == 4) {
 				if(isSupportFocuse_1){
 					new Handler().postDelayed(new Runnable(){
 						public void run() {
@@ -779,7 +749,7 @@ public class MainActivity extends Activity {
 			if(success==false){
 				Log.e(TAG, "wide auto focus fail");
 			}else {
-				if(isSupportFocuse_1 && mCameraMode == 0 && mCamera1 != null){
+				if(isSupportFocuse_1 && mCamera1 != null){
 					Log.i(TAG, "do Focus tele :");
 					new Handler().postDelayed(new Runnable(){
 						public void run() {
@@ -817,7 +787,7 @@ public class MainActivity extends Activity {
 			String savaPath = mSavaPath;
 			try {
 				if (data != null && mSavaPath != null){
-					if(mCameraMode == 0){
+					if(mCamera1 != null){
 						savaPath = mSavaPath+"_1.jpg";
 					}
 					File rawOutput = new File(savaPath);
@@ -831,11 +801,9 @@ public class MainActivity extends Activity {
 			}
 
 			mbTkPicture=false;
-			//mCamera.startPreview();
-			//mCamera.cancelAutoFocus();
 			wlog("takePicture finish");
 
-			if(mCameraMode == 0 && mCamera1 != null) {
+			if(mCamera1 != null) {
 				new Handler().postDelayed(new Runnable(){
 					public void run() {
 						Log.i(TAG,"take picture_1 : ");
@@ -843,7 +811,6 @@ public class MainActivity extends Activity {
 					}
 				}, 300);
 			}else{
-				//mCamera.startPreview();
 				try {
 					//android读取图片EXIF信息
 					ExifInterface exifInterface=new ExifInterface(savaPath);
@@ -862,7 +829,6 @@ public class MainActivity extends Activity {
 		public void onPictureTaken(byte[] data, Camera camera) {
 			// TODO Auto-generated method stub
 			Log.d(TAG, "onPictureTaken_1");
-
 			String savaPath="";
 			try {
 				if (data != null && mSavaPath != null){
@@ -877,8 +843,6 @@ public class MainActivity extends Activity {
 				wlog(e.getMessage());
 			}
 			mbTkPicture_1=false;
-			//mCamera1.startPreview();
-			//mCamera1.cancelAutoFocus();
 			wlog("takePicture_1 finish");
 		}
 	};
@@ -888,10 +852,8 @@ public class MainActivity extends Activity {
 		public void onPictureTaken(byte[] data, Camera camera) {
 			// TODO Auto-generated method stub
 			mbTkPicture=false;
-			//mCamera.startPreview();
 			wlog("takeRawPicture finish");
-
-			if(mCameraMode == 0 && mCamera1 != null) {
+			if(mCamera1 != null) {
 				new Handler().postDelayed(new Runnable(){
 					public void run() {
 						mCamera1.takePicture(null, null, mRawPicture_1Callback);
@@ -930,7 +892,7 @@ public class MainActivity extends Activity {
 			return;
 		}else {
 			mbTkPicture=true;
-			if(mCameraMode == 0){
+			if(mCamera1 != null){
 				mbTkPicture_1=true;
 			}
 		}
@@ -965,12 +927,7 @@ public class MainActivity extends Activity {
 		if(raw_need==1)
 		{
 			try {
-				//mCamera.stopPreview();
 				wlog("take raw pic");
-				//if(mCameraMode == 0 && mCamera1 != null) {
-				//	mCamera1.stopPreview();
-				//}
-				//mCamera.startPreview();
 				mCamera.takePicture(null, null, mRawPictureCallback);
 			} catch (Exception e) {
 				// TODO: handle exception
@@ -986,7 +943,7 @@ public class MainActivity extends Activity {
 			mCamera.setParameters(parameters);
 			mCamera.cancelAutoFocus(); //reset focusState=0
 
-			if(mCameraMode == 0 && mCamera1 != null && isSupportFocuse_1) {
+			if(mCamera1 != null && isSupportFocuse_1) {
 				Parameters parameters_1 = mCamera1.getParameters();
 				parameters_1.setFocusMode(Parameters.FOCUS_MODE_AUTO);
 				mCamera1.setParameters(parameters_1);
@@ -1009,9 +966,6 @@ public class MainActivity extends Activity {
 		else{
 			try {
 				Log.i(TAG,"take picture start without af");
-				//if(mCameraMode == 0 && mCamera1 != null) {
-				//	mCamera1.stopPreview();
-				//}
 				mCamera.takePicture(null, null, mPictureCallback);
 			} catch (Exception e) {
 				// TODO: handle exception
@@ -1035,24 +989,19 @@ public class MainActivity extends Activity {
 			{
 				ArrayList<Area> focusArea = new ArrayList<Area>();
 				focusArea.add(new Area(new Rect(), 1000));
+				focusArea.get(0).rect.set(-250, -250, 250, 250);
 
-				if(CameraMode == 0 && mCamera1 != null){
-					//focusArea.get(0).rect.set(-500, -250, 0, 250);
-					focusArea.get(0).rect.set(-250, -250, 250, 250);
+				if(CameraMode == 0 || CameraMode == 4){
 					parameters.setFocusAreas(focusArea);
 					mCamera.setParameters(parameters);
 
 					Parameters parameters_1=mCamera1.getParameters();
-					//focusArea.get(0).rect.set(0, -250, 500, 250);
-					focusArea.get(0).rect.set(-250, -250, 250, 250);
 					parameters_1.setFocusAreas(focusArea);
 					mCamera1.setParameters(parameters_1);
 				}else{
-					focusArea.get(0).rect.set(-250, -250, 250, 250);
 					parameters.setFocusAreas(focusArea);
 					mCamera.setParameters(parameters);
 				}
-				//}
 			}
 
 			int meteringAreaNum = parameters.getMaxNumMeteringAreas();
@@ -1061,24 +1010,19 @@ public class MainActivity extends Activity {
 
 				ArrayList<Area> meteringArea = new ArrayList<Area>();
 				meteringArea.add(new Area(new Rect(), 1000));
+				meteringArea.get(0).rect.set(-250, -250, 250, 250);
 
-				if(mCameraMode == 0 && mCamera1 != null) {
-					//meteringArea.get(0).rect.set(-500, -250, 0, 250);
-					meteringArea.get(0).rect.set(-250, -250, 250, 250);
+				if(CameraMode == 0 || CameraMode == 4) {
 					parameters.setMeteringAreas(meteringArea);
 					mCamera.setParameters(parameters);
 
 					Parameters parameters_1=mCamera1.getParameters();
-					//meteringArea.get(0).rect.set(0, -250, 500, 250);
-					meteringArea.get(0).rect.set(-250, -250, 250, 250);
 					parameters_1.setMeteringAreas(meteringArea);
 					mCamera1.setParameters(parameters_1);
 				}else{
-					meteringArea.get(0).rect.set(-250, -250, 250, 250);
 					parameters.setMeteringAreas(meteringArea);
 					mCamera.setParameters(parameters);
 				}
-				//}
 			}
 		}
 	}

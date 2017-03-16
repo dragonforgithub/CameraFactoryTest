@@ -23,7 +23,7 @@ public class CameraPreview extends SurfaceView implements SurfaceHolder.Callback
     private Camera mCamera;
     private Context mContext;
     private int cameraID=0;
-    private int mCameraMode=1;
+    private int mCameraMode=0;
     private String mLogPath = "";
     private static final String TAG = "CameraPreview";
 
@@ -59,8 +59,7 @@ public class CameraPreview extends SurfaceView implements SurfaceHolder.Callback
     }
 
     public void surfaceDestroyed(SurfaceHolder holder) {
-        // empty. Take care of releasing the Camera preview in your activity.
-    	Log.v(TAG,"surfaceDestroyed");
+        // empty. Take care of releasing the Camera preview in your activity.g.v(TAG,"surfaceDestroyed");
         /*
         if(mCamera!=null){
             mCamera.setPreviewCallback(null);
@@ -83,58 +82,18 @@ public class CameraPreview extends SurfaceView implements SurfaceHolder.Callback
 
         // set preview size and ROI:
         setMaxPreviewAndPictureSize(mCamera);
-        //init ROI and update
-        setFocusArea(mCamera);
 
         // start preview with new settings
         try {
                 //set preview display delay
                 mCamera.setPreviewDisplay(mHolder);
                 mCamera.startPreview();
-                if(mCameraMode == 0){
-                    Thread.sleep(900); //delay 900ms
-                    Log.i(TAG,"DaulCamera mode delay 900ms");
-                }
 
-                //new Handler().postDelayed(new Runnable(){
-                  //  public void run() {
-                        wlog("finish startPreview"+cameraID);
-                        Log.i(TAG,"[ok] start preview : "+cameraID);
-                    //}
-                //}, 800);
-
+                wlog("finish startPreview"+cameraID);
+                Log.i(TAG,"[ok] start preview : "+cameraID);
         } catch (Exception e){
                 Log.e(TAG,"[fail] start preview : "+cameraID);
                 Log.e(TAG, "Error starting camera preview: " + e.getMessage());
-        }
-    }
-
-    public void setFocusArea(Camera rCamera)
-    {
-        if(Build.VERSION.SDK_INT>=14 )
-        {
-            Parameters parameters=rCamera.getParameters();
-
-            int focusAreaNum=parameters.getMaxNumFocusAreas() ;
-            if(focusAreaNum > 0) {
-                ArrayList<Camera.Area> focusArea = new ArrayList<Camera.Area>();
-                focusArea.add(new Camera.Area(new Rect(), 1000));
-
-                focusArea.get(0).rect.set(-250, -250, 250, 250);
-                parameters.setFocusAreas(focusArea);
-            }
-
-            int meteringAreaNum = parameters.getMaxNumMeteringAreas();
-            Log.i(TAG,"max metering area = " + meteringAreaNum);
-            if (meteringAreaNum > 0) {
-                ArrayList<Camera.Area> meteringArea = new ArrayList<Camera.Area>();
-                meteringArea.add(new Camera.Area(new Rect(), 1000));
-
-                meteringArea.get(0).rect.set(-250, -250, 250, 250);
-                parameters.setMeteringAreas(meteringArea);
-            }
-
-            rCamera.setParameters(parameters);
         }
     }
 
@@ -184,7 +143,7 @@ public class CameraPreview extends SurfaceView implements SurfaceHolder.Callback
             Log.v(TAG, "set previewsize:" + lw + "x" + lh );
 
             //reset display size if not dual camera mode
-            if(mCameraMode != 0){
+            if(mCameraMode != 0 && mCameraMode != 4) {
                 FrameLayout.LayoutParams lp = (FrameLayout.LayoutParams) mSurfaceView.getLayoutParams();
                 lp.height = lw;
                 lp.width = lh;
